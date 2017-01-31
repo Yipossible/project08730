@@ -4,9 +4,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Survey Page-14</title>
 </head>
 <body>
+<p>
+Before we continue, I would like to ask you a question to make sure that you understand the scenario:
+</p>
+<p>
+1. When will the power come back on?
+</p>
+<form>
+	<input type="radio" name="page14-1" value="Yes">Yes<br>
+	<input type="radio" name="page14-2" value="No">No<br>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<form method="get" action="Page-10.do">
+	<button type="submit">Next Page</button>
+</form>
+
+
+
+
+
 
 </body>
 </html>
