@@ -15,11 +15,11 @@ When will the power come back on?
 </p>
 
 <form>
-	<input type="radio" name="powerComebackDays" value="3 hours">3 hours<br>
-	<input type="radio" name="powerComebackDays" value="1 day">1 day<br>
-	<input type="radio" name="powerComebackDays" value="3 days">3 days<br>
-	<input type="radio" name="powerComebackDays" value="7 days">7 days<br>
-	<input type="radio" name="powerComebackDays" value="14 days">14 days<br>
+	<input type="radio" name="page08-1" value="3 hours">3 hours<br>
+	<input type="radio" name="page08-1" value="1 day">1 day<br>
+	<input type="radio" name="page08-1" value="3 days">3 days<br>
+	<input type="radio" name="page08-1" value="7 days">7 days<br>
+	<input type="radio" name="page08-1" value="14 days">14 days<br>
 </form>
 
 
