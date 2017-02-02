@@ -7,7 +7,7 @@
 	<br>
 	Before we continue, I would like to ask you a question to make sure you understand the scenario: <br>
 	When will the power come back on?
-	<input type="checkbox" name="ticker" value="House">3 hours
+	<input type="checkbox" name="ticker" value="House">hihi hours
 	<input type="checkbox" name="ticker" value="House">3 days
 	<input type="checkbox" name="ticker" value="House">7 days
 	<input type="checkbox" name="ticker" value="House">2 weeks
