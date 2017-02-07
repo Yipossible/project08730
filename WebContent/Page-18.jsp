@@ -29,10 +29,10 @@ Gravy, stuffing, broth, Lunchmeats, hot dogs, bacon, sausage, dried beef, Pizza 
 Canned hams labeled ‘keep refrigerated’, Opened canned meats and fish,
 Casseroles, soups, stews</td>
 		<td>$
-			 <input type="text" name="page18-1" value="">
+			 <input type="text" name="page18_1_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-1" value="">
+			 <input type="text" name="page18_1_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -45,10 +45,10 @@ Casseroles, soups, stews</td>
 		<td>Milk, cream, sour cream, Buttermilk, evaporated milk, 
 Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
-			 <input type="text" name="page18-2" value="">
+			 <input type="text" name="page18_2_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-2" value="">
+			 <input type="text" name="page18_2_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -60,10 +60,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td>Fresh eggs, hard-cooked in shell Custards and puddings, quiche</td>
 		<td>$
-			 <input type="text" name="page18-3" value="">
+			 <input type="text" name="page18_3_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-3" value="">
+			 <input type="text" name="page18_3_guessbad" value="">
 		</td>
 	</tr>
 
@@ -75,10 +75,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td>Opened canned fruits and juices</td>
 		<td>$
-			 <input type="text" name="page18-3" value="">
+			 <input type="text" name="page18_4_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-3" value="">
+			 <input type="text" name="page18_4_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -91,10 +91,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>Opened mayonnaise, Tartar sauce, Horseradish,Fish sauces, oyster sauce
 Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>$
-			 <input type="text" name="page18-4" value="">
+			 <input type="text" name="page18_5_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-4" value="">
+			 <input type="text" name="page18_5_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -107,40 +107,40 @@ Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>Refrigerator biscuits, rolls, cookie dough, Cooked pasta, rice, potatoes,
 Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
-			 <input type="text" name="page18-5" value="">
+			 <input type="text" name="page18_6_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-5" value="">
+			 <input type="text" name="page18_6_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Perishable Pies and Pastry</td>
 		<td>$
-			 <input type="text" name="page18-6" value="">
+			 <input type="text" name="page18_7_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-6" value="">
+			 <input type="text" name="page18_7_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Perishable Vegetables (except raw vegetables)</td>
 		<td>$
-			 <input type="text" name="page18-7" value="">
+			 <input type="text" name="page18_8_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-7" value="">
+			 <input type="text" name="page18_8_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Soft Cheese</td>
 		<td>$
-			 <input type="text" name="page18-8" value="">
+			 <input type="text" name="page18_9_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page18-8" value="">
+			 <input type="text" name="page18_9_guessbad" value="">
 		</td>
 	</tr>
 	
