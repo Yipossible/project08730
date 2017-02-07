@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import org.genericdao.PrimaryKey;
 
-@PrimaryKey("surveyResponse_id")
+@PrimaryKey("respondent_id")
 public class SurveyResponse {
 	private int respondent_id;
 	private int survey_id;
