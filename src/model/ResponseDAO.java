@@ -30,6 +30,6 @@ public class ResponseDAO extends GenericDAO<ResponseBean>{
                 Transaction.rollback();
             }
 		}
-		
+	// read: parsing method {} for mulitiple choice question
 	}
 }
