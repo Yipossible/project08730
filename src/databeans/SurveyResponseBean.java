@@ -9,7 +9,6 @@ public class SurveyResponseBean {
 	private int respondent_id;
 	private int survey_id;
 	private Timestamp timestamp;
-	private String response;
     /**
      * @return the respondent_id
      */
@@ -45,17 +44,5 @@ public class SurveyResponseBean {
      */
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
-    }
-    /**
-     * @return the response
-     */
-    public String getResponse() {
-        return response;
-    }
-    /**
-     * @param response the response to set
-     */
-    public void setResponse(String response) {
-        this.response = response;
     }
 }

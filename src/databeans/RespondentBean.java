@@ -4,21 +4,14 @@ import org.genericdao.PrimaryKey;
 
 @PrimaryKey("respondent_id")
 public class RespondentBean {
-	private int respondent_id;
 	private int survey_id;
-	private int zipcode;
+	private String zipcode;
 	private int age;
 	private String email;
 	private String payment_account;
 	private String geo_info;
 	private boolean full_payment;
-	
-	public int getRespondent_id() {
-		return respondent_id;
-	}
-	public void setRespondent_id(int respondent_id) {
-		this.respondent_id = respondent_id;
-	}
+
 	public int getSurvey_id() {
 		return survey_id;
 	}

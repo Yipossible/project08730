@@ -4,18 +4,12 @@ import org.genericdao.PrimaryKey;
 
 @PrimaryKey("response_id")
 public class ResponseBean {
-	private int response_id;
+
 	private int question_id;
 	private int respondent_id;
 	private String response;
 	
 	
-	public int getResponse_id() {
-		return response_id;
-	}
-	public void setResponse_id(int response_id) {
-		this.response_id = response_id;
-	}
 	public int getQuestion_id() {
 		return question_id;
 	}

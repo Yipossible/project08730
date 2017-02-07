@@ -28,7 +28,7 @@ public class SurveyResponseDAO extends GenericDAO<SurveyResponseBean>{
                 Transaction.rollback();
             }
 		}
-		
+	// count number of respondents by surveyID
 	}
 	
 }

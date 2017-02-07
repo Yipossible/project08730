@@ -34,7 +34,7 @@ public class Page_03Form extends FormBean {
      * @param zipcode the zipcode to set
      */
     public void setZipcode(String zipcode) {
-        this.zipcode = trimAndConvert(zipcode, "<>\"");
+        this.zipcode = trimAndConvert(zipcode, "<>\&"");
     }
 
     /**
@@ -48,7 +48,7 @@ public class Page_03Form extends FormBean {
      * @param cityLiveTime the cityLiveTime to set
      */
     public void setCityLiveTime(String cityLiveTime) {
-        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>\"");
+        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>\&"");
     }
 
     /**
@@ -62,7 +62,7 @@ public class Page_03Form extends FormBean {
      * @param houseType the houseType to set
      */
     public void setHouseType(String houseType) {
-        this.houseType = trimAndConvert(houseType, "<>\"");
+        this.houseType = trimAndConvert(houseType, "<>&\"");
     }
 
     /**
@@ -76,7 +76,7 @@ public class Page_03Form extends FormBean {
      * @param houseLiveTime the houseLiveTime to set
      */
     public void setHouseLiveTime(String houseLiveTime) {
-        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>\"");
+        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>\&"");
     }
 
     /**
@@ -90,7 +90,7 @@ public class Page_03Form extends FormBean {
      * @param age the age to set
      */
     public void setAge(String age) {
-        this.age = trimAndConvert(age, "<>\"");
+        this.age = trimAndConvert(age, "<>&\"");
     }
 
     /**
@@ -104,7 +104,7 @@ public class Page_03Form extends FormBean {
      * @param preschool the preschool to set
      */
     public void setPreschool(String preschool) {
-        this.preschool = trimAndConvert(preschool, "<>\"");
+        this.preschool = trimAndConvert(preschool, "<>\"&");
     }
 
     /**
@@ -118,7 +118,7 @@ public class Page_03Form extends FormBean {
      * @param k12 the k12 to set
      */
     public void setK12(String k12) {
-        this.k12 = trimAndConvert(k12, "<>\"");
+        this.k12 = trimAndConvert(k12, "<>&\"");
     }
 
     /**
@@ -132,7 +132,7 @@ public class Page_03Form extends FormBean {
      * @param under30 the under30 to set
      */
     public void setUnder30(String under30) {
-        this.under30 = trimAndConvert(under30, "<>\"");
+        this.under30 = trimAndConvert(under30, "<>&\"");
     }
 
     /**
@@ -146,7 +146,7 @@ public class Page_03Form extends FormBean {
      * @param from30to65 the from30to65 to set
      */
     public void setFrom30to65(String from30to65) {
-        this.from30to65 = trimAndConvert(from30to65, "<>\"");
+        this.from30to65 = trimAndConvert(from30to65, "<>&\"");
     }
 
     /**
@@ -160,7 +160,7 @@ public class Page_03Form extends FormBean {
      * @param over65 the over65 to set
      */
     public void setOver65(String over65) {
-        this.over65 = trimAndConvert(over65, "<>\"");
+        this.over65 = trimAndConvert(over65, "<>&\"");
     }
 
     public List<String> getValidationErrors() {
