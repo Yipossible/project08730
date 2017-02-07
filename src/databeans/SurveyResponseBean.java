@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import org.genericdao.PrimaryKey;
 
 @PrimaryKey("respondent_id")
-public class SurveyResponse {
+public class SurveyResponseBean {
 	private int respondent_id;
 	private int survey_id;
 	private Timestamp timestamp;
