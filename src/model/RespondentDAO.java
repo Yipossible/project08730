@@ -7,18 +7,18 @@ import org.genericdao.MatchArg;
 import org.genericdao.RollbackException;
 import org.genericdao.Transaction;
 
-import databeans.ResponseBean;
+import databeans.RespondentBean;
 
-public class RespondentDAO extends GenericDAO<ResponseBean> {
+public class RespondentDAO extends GenericDAO<RespondentBean> {
 
     public RespondentDAO(ConnectionPool cp, String tableName) throws DAOException {
-        super(ResponseBean.class, tableName, cp);
+        super(RespondentBean.class, tableName, cp);
     }
     
-    public void create(ResponseBean r) throws RollbackException {
+    public void create(RespondentBean r) throws RollbackException {
         try {
             Transaction.begin();
-            ResponseBean a[] = match(MatchArg.equals("payment_account", r.getPayment_account()));
+            RespondentBean a[] = match(MatchArg.equals("payment_account", r.getPayment_account()));
             if (a.length > 0)
                 throw new RollbackException("User already exists, duplicate submission is not allowed!");
             super.create(r);
