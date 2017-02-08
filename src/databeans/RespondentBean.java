@@ -4,31 +4,59 @@ import org.genericdao.PrimaryKey;
 
 @PrimaryKey("respondent_id")
 public class RespondentBean {
-	private int survey_id;
-	private String zipcode;
-	private int age;
+    private int respondent_id;
+    private int survey_id;
+    private String unique_id;
+    private String zipcode;
+    private int age;
 	private String email;
 	private String payment_account;
 	private String geo_info;
 	private boolean full_payment;
-
-	public int getSurvey_id() {
+	
+	/**
+     * @return the respondent_id
+     */
+    public int getRespondent_id() {
+        return respondent_id;
+    }
+    /**
+     * @param respondent_id the respondent_id to set
+     */
+    public void setRespondent_id(int respondent_id) {
+        this.respondent_id = respondent_id;
+    }
+    public int getSurvey_id() {
 		return survey_id;
 	}
 	public void setSurvey_id(int survey_id) {
 		this.survey_id = survey_id;
 	}
+	
     /**
-     * @return the zipcode
+     * @return the session_id
      */
-    public int getZipcode() {
-        return zipcode;
+    public String getUnique_id() {
+        return unique_id;
+    }
+    /**
+     * @param session_id the session_id to set
+     */
+    public void setUnique_id(String unique_id) {
+        this.unique_id = unique_id;
     }
     /**
      * @param zipcode the zipcode to set
      */
-    public void setZipcode(int zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+    
+    /**
+     * @return the zipcode
+     */
+    public String getZipcode() {
+        return zipcode;
     }
     /**
      * @return the age
