@@ -11,18 +11,11 @@ import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
-import databeans.CustomerBean;
-import databeans.TransactionBean;
-import formbeans.BuyFundForm;
-import formbeans.RequestCheckForm;
-import model.CustomerDAO;
-import model.FundDAO;
+import formbean.Page03Form;
 import model.Model;
-import model.TransactionDAO;
 
 public class Page03Action extends Action {
-	private FormBeanFactory<RequestCheckForm> formBeanFactory = FormBeanFactory
-            .getInstance(RequestCheckForm.class);
+	private FormBeanFactory<Page03Form> formBeanFactory = FormBeanFactory.getInstance(Page03Form.class);
 	
 	private TransactionDAO transactionDAO;
     private FundDAO fundDAO;

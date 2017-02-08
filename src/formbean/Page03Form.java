@@ -11,7 +11,7 @@ import org.mybeans.form.FormBean;
  * @author jennyching
  *
  */
-public class Page_03Form extends FormBean {
+public class Page03Form extends FormBean {
     private String zipcode;
     private String cityLiveTime;
     private String houseType;
@@ -34,7 +34,7 @@ public class Page_03Form extends FormBean {
      * @param zipcode the zipcode to set
      */
     public void setZipcode(String zipcode) {
-        this.zipcode = trimAndConvert(zipcode, "<>\&"");
+        this.zipcode = trimAndConvert(zipcode, "<>\"&");
     }
 
     /**
@@ -48,7 +48,7 @@ public class Page_03Form extends FormBean {
      * @param cityLiveTime the cityLiveTime to set
      */
     public void setCityLiveTime(String cityLiveTime) {
-        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>\&"");
+        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>\"&");
     }
 
     /**
@@ -76,7 +76,7 @@ public class Page_03Form extends FormBean {
      * @param houseLiveTime the houseLiveTime to set
      */
     public void setHouseLiveTime(String houseLiveTime) {
-        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>\&"");
+        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>\"&");
     }
 
     /**
