@@ -33,6 +33,10 @@ public class Model {
         return respondentDAO;
     }
     
+    public ResponseDAO getResponseDAO() {
+        return responseDAO;
+    }
+    
 	public boolean getRequireSSL() {
 		return requireSSL;
 	}
