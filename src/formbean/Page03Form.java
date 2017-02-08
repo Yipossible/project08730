@@ -11,7 +11,7 @@ import org.mybeans.form.FormBean;
  * @author jennyching
  *
  */
-public class Page_03Form extends FormBean {
+public class Page03Form extends FormBean {
     private String zipcode;
     private String cityLiveTime;
     private String houseType;
