@@ -3,13 +3,12 @@ package controller;
 import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.authenticator.SingleSignOnSessionKey;
 import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
-import com.mysql.fabric.Response;
 
 import databeans.ResponseBean;
 import formbean.Page18Form;
@@ -32,24 +31,31 @@ public class Page18Action extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
-		request.getSession(false).setAttribute("errors", errors);
+		HttpSession session = request.getSession();
+		session.setAttribute("errors", errors);
 		
 		try {
-			Page18Form form = formBeanFactory.create(request);
 			
+			Page18Form form = formBeanFactory.create(request);
+			System.out.println(form);
+			System.out.println(!form.isPresent());
 			if (!form.isPresent()) {
 				return "Page18.jsp";
 			}
 			
+			
+			System.out.println(form.getValidationErrors());
 			errors.addAll(form.getValidationErrors());
 			if (errors.size() > 0) {
 				return "Page18.jsp";
 			}
 			
-			
+			System.out.println(form.getPage_18_10_totalguessall());
+			System.out.println(form.getPage_18_10_totalguessbad());
 			
 			//if sum is present, invoke dao
 			if (form.getPage_18_10_totalguessall() != null || form.getPage_18_10_totalguessbad() != null) {
+				System.out.println("valid sums");
 			ResponseBean r= new ResponseBean();
 			r.setQuestion_id(18);
 			r.setRespondent_id(1);//get session id);

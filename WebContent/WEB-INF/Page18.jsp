@@ -12,7 +12,7 @@
 Please use the calculator below to estimate the value of the food you have, and would need to replace if the power went out for one to two weeks.
 </p>
 
-<form method = "post" action="page18.do">
+<form method="POST" action="page18.do">
 <table>
 	<tr>
 		<td></td>
@@ -153,10 +153,10 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 	<tr>
 		<td>Best Guess Total</td>
 		<td>$
-		<input type="text" id="page18_10_totalguessall" disabled>
+		<input type="text" name="page_18_10_totalguessall" id="page18_10_totalguessall" disabled>
 		</td>
 		<td>$
-		<input type="text" id="page18_10_totalguessbad" disabled>
+		<input type="text" name="page_18_10_totalguessbad" id="page18_10_totalguessbad" disabled>
 		</td>
 	</tr>
     <tr>
@@ -172,14 +172,14 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 
 
 
-	<button type="submit">Next Page</button>
+	<input type="submit" value="Next">
 </form>
 
 
 
 
 
-<script src="calculator.js"></script>
+<script src="js/calculator.js"></script>
 
 </body>
 </html>
