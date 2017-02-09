@@ -51,7 +51,8 @@ public class Page03Action extends Action {
             if (errors.size() != 0) {
                 return "Page03.jsp";
             }
-            RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
+            //RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
+            RespondentBean r = respondentDAO.read("1234");
             if (r != null) {
                 // store question 1~5 to the response table
                 ResponseBean t = new ResponseBean(); 
@@ -80,7 +81,7 @@ public class Page03Action extends Action {
                 
                 t = new ResponseBean(); 
                 t.setQuestion_id(5);
-                t.setResponse(form.getPreschool()+form.getFrom30to65()+form.getOver65()+form.getK12()+form.getUnder30());
+                t.setResponse(form.getPreschool()+','+form.getK12()+','+form.getUnder30()+','+form.getFrom30to65()+','+form.getOver65());
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
             }
