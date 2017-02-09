@@ -44,14 +44,13 @@ public class Page03Action extends Action {
             Page03Form form = formBeanFactory.create(request);
 
             if (!form.isPresent()) {
-                return "page03.do";
+                return "Page03.jsp";
             }
 
             errors.addAll(form.getValidationErrors());
             if (errors.size() != 0) {
-                return "page03.do";
+                return "Page03.jsp";
             }
-
             RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
             if (r != null) {
                 // store question 1~5 to the response table
