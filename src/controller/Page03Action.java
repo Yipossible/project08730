@@ -88,7 +88,7 @@ public class Page03Action extends Action {
             else {
                 return "Page03.jsp";
             }
-            return "Page03.jsp";
+            return "Page05.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";
