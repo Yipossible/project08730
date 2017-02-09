@@ -26,7 +26,7 @@ public class Page18Action extends Action{
 	
 	@Override
 	public String getName() {
-		return "Page18.do";
+		return "page18.do";
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class Page18Action extends Action{
 			if (form.getPage_18_10_totalguessall() != null || form.getPage_18_10_totalguessbad() != null) {
 			ResponseBean r= new ResponseBean();
 			r.setQuestion_id(18);
-			r.setRespondent_id();//get session id);
+			r.setRespondent_id(1);//get session id);
 			r.setResponse("{" 
 					+ form.getPage_18_10_totalguessall()
 					+ ","
@@ -61,7 +61,7 @@ public class Page18Action extends Action{
 			responseDAO.create(r);
 			} else {
 				errors.add("Please input all fields and click calculate button to get results before move to next page.");
-				return "Page18,jsp";
+				return "Page18.jsp";
 			}
 			
 			return "Page18.jsp";
