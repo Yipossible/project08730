@@ -1,7 +1,6 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,30 +10,27 @@ import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
-import databeans.CustomerBean;
-import databeans.TransactionBean;
-import formbeans.BuyFundForm;
-import formbeans.RequestCheckForm;
-import model.CustomerDAO;
-import model.FundDAO;
+import databeans.RespondentBean;
+import databeans.ResponseBean;
+import formbean.Page03Form;
 import model.Model;
-import model.TransactionDAO;
+import model.RespondentDAO;
+import model.ResponseDAO;
 
 public class Page03Action extends Action {
-	private FormBeanFactory<RequestCheckForm> formBeanFactory = FormBeanFactory
-            .getInstance(RequestCheckForm.class);
+	private FormBeanFactory<Page03Form> formBeanFactory = FormBeanFactory.getInstance(Page03Form.class);
 	
-	private TransactionDAO transactionDAO;
-    private FundDAO fundDAO;
+	private ResponseDAO responseDAO;
+    private RespondentDAO respondentDAO;
 
     public Page03Action(Model model) {
-        transactionDAO = model.getTransactionDAO();
-        fundDAO = model.getFundDAO();
+        responseDAO = model.getResponseDAO();
+        respondentDAO = model.getRespondentDAO();
     }
 
     @Override
     public String getName() {
-        return "c_requestCheck.do";
+        return "page03.do";
     }
 
     @Override
@@ -45,45 +41,54 @@ public class Page03Action extends Action {
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
         try {
-            RequestCheckForm form = formBeanFactory.create(request);
+            Page03Form form = formBeanFactory.create(request);
 
             if (!form.isPresent()) {
-                return "c_home.do";
+                return "Page03.jsp";
             }
 
             errors.addAll(form.getValidationErrors());
             if (errors.size() != 0) {
-                return "c_home.do";
+                return "Page03.jsp";
             }
-
-            CustomerBean c = (CustomerBean)session.getAttribute("customer");
-            if (c != null) {
-            	double amountInProcessing = 0;
-            	TransactionBean[] oldTransactions = transactionDAO.getTransactionByCustomerId(c.getCustomerId());
-            	for (int i = 0; i < oldTransactions.length; i++) {
-            		if (oldTransactions[i].getTransaction_type().equals("pending") 
-            				&& (oldTransactions[i].getOrder_type().equals("buy") || oldTransactions[i].getOrder_type().equals("requestcheck"))) {
-            			amountInProcessing  += oldTransactions[i].getDollar_amount(); 
-            		}
-            	}
-            	if (amountInProcessing + Double.parseDouble(form.getCheckAmount()) > c.getCash()) {
-            		errors.add("Cannot add request. Insufficient Funds.");
-            		return "c_home.do";
-            	}
+            //RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
+            RespondentBean r = respondentDAO.read("1234");
+            if (r != null) {
+                // store question 1~5 to the response table
+                ResponseBean t = new ResponseBean(); 
+            	t.setQuestion_id(1);
+            	t.setResponse(form.getZipcode());
+            	t.setRespondent_id(r.getRespondent_id());
+            	responseDAO.create(t);
             	
-            	TransactionBean t = new TransactionBean(); 
-            	t.setCustomer_id(c.getCustomerId());
-            	t.setDate(new Date());
-            	t.setOrder_type("requestcheck");
-            	t.setDollar_amount(Double.parseDouble(form.getCheckAmount()));
-            	t.setTransaction_type("pending");
-            	transactionDAO.addTransaction(t);
-            	successMessage.add("Request to encash $" + form.getCheckAmount() + " successfull placed.");
+            	t = new ResponseBean(); 
+                t.setQuestion_id(2);
+                t.setResponse(form.getCityLiveTime());
+                t.setRespondent_id(r.getRespondent_id());
+                responseDAO.create(t);
+                
+                t = new ResponseBean(); 
+                t.setQuestion_id(3);
+                t.setResponse(form.getHouseLiveTime());
+                t.setRespondent_id(r.getRespondent_id());
+                responseDAO.create(t);
+                
+                t = new ResponseBean(); 
+                t.setQuestion_id(4);
+                t.setResponse(form.getAge());
+                t.setRespondent_id(r.getRespondent_id());
+                responseDAO.create(t);
+                
+                t = new ResponseBean(); 
+                t.setQuestion_id(5);
+                t.setResponse(form.getPreschool()+','+form.getK12()+','+form.getUnder30()+','+form.getFrom30to65()+','+form.getOver65());
+                t.setRespondent_id(r.getRespondent_id());
+                responseDAO.create(t);
             }
             else {
-                return "login.jsp";
+                return "Page03.jsp";
             }
-            return "c_home.do";
+            return "Page05.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";

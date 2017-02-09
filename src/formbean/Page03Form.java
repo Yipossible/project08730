@@ -34,7 +34,7 @@ public class Page03Form extends FormBean {
      * @param zipcode the zipcode to set
      */
     public void setZipcode(String zipcode) {
-        this.zipcode = trimAndConvert(zipcode, "<>\&"");
+        this.zipcode = trimAndConvert(zipcode, "<>&\"");
     }
 
     /**
@@ -48,7 +48,7 @@ public class Page03Form extends FormBean {
      * @param cityLiveTime the cityLiveTime to set
      */
     public void setCityLiveTime(String cityLiveTime) {
-        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>\&"");
+        this.cityLiveTime = trimAndConvert(cityLiveTime, "<>&\"");
     }
 
     /**
@@ -76,7 +76,7 @@ public class Page03Form extends FormBean {
      * @param houseLiveTime the houseLiveTime to set
      */
     public void setHouseLiveTime(String houseLiveTime) {
-        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>\&"");
+        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>&\"");
     }
 
     /**
@@ -167,36 +167,31 @@ public class Page03Form extends FormBean {
         List<String> errors = new ArrayList<String>();
         if (zipcode == null || zipcode.length() == 0) {
             errors.add("zipcode is required");
-        }
-        if (zipcode.length() > 5 || zipcode.length() > 5) {
+        } else if (zipcode.length() > 5 || zipcode.length() > 5) {
             errors.add("Invalid values");
             return errors;
         }
         if (cityLiveTime == null || cityLiveTime.length() == 0) {
             errors.add("cityLiveTime is required");
-        }
-        if (cityLiveTime.length() > 15 || cityLiveTime.length() >15) {
+        } else if (cityLiveTime.length() > 15 || cityLiveTime.length() >15) {
             errors.add("Invalid values");
             return errors;
         }
         if (houseType == null || houseType.length() == 0) {
             errors.add("houseType is required");
-        }
-        if (houseType.length() > 15 || houseType.length() >15) {
+        } else if (houseType.length() > 15 || houseType.length() >15) {
             errors.add("Invalid values");
             return errors;
         }
         if (houseLiveTime == null || houseLiveTime.length() == 0) {
             errors.add("houseLiveTime is required");
-        }
-        if (houseLiveTime.length() > 15 || houseLiveTime.length() >15) {
+        } else if (houseLiveTime.length() > 15 || houseLiveTime.length() >15) {
             errors.add("Invalid values");
             return errors;
         }
         if (age == null || age.length() == 0) {
             errors.add("age is required");
-        }
-        if (age.length() > 3 || age.length() > 3) {
+        } else if (age.length() > 3 || age.length() > 3) {
             errors.add("Invalid values");
             return errors;
         }

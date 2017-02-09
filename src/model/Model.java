@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 
@@ -12,6 +10,7 @@ import org.genericdao.RollbackException;
 
 public class Model {
     private RespondentDAO respondentDAO;
+    private ResponseDAO responseDAO;
     
 	private boolean requireSSL;
     
@@ -24,6 +23,7 @@ public class Model {
 
             ConnectionPool pool = new ConnectionPool(jdbcDriver, jdbcURL);
             respondentDAO = new RespondentDAO(pool, "respondent");
+            responseDAO = new ResponseDAO(pool, "response");
         } catch (DAOException e) {
             throw new ServletException(e);
         }
