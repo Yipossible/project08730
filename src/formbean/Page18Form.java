@@ -138,8 +138,6 @@ public class Page18Form extends FormBean{
 	public void setPage_18_9_guessbad(String page_18_9_guessbad) {
 		this.page_18_9_guessbad = trimAndConvert(page_18_9_guessbad, "<>\"&");
 	}
-	
-	
 	public String getPage_18_10_totalguessall() {
 		return page_18_10_totalguessall;
 	}
@@ -238,11 +236,11 @@ public class Page18Form extends FormBean{
 			errors.add("Please input your answer.");
 		}
 		
-		if(page_18_10_totalguessall.length() == 0 || page_18_9_guessall == null) {
+		if(page_18_10_totalguessall.length() == 0 || page_18_10_totalguessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(page_18_9_guessbad.length() == 0 || page_18_9_guessbad == null) {
+		if(page_18_10_totalguessbad.length() == 0 || page_18_10_totalguessbad == null) {
 			errors.add("Please input your answer.");
 		}
 

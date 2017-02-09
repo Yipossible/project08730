@@ -12,7 +12,7 @@
 Please use the calculator below to estimate the value of the food you have, and would need to replace if the power went out for one to two weeks.
 </p>
 
-<form method="post" action="page18Caculator.do">
+<form method="post" action="Page18.do">
 <table>
 	<tr>
 		<td></td>
@@ -144,19 +144,21 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 			 <input type="text" name="page18_9_guessbad" value="">
 		</td>
 	</tr>
-	<button type="submit">Calculate</button>
-</table>
-</form>
+	
+	<tr>
+		<input type = "button" value="Calculate" id="calculate" onclick="sum()">
+	</tr>
 
 
-<table>
+
+
 	<tr>
 		<td>Best Guess Total</td>
 		<td>$
-		${totalGuess}
+		<input type="text" id="page_18_10_totalguessall" disabled>
 		</td>
 		<td>$
-		${totalGuessBad}
+		<input type="text" id="page_18_10_totalguessbad" disabled>
 		</td>
 	</tr>
 </table>
@@ -172,14 +174,14 @@ Losing all the perishable food in your refrigerator may not be the only economic
 </p>
 
 
-<form method="get" action="Page18.do">
+
 	<button type="submit">Next Page</button>
 </form>
 
 
 
 
-
+<script src="calculator.js"></script>
 
 </body>
 </html>
