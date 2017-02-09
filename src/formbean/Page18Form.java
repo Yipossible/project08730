@@ -26,6 +26,10 @@ public class Page18Form extends FormBean{
 	private String page_18_8_guessbad;
 	private String page_18_9_guessall;
 	private String page_18_9_guessbad;
+	private String page_18_10_totalguessall;
+	private String page_18_10_totalguessbad;
+	
+	
 	public String getPage_18_1_guessall() {
 		return page_18_1_guessall;
 	}
@@ -135,6 +139,21 @@ public class Page18Form extends FormBean{
 		this.page_18_9_guessbad = trimAndConvert(page_18_9_guessbad, "<>\"&");
 	}
 	
+	
+	public String getPage_18_10_totalguessall() {
+		return page_18_10_totalguessall;
+	}
+	public void setPage_18_10_totalguessall(String page_18_10_totalguessall) {
+		this.page_18_10_totalguessall = page_18_10_totalguessall;
+	}
+	public String getPage_18_10_totalguessbad() {
+		return page_18_10_totalguessbad;
+	}
+	public void setPage_18_10_totalguessbad(String page_18_10_totalguessbad) {
+		this.page_18_10_totalguessbad = page_18_10_totalguessbad;
+	}
+	
+	
 	public double getValueasDouble(String s) {
 		try {
 			Double valueasDouble = Double.parseDouble(s);
@@ -147,75 +166,83 @@ public class Page18Form extends FormBean{
 	public List<String> getValidationErrors() {
 		List<String> errors = new ArrayList<String>();
 		
-		if(getPage_18_1_guessall().length() == 0 || getPage_18_1_guessall() == null) {
+		if(page_18_1_guessall.length() == 0 || page_18_1_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_1_guessbad().length() == 0 || getPage_18_1_guessbad() == null) {
+		if(page_18_1_guessbad.length() == 0 || page_18_1_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_2_guessall().length() == 0 || getPage_18_2_guessall() == null) {
+		if(page_18_2_guessall.length() == 0 || page_18_2_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_2_guessbad().length() == 0 || getPage_18_2_guessbad() == null) {
+		if(page_18_2_guessbad.length() == 0 || page_18_2_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_3_guessall().length() == 0 || getPage_18_3_guessall() == null) {
+		if(page_18_3_guessall.length() == 0 || page_18_3_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_3_guessbad().length() == 0 || getPage_18_3_guessbad() == null) {
+		if(page_18_3_guessbad.length() == 0 || page_18_3_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_4_guessall().length() == 0 || getPage_18_4_guessall() == null) {
+		if(page_18_4_guessall.length() == 0 || page_18_4_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_4_guessbad().length() == 0 || getPage_18_4_guessbad() == null) {
+		if(page_18_4_guessbad.length() == 0 || page_18_4_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_5_guessall().length() == 0 || getPage_18_5_guessall() == null) {
+		if(page_18_5_guessall.length() == 0 || page_18_5_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_5_guessbad().length() == 0 || getPage_18_5_guessbad() == null) {
+		if(page_18_5_guessbad.length() == 0 || page_18_5_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_6_guessall().length() == 0 || getPage_18_6_guessall() == null) {
+		if(page_18_6_guessall.length() == 0 || page_18_6_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_6_guessbad().length() == 0 || getPage_18_6_guessbad() == null) {
+		if(page_18_6_guessbad.length() == 0 || page_18_6_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_7_guessall().length() == 0 || getPage_18_7_guessall() == null) {
+		if(page_18_7_guessall.length() == 0 || page_18_7_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_7_guessbad().length() == 0 || getPage_18_7_guessbad() == null) {
+		if(page_18_7_guessbad.length() == 0 || page_18_7_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_8_guessall().length() == 0 || getPage_18_8_guessall() == null) {
+		if(page_18_8_guessall.length() == 0 || page_18_8_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_8_guessbad().length() == 0 || getPage_18_8_guessbad() == null) {
+		if(page_18_8_guessbad.length() == 0 || page_18_8_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_9_guessall().length() == 0 || getPage_18_9_guessall() == null) {
+		if(page_18_9_guessall.length() == 0 || page_18_9_guessall == null) {
 			errors.add("Please input your answer.");
 		}
 		
-		if(getPage_18_9_guessbad().length() == 0 || getPage_18_9_guessbad() == null) {
+		if(page_18_9_guessbad.length() == 0 || page_18_9_guessbad == null) {
+			errors.add("Please input your answer.");
+		}
+		
+		if(page_18_10_totalguessall.length() == 0 || page_18_9_guessall == null) {
+			errors.add("Please input your answer.");
+		}
+		
+		if(page_18_9_guessbad.length() == 0 || page_18_9_guessbad == null) {
 			errors.add("Please input your answer.");
 		}
 

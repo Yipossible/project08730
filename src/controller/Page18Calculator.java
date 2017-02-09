@@ -15,7 +15,7 @@ public class Page18Calculator extends Action{
 
 	@Override
 	public String getName() {
-		return "Page18Caculator.do";
+		return "page18Caculator.do";
 	}
 	
 	public String perform(HttpServletRequest request) {

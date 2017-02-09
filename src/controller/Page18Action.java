@@ -49,14 +49,20 @@ public class Page18Action extends Action{
 			
 			
 			//if sum is present, invoke dao
+			if (request.getAttribute("totalGuess") != null || request.getAttribute("totalGuessBad") != null) {
 			ResponseBean r= new ResponseBean();
 			r.setQuestion_id(18);
-			r.setRespondent_id(//get session id);
+			r.setRespondent_id();//get session id);
 			r.setResponse("{" 
-					+ //get value from column 1
+					+ request.getAttribute("totalGuess")
 					+ ","
-					+ //get value from column 2
+					+ request.getAttribute("totalGuessBad")
 					+ "}");
+			responseDAO.create(r);
+			} else {
+				errors.add("Please input all fields and click calculate button to get results before move to next page.");
+				return "Page18,jsp";
+			}
 			
 			return "Page18.jsp";
 		} catch (RollbackException e) {

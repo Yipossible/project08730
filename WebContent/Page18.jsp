@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,7 +12,7 @@
 Please use the calculator below to estimate the value of the food you have, and would need to replace if the power went out for one to two weeks.
 </p>
 
-
+<form method="post" action="page18Caculator.do">
 <table>
 	<tr>
 		<td></td>
@@ -143,15 +144,21 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 			 <input type="text" name="page18_9_guessbad" value="">
 		</td>
 	</tr>
-	
+	<button type="submit">Calculate</button>
+</table>
+</form>
+
+
+<table>
 	<tr>
 		<td>Best Guess Total</td>
 		<td>$
+		${totalGuess}
 		</td>
 		<td>$
+		${totalGuessBad}
 		</td>
 	</tr>
-
 </table>
 
 
@@ -165,7 +172,7 @@ Losing all the perishable food in your refrigerator may not be the only economic
 </p>
 
 
-<form method="get" action="Page-10.do">
+<form method="get" action="Page18.do">
 	<button type="submit">Next Page</button>
 </form>
 
