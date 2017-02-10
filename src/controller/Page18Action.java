@@ -36,9 +36,12 @@ public class Page18Action extends Action{
 		
 		try {
 			
+			System.out.println(formBeanFactory);
 			Page18Form form = formBeanFactory.create(request);
+			System.out.println(!form.isPresent());
 			System.out.println(form);
 			System.out.println(!form.isPresent());
+			System.out.println("123");
 			if (!form.isPresent()) {
 				return "Page18.jsp";
 			}

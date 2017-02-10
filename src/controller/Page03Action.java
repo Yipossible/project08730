@@ -42,7 +42,7 @@ public class Page03Action extends Action {
         session.setAttribute("errors", errors);
         try {
             Page03Form form = formBeanFactory.create(request);
-
+            System.out.println(!form.isPresent());
             if (!form.isPresent()) {
                 return "Page03.jsp";
             }

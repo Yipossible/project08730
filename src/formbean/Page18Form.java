@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.mybeans.form.FormBean;
-import org.omg.CORBA.PUBLIC_MEMBER;
+
 
 public class Page18Form extends FormBean{
 
