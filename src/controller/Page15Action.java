@@ -17,11 +17,11 @@ import formbean.Page15Form;
 import model.Model;
 import model.ResponseDAO;
 
-public class Page15ction extends Action{
+public class Page15Action extends Action{
 	private FormBeanFactory<Page15Form> formBeanFactory = FormBeanFactory.getInstance(Page15Form.class);
 	private ResponseDAO responseDAO;
 	
-	public Page15ction(Model model) {
+	public Page15Action(Model model) {
 		responseDAO = model.getResponseDAO();
 	}
 	

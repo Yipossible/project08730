@@ -21,9 +21,13 @@ public class Controller extends HttpServlet {
         Action.add(new Page10Action(model));
         Action.add(new Page11Action(model));
         Action.add(new Page14Action(model));
-        Action.add(new Page15ction(model));
-        Action.add(new Page16ction(model));
-        Action.add(new Page17ction(model));
+        Action.add(new Page15Action(model));
+        Action.add(new Page16Action(model));
+        Action.add(new Page17Action(model));
+        Action.add(new Page18Action(model));
+        Action.add(new Page19Action(model));
+        Action.add(new Page20Action(model));
+        Action.add(new Page21Action(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
