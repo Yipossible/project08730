@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
         Action.add(new Page22Action(model));
         Action.add(new Page23Action(model));
         Action.add(new Page24Action(model));
-        Action.add(new Page25Action(model));
+//        Action.add(new Page25Action(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
