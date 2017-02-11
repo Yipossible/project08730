@@ -47,7 +47,6 @@ public class Page18Action extends Action{
 			
 		
 			errors.addAll(form.getValidationErrors());
-			System.out.println(errors);
 			session.setAttribute("errors", errors);
 			if (errors.size() > 0) {
 				return "Page18.jsp";
