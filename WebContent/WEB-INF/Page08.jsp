@@ -8,23 +8,28 @@
 </head>
 <body>
 <p>
-Before we continue, I would like to ask you a question to make sure that you understand the scenario:
+In addition to paying for the actual electricity you use, your monthly 
+electricity bill includes charges for performing maintenance on the 
+electricity system (e.g., distribution lines, transformers, etc.) and some
+ limited protection of the system against blackouts. However, the bill does
+  not include charges to provide electric services in the event of an 
+  unpredictable blackout. In this case, the National Weather Service (NWS)
+   could predict the tornadoes; yet, utilities could not prevent the 
+   blackout because it was too wide-spread, and they did not have enough 
+   time to prepare for the disruption.
 </p>
 <p>
-When will the power come back on?
+Suppose that during the blackout there is a private local service that 
+specializes in disasters and emergencies that can quickly hook up a 
+generator to your house and provide all the electric power you would have 
+normally used. Assume your cell phone has enough power to call to get that
+ service and obtain a one-time payment for one day of immediate service 
+ provided by the company. You will receive a bill for the payment by mail.
+ 
 </p>
 
-<form>
-	<input type="radio" name="page08-1" value="3 hours">3 hours<br>
-	<input type="radio" name="page08-1" value="1 day">1 day<br>
-	<input type="radio" name="page08-1" value="3 days">3 days<br>
-	<input type="radio" name="page08-1" value="7 days">7 days<br>
-	<input type="radio" name="page08-1" value="14 days">14 days<br>
-</form>
-
-
 <form method="get" action="page10.do">
-	<button type="submit">Next Page</button>
+	<input type="submit" value="Next"/>
 </form>
 
 
