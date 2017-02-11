@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Survey Page-18</title>
+<title>Survey Page-15</title>
 </head>
 <body>
 <p>
@@ -17,7 +17,7 @@ Please use the calculator below to estimate the value of the food you have, and 
                     </p>
 
 
-<form method="POST" action="page18.do">
+<form method="POST" action="page15.do">
 <table>
 	<tr>
 		<td></td>
@@ -35,10 +35,10 @@ Gravy, stuffing, broth, Lunchmeats, hot dogs, bacon, sausage, dried beef, Pizza 
 Canned hams labeled ‘keep refrigerated’, Opened canned meats and fish,
 Casseroles, soups, stews</td>
 		<td>$
-			 <input type="text" name="page_18_1_guessall" id = "page18_1_guessall" value="">
+			 <input type="text" name="page_15_1_guessall" id = "page15_1_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_1_guessbad" id = "page18_1_guessbad" value="">
+			 <input type="text" name="page_15_1_guessbad" id = "page15_1_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -51,10 +51,10 @@ Casseroles, soups, stews</td>
 		<td>Milk, cream, sour cream, Buttermilk, evaporated milk, 
 Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
-			 <input type="text" name="page_18_2_guessall" id = "page18_2_guessall" value="">
+			 <input type="text" name="page_15_2_guessall" id = "page15_2_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_2_guessbad" id = "page18_2_guessbad" value="">
+			 <input type="text" name="page_15_2_guessbad" id = "page15_2_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -66,10 +66,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td>Fresh eggs, hard-cooked in shell Custards and puddings, quiche</td>
 		<td>$
-			 <input type="text" name="page_18_3_guessall" id = "page18_3_guessall" value="">
+			 <input type="text" name="page_15_3_guessall" id = "page15_3_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_3_guessbad" id = "page18_3_guessbad" value="">
+			 <input type="text" name="page_15_3_guessbad" id = "page15_3_guessbad" value="">
 		</td>
 	</tr>
 
@@ -81,10 +81,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td>Opened canned fruits and juices</td>
 		<td>$
-			 <input type="text" name="page_18_4_guessall" id = "page18_4_guessall" value="">
+			 <input type="text" name="page_15_4_guessall" id = "page15_4_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_4_guessbad" id = "page18_4_guessbad" value="">
+			 <input type="text" name="page_15_4_guessbad" id = "page15_4_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -97,10 +97,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>Opened mayonnaise, Tartar sauce, Horseradish,Fish sauces, oyster sauce
 Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>$
-			 <input type="text" name="page_18_5_guessall" id = "page18_5_guessall" value="">
+			 <input type="text" name="page_15_5_guessall" id = "page15_5_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_5_guessbad" id = "page18_5_guessbad" value="">
+			 <input type="text" name="page_15_5_guessbad" id = "page15_5_guessbad" value="">
 		</td>
 	</tr>
 	
@@ -113,40 +113,40 @@ Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>Refrigerator biscuits, rolls, cookie dough, Cooked pasta, rice, potatoes,
 Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
-			 <input type="text" name="page_18_6_guessall" id = "page18_6_guessall" value="">
+			 <input type="text" name="page_15_6_guessall" id = "page15_6_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_6_guessbad" id = "page18_6_guessbad" value="">
+			 <input type="text" name="page_15_6_guessbad" id = "page15_6_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Perishable Pies and Pastry</td>
 		<td>$
-			 <input type="text" name="page_18_7_guessall" id = "page18_7_guessall" value="">
+			 <input type="text" name="page_15_7_guessall" id = "page15_7_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_7_guessbad" id = "page18_7_guessbad" value="">
+			 <input type="text" name="page_15_7_guessbad" id = "page15_7_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Perishable Vegetables (except raw vegetables)</td>
 		<td>$
-			 <input type="text" name="page_18_8_guessall" id = "page18_8_guessall" value="">
+			 <input type="text" name="page_15_8_guessall" id = "page15_8_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_8_guessbad" id = "page18_8_guessbad" value="">
+			 <input type="text" name="page_15_8_guessbad" id = "page15_8_guessbad" value="">
 		</td>
 	</tr>
 	
 	<tr>
 		<td>Soft Cheese</td>
 		<td>$
-			 <input type="text" name="page_18_9_guessall" id = "page18_9_guessall" value="">
+			 <input type="text" name="page_15_9_guessall" id = "page15_9_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" name="page_18_9_guessbad" id = "page18_9_guessbad" value="">
+			 <input type="text" name="page_15_9_guessbad" id = "page15_9_guessbad" value="">
 		</td>
 	</tr>
 	
