@@ -1,42 +1,186 @@
-<html><body>
-			In this case, I would like to know how much you would be willing to pay for this one-time 
-			(full in case the respondent is in Group 1/ partial in case the respondent is in Group 2) backup service during the outage. 
- 			
-			<p>Would you be willing to pay this amount to get the full service?)</p>
-			<table cellpadding="0" cellspacing="0" class="ChoiceStructure"> 
-				<thead>  
-					<tr class="Answers" aria-hidden="true">  
-						<td class="c1 BorderColor" width="25%">  &nbsp;  </td>    
-							<th scope="col" width="25%">  
-								<span>Yes (Definitely)</span>  </th>  
-							<th scope="col" width="25%">  
-								<span>Not sure (Maybe)</span>  </th>  
-							<th scope="col" width="25%">  
-								<span>No (Definitely not)</span>  </th>  
-					</tr> 
-				</thead>  
-				<tbody>       
-					<tr class="ChoiceRow  "> 
-					<th scope="row" class="c1" id="header~QID1~1" tabindex="-1">  
-						<span>0-50 miles</span>   
-						<td> <input type="checkbox"> <span>Yes (Definitely)</span>  </td>  
-						<td> <input type="checkbox"> <span>Not sure (Maybe)</span>  </td>
-						<td> <input type="checkbox"> <span>No (Definitely not)</span>  </td>
-					</tr>
-					<tr class="ChoiceRow  "> 
-					<th scope="row" class="c1" id="header~QID1~1" tabindex="-1">  
-						<span>50-100 miles</span>   
-						<td> <input type="checkbox"> <span>Yes (Definitely)</span>  </td>  
-						<td> <input type="checkbox"> <span>Not sure (Maybe)</span>  </td>
-						<td> <input type="checkbox"> <span>No (Definitely not)</span>  </td>
-					</tr>  
-					<tr class="ChoiceRow  "> 
-					<th scope="row" class="c1" id="header~QID1~1" tabindex="-1">  
-						<span>100-150 miles</span>   
-						<td> <input type="checkbox"> <span>Yes (Definitely)</span>  </td>  
-						<td> <input type="checkbox"> <span>Not sure (Maybe)</span>  </td>
-						<td> <input type="checkbox"> <span>No (Definitely not)</span>  </td>
-					</tr>   
-				</tbody> 
-				</table>
-</body></html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<p>
+In this case, I would like to know <strong>how much you would be willing to pay</strong>  
+for this <strong>service</strong> during the outage. For each of the following questions, 
+please indicate whether you would be willing to pay that amount of money 
+in exchange for the partial service. 
+</p>
+
+<h3>
+RESPONSE MODE - INITIAL I
+</h3>
+
+<form method ="post" action="page07.do">
+	<table>
+		<tr>
+			<td></td>
+			<td colspan = "3">
+				<p>
+				Would you be willing to pay this amount <strong>per day</strong> to get full service during the outage?
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Yes</td>
+			<td>Not Sure</td>
+			<td>No</td>
+		</tr>
+		
+		<tr>
+			<td>Less than $10</td>
+			<td>
+			<input type="radio" name="page_07_1" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_1" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_1" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$10 - $19.99</td>
+			<td>
+			<input type="radio" name="page_07_2" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_2" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_2" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$20 - $29.99</td>
+			<td>
+			<input type="radio" name="page_07_3" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_3" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_3" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$30 - $39.99</td>
+			<td>
+			<input type="radio" name="page_07_4" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_4" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_4" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$40 - $49.99</td>
+			<td>
+			<input type="radio" name="page_07_5" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_5" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_5" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$50 - $59.99</td>
+			<td>
+			<input type="radio" name="page_07_6" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_6" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_6" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$60 - $69.99</td>
+			<td>
+			<input type="radio" name="page_07_7" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_7" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_7" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$70 - $79.99</td>
+			<td>
+			<input type="radio" name="page_07_8" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_8" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_8" value="No">
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td>$80 - $89.99</td>
+			<td>
+			<input type="radio" name="page_07_9" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_9" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_9" value="No">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>$90 - $99.99</td>
+			<td>
+			<input type="radio" name="page_07_10" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_10" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_10" value="No">
+			</td>
+		</tr>
+		<tr>
+			<td>More than $100</td>
+			<td>
+			<input type="radio" name="page_07_11" value="Yes">
+			</td>
+			<td>
+			<input type="radio" name="page_07_11" value="Not sure">
+			</td>
+			<td>
+			<input type="radio" name="page_07_11" value="No">
+			</td>
+		</tr>
+	
+	</table>
+	<input type="submit" value="Next">
+</form>
+
+</body>
+</html>
