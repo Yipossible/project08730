@@ -26,8 +26,7 @@ public class Page18Form extends FormBean{
 	private String page_18_8_guessbad;
 	private String page_18_9_guessall;
 	private String page_18_9_guessbad;
-	private String page_18_10_totalguessall;
-	private String page_18_10_totalguessbad;
+
 	
 	
 	public String getPage_18_1_guessall() {
@@ -138,18 +137,7 @@ public class Page18Form extends FormBean{
 	public void setPage_18_9_guessbad(String page_18_9_guessbad) {
 		this.page_18_9_guessbad = trimAndConvert(page_18_9_guessbad, "<>\"&");
 	}
-	public String getPage_18_10_totalguessall() {
-		return page_18_10_totalguessall;
-	}
-	public void setPage_18_10_totalguessall(String page_18_10_totalguessall) {
-		this.page_18_10_totalguessall = page_18_10_totalguessall;
-	}
-	public String getPage_18_10_totalguessbad() {
-		return page_18_10_totalguessbad;
-	}
-	public void setPage_18_10_totalguessbad(String page_18_10_totalguessbad) {
-		this.page_18_10_totalguessbad = page_18_10_totalguessbad;
-	}
+
 	
 	
 	public double getValueasDouble(String s) {
@@ -236,13 +224,7 @@ public class Page18Form extends FormBean{
 			errors.add("Please input your answer.");
 		}
 		
-		if(page_18_10_totalguessall.length() == 0 || page_18_10_totalguessall == null) {
-			errors.add("Please input your answer.");
-		}
-		
-		if(page_18_10_totalguessbad.length() == 0 || page_18_10_totalguessbad == null) {
-			errors.add("Please input your answer.");
-		}
+
 
 		
 		if(errors.size() > 0) {

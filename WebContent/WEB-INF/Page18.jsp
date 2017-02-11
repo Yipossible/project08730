@@ -147,25 +147,6 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 	
 
 
-
-
-
-	<tr>
-		<td>Best Guess Total</td>
-		<td>$
-		<input type="text" name="page_18_10_totalguessall" id="page18_10_totalguessall" disabled>
-		</td>
-		<td>$
-		<input type="text" name="page_18_10_totalguessbad" id="page18_10_totalguessbad" disabled>
-		</td>
-	</tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td>
-		<input type = "button" value="Calculate" id="calculate" onclick="sum()">
-        </td>
-	</tr>
 </table>
 
 
@@ -179,7 +160,6 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 
 
 
-<script src="js/calculator.js"></script>
 
 </body>
 </html>
