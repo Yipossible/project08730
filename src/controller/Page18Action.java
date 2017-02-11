@@ -13,7 +13,7 @@ import org.mybeans.form.FormBeanFactory;
 
 import databeans.ResponseBean;
 import formbean.Page18Form;
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
+
 import model.Model;
 import model.ResponseDAO;
 
@@ -34,26 +34,25 @@ public class Page18Action extends Action{
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
-		session.setAttribute("errors", errors);
+		
 		
 		try {
 			
-			System.out.println(formBeanFactory);
+			
 			Page18Form form = formBeanFactory.create(request);
-			request.setAttribute("form", form);
 			
-			
-			System.out.println("123");
 			if (!form.isPresent()) {
 				return "Page18.jsp";
 			}
 			
-			
-			System.out.println(form.getValidationErrors());
+		
 			errors.addAll(form.getValidationErrors());
+			System.out.println(errors);
+			session.setAttribute("errors", errors);
 			if (errors.size() > 0) {
 				return "Page18.jsp";
 			}
+			
 			
 		
 			double sumTotal = 
@@ -78,7 +77,8 @@ public class Page18Action extends Action{
 				+ form.getValueasDouble(form.getPage_18_7_guessbad())
 				+ form.getValueasDouble(form.getPage_18_8_guessbad())
 				+ form.getValueasDouble(form.getPage_18_9_guessbad());
-				
+			
+			
 			ResponseBean r= new ResponseBean();
 			r.setQuestion_id(18);
 			r.setRespondent_id(1);//get session id);
@@ -93,10 +93,10 @@ public class Page18Action extends Action{
 			return "Page18.jsp";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
-			return "errors.jsp";
+			return "Page18.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
-			return "errors.jsp";
+			return "Page18.jsp";
 		}
 	}
 }

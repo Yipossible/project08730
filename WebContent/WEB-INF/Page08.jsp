@@ -23,7 +23,7 @@ When will the power come back on?
 </form>
 
 
-<form method="get" action="Page-10.do">
+<form method="get" action="page10.do">
 	<button type="submit">Next Page</button>
 </form>
 
