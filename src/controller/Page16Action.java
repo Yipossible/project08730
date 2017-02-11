@@ -11,21 +11,21 @@ import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
 import databeans.ResponseBean;
-import formbean.Page09Form;
+import formbean.Page16Form;
 import model.Model;
 import model.ResponseDAO;
 
-public class Page09Action extends Action {
-	private FormBeanFactory<Page09Form> formBeanFactory = FormBeanFactory.getInstance(Page09Form.class);
+public class Page16Action extends Action {
+	private FormBeanFactory<Page16Form> formBeanFactory = FormBeanFactory.getInstance(Page16Form.class);
 	private ResponseDAO responseDAO;
 	
-	public Page09Action (Model model) {
+	public Page16Action (Model model) {
 		responseDAO = model.getResponseDAO();
 	}
 	
 	@Override
 	public String getName() {
-		return "page09.do";
+		return "page16.do";
 	}
 
 	@Override
@@ -34,10 +34,10 @@ public class Page09Action extends Action {
 		HttpSession session = request.getSession();
 		
 		try {
-			Page09Form form = formBeanFactory.create(request);
+			Page16Form form = formBeanFactory.create(request);
 			
 			if (!form.isPresent()) {
-				return "Page09.jsp";
+				return "Page16.jsp";
 			}
 			
 
@@ -45,34 +45,34 @@ public class Page09Action extends Action {
 			System.out.println(errors);
 			session.setAttribute("errors", errors);
 			if (errors.size() > 0) {
-				return "Page09.jsp";
+				return "Page16.jsp";
 			}
 			
 			ResponseBean r = new ResponseBean();
-			r.setQuestion_id(9);
+			r.setQuestion_id(16);
 			r.setRespondent_id(1);
 			r.setResponse( "{"
-					+ form.getPage_09_1() + "'"
-					+ form.getPage_09_2() + "'"
-					+ form.getPage_09_3() + "'"
-					+ form.getPage_09_4() + "'"
-					+ form.getPage_09_5() + "'"
-					+ form.getPage_09_6() + "'"
-					+ form.getPage_09_7() + "'"
-					+ form.getPage_09_8() + "'"
-					+ form.getPage_09_9() + "'"
-					+ form.getPage_09_10() + "'"
-					+ form.getPage_09_11() + "'"
+					+ form.getPage_16_1() + "'"
+					+ form.getPage_16_2() + "'"
+					+ form.getPage_16_3() + "'"
+					+ form.getPage_16_4() + "'"
+					+ form.getPage_16_5() + "'"
+					+ form.getPage_16_6() + "'"
+					+ form.getPage_16_7() + "'"
+					+ form.getPage_16_8() + "'"
+					+ form.getPage_16_9() + "'"
+					+ form.getPage_16_10() + "'"
+					+ form.getPage_16_11() + "'"
 					+ "}");
 			responseDAO.create(r);
 			
-			return "Page09.jsp";
+			return "Page16.jsp";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
-			return "Page09jsp";
+			return "Page16jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
-			return "Page09.jsp";
+			return "Page16.jsp";
 		}
 		
 	}

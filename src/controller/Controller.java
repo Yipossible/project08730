@@ -16,12 +16,14 @@ public class Controller extends HttpServlet {
     Model model;
     public void init() throws ServletException {
         model = new Model(getServletConfig());
-        Action.add(new Page15ction(model));
         Action.add(new Page03Action(model));
         Action.add(new Page09Action(model));
         Action.add(new Page10Action(model));
         Action.add(new Page11Action(model));
         Action.add(new Page14Action(model));
+        Action.add(new Page15ction(model));
+        Action.add(new Page16ction(model));
+        Action.add(new Page17ction(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
