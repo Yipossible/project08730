@@ -12,25 +12,25 @@ import org.mybeans.form.FormBeanFactory;
 
 import databeans.RespondentBean;
 import databeans.ResponseBean;
-import formbean.Page03Form;
+import formbean.Page04Form;
 import model.Model;
 import model.RespondentDAO;
 import model.ResponseDAO;
 
-public class Page03Action extends Action {
-	private FormBeanFactory<Page03Form> formBeanFactory = FormBeanFactory.getInstance(Page03Form.class);
+public class Page04Action extends Action {
+	private FormBeanFactory<Page04Form> formBeanFactory = FormBeanFactory.getInstance(Page04Form.class);
 	
 	private ResponseDAO responseDAO;
     private RespondentDAO respondentDAO;
 
-    public Page03Action(Model model) {
+    public Page04Action(Model model) {
         responseDAO = model.getResponseDAO();
         respondentDAO = model.getRespondentDAO();
     }
 
     @Override
     public String getName() {
-        return "page03.do";
+        return "page04.do";
     }
 
     @Override
@@ -41,43 +41,42 @@ public class Page03Action extends Action {
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
         try {
-            Page03Form form = formBeanFactory.create(request);
+            Page04Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());
             if (!form.isPresent()) {
-                return "Page03.jsp";
+                return "Page04.jsp";
             }
 
             errors.addAll(form.getValidationErrors());
             if (errors.size() != 0) {
-                return "Page03.jsp";
+                System.out.println(errors);
+                return "Page04.jsp";
             }
             //RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read("1234");
             if (r != null) {
-                // store question 1~3 to the response table
+                // store question 4~5 to the response table
                 ResponseBean t = new ResponseBean(); 
-            	t.setQuestion_id(1);
-            	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime());
-            	t.setRespondent_id(r.getRespondent_id());
-            	responseDAO.create(t);
-                
-                t = new ResponseBean(); 
-                t.setQuestion_id(2);
-                t.setResponse(form.getAge());
+                t.setQuestion_id(4);
+                t.setResponse(form.getWorkFromHome() +',' + form.getWorkFromHomeExplain());
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
                 
+                t.setQuestion_id(5);
+            	t.setResponse(form.getDevice() +',' + form.getDeviceExplain());
+            	t.setRespondent_id(r.getRespondent_id());
+            	responseDAO.create(t);
+
                 t = new ResponseBean(); 
-                t.setQuestion_id(3);
-                t.setResponse(form.getPreschool()+','+form.getK12()+','+form.getUnder30()+','+form.getFrom30to65()+','+form.getOver65());
+                t.setQuestion_id(6);
+                t.setResponse(form.getHouseType() + ',' + form.getHouseLiveTime());
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
             }
             else {
-            	
-                return "Page03.jsp";
+                return "Page04.jsp";
             }
-            return "page04.do";
+            return "Page05.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";

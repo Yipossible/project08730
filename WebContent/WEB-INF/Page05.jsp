@@ -7,11 +7,14 @@
 	<br>
 	Before we continue, I would like to ask you a question to make sure you understand the scenario: <br>
 	When will the power come back on?
-	<input type="checkbox" name="ticker" value="House">3 hours XX
-	<input type="checkbox" name="ticker" value="House">3 days
-	<input type="checkbox" name="ticker" value="House">7 days
-	<input type="checkbox" name="ticker" value="House">2 weeks
-	<input type="checkbox" name="ticker" value="House">1 month
-	<input type="submit" class="btn btn-primary btn-lg active" name="submitCreateFund" value="Next"/>
+	<input type="radio" name="ans" value="3 hours">3 hours
+	<input type="radio" name="ans" value="3 days">3 days
+	<input type="radio" name="ans" value="7 days">7 days
+	<input type="radio" name="ans" value="2 weeks">2 weeks
+	<input type="radio" name="ans" value="1 month">1 month
+	<form method="get" action="page06.do">
+		<input type="submit" value="Next"/>
+	</form>
+	
 </body></html>
 

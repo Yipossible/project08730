@@ -14,8 +14,6 @@ import org.mybeans.form.FormBean;
 public class Page03Form extends FormBean {
     private String zipcode;
     private String cityLiveTime;
-    private String houseType;
-    private String houseLiveTime;
     private String age;
     private String preschool;
     private String k12;
@@ -49,34 +47,6 @@ public class Page03Form extends FormBean {
      */
     public void setCityLiveTime(String cityLiveTime) {
         this.cityLiveTime = trimAndConvert(cityLiveTime, "<>&\"");
-    }
-
-    /**
-     * @return the houseType
-     */
-    public String getHouseType() {
-        return houseType;
-    }
-
-    /**
-     * @param houseType the houseType to set
-     */
-    public void setHouseType(String houseType) {
-        this.houseType = trimAndConvert(houseType, "<>&\"");
-    }
-
-    /**
-     * @return the houseLiveTime
-     */
-    public String getHouseLiveTime() {
-        return houseLiveTime;
-    }
-
-    /**
-     * @param houseLiveTime the houseLiveTime to set
-     */
-    public void setHouseLiveTime(String houseLiveTime) {
-        this.houseLiveTime = trimAndConvert(houseLiveTime, "<>&\"");
     }
 
     /**
@@ -177,18 +147,7 @@ public class Page03Form extends FormBean {
             errors.add("Invalid values");
             return errors;
         }
-        if (houseType == null || houseType.length() == 0) {
-            errors.add("houseType is required");
-        } else if (houseType.length() > 15 || houseType.length() >15) {
-            errors.add("Invalid values");
-            return errors;
-        }
-        if (houseLiveTime == null || houseLiveTime.length() == 0) {
-            errors.add("houseLiveTime is required");
-        } else if (houseLiveTime.length() > 15 || houseLiveTime.length() >15) {
-            errors.add("Invalid values");
-            return errors;
-        }
+        
         if (age == null || age.length() == 0) {
             errors.add("age is required");
         } else if (age.length() > 3 || age.length() > 3) {
@@ -197,10 +156,9 @@ public class Page03Form extends FormBean {
         }
         try {
             double a = Double.parseDouble(age);
-            double hl = Double.parseDouble(houseLiveTime);
             double cl = Double.parseDouble(cityLiveTime);
             int z = Integer.parseInt(zipcode);
-            if (a < 0 || hl < 0 || cl < 0 || z < 9999) {
+            if (a < 0 || cl < 0 || z < 9999) {
                 errors.add("Invalid value");
             }
         } catch (NumberFormatException e) {
