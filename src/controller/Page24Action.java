@@ -72,7 +72,7 @@ public class Page24Action extends Action {
             	
                 return "Page24.jsp";
             }
-            return "page03.do";
+            return "page25.do";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";
