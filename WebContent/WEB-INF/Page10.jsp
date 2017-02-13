@@ -77,7 +77,7 @@ Hospitals, police stations, and other government services.
 </table>
 
 <form>
-	<input type="submit" name= "button" value="Next">
+	<input type="submit" name= "button" value="Next" action="page11.do">
 </form>
 
 </body>

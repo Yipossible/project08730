@@ -116,7 +116,7 @@ if at all. Please rate the exercises in order of importance regarding how much t
 		</tr>
 		
 	</table>
-	<input type="submit" value="Next">
+	<input type="submit" value="Next" action="page23.do">
 </form>
 </body>
 </html>

@@ -180,7 +180,7 @@ RESPONSE MODE - INITIAL II
 		</tr>
 	
 	</table>
-	<input type="submit" value="Next">
+	<input type="submit" value="Next" action="page21.do">
 </form>
 </body>
 </html>

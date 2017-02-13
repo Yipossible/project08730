@@ -41,7 +41,7 @@
 		<input type="radio" name="page_11_5" value="Yes">Yes<br>
 		<input type="radio" name="page_11_5" value="No">No<br>
 	
-	<input type="submit" value="Next Page"/>
+	<input type="submit" value="Next Page" action="page12.do"/>
 </form>
 
 
