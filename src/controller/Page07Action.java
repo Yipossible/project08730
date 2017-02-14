@@ -10,17 +10,21 @@ import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import databeans.RespondentBean;
 import databeans.ResponseBean;
 import formbean.Page07Form;
 import model.Model;
+import model.RespondentDAO;
 import model.ResponseDAO;
 
 public class Page07Action extends Action {
 	private FormBeanFactory<Page07Form> formBeanFactory = FormBeanFactory.getInstance(Page07Form.class);
 	private ResponseDAO responseDAO;
+	private RespondentDAO respondentDAO;
 	
 	public Page07Action (Model model) {
 		responseDAO = model.getResponseDAO();
+		respondentDAO = model.getRespondentDAO();
 	}
 	
 	@Override
@@ -47,10 +51,13 @@ public class Page07Action extends Action {
 			if (errors.size() > 0) {
 				return "Page07.jsp";
 			}
-			
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            System.out.println(p);
+            
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(7);
-			r.setRespondent_id(2);
+			r.setRespondent_id(p.getRespondent_id());
 			r.setResponse( "{"
 			        + form.getPage_07_1() + ","
                     + form.getPage_07_2() + ","
@@ -69,9 +76,11 @@ public class Page07Action extends Action {
 			return "Page08.jsp";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
+			System.out.println(errors);
 			return "Page07.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
+			System.out.println(errors);
 			return "Page07.jsp";
 		}
 		

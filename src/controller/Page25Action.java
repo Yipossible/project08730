@@ -10,17 +10,21 @@ import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import databeans.RespondentBean;
 import databeans.ResponseBean;
 import formbean.Page25Form;
 import model.Model;
+import model.RespondentDAO;
 import model.ResponseDAO;
 
 public class Page25Action extends Action {
 	private FormBeanFactory<Page25Form> formBeanFactory = FormBeanFactory.getInstance(Page25Form.class);
 	private ResponseDAO responseDAO;
+	private RespondentDAO respondentDAO;
 	
 	public Page25Action (Model model) {
 		responseDAO = model.getResponseDAO();
+		respondentDAO = model.getRespondentDAO();
 	}
 	
 	@Override
@@ -47,10 +51,13 @@ public class Page25Action extends Action {
 			if (errors.size() > 0) {
 				return "Page25.jsp";
 			}
-			
+			String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            System.out.println(p);
+            
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(29);
-			r.setRespondent_id(1);
+			r.setRespondent_id(p.getRespondent_id());
 			r.setResponse( "{"
 					+ form.getPage_25_1() + ","
 					+ form.getPage_25_2() + ","

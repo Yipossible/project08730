@@ -18,12 +18,12 @@ public class RespondentDAO extends GenericDAO<RespondentBean> {
     public void create(RespondentBean r) throws RollbackException {
         try {
             Transaction.begin();
-            RespondentBean a[] = match(MatchArg.equals("payment_account", r.getPayment_account())); // compare or email duplicated
-            RespondentBean b[] = match(MatchArg.equals("email", r.getEmail()));
-            if (a.length > 0)
-                throw new RollbackException("User already exists, duplicate submission is not allowed!");
-            if (b.length > 0)
-                throw new RollbackException("User already exists, duplicate submission is not allowed!");
+//            RespondentBean a[] = match(MatchArg.equals("payment_account", r.getPayment_account())); // compare or email duplicated
+//            RespondentBean b[] = match(MatchArg.equals("email", r.getEmail()));
+//            if (a.length > 0)
+//                throw new RollbackException("User already exists, duplicate submission is not allowed!");
+//            if (b.length > 0)
+//                throw new RollbackException("User already exists, duplicate submission is not allowed!");
             super.create(r);
             Transaction.commit();
         } finally {

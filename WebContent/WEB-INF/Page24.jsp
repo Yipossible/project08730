@@ -18,16 +18,16 @@
 	
 	<p>5. Please tell me about whether you have the following items available to you in the case of a blackout :</p>
 	<input type="checkbox" name="available_1" value="  Flashlights in easy-to-find places">  Flashlights in easy-to-find places
-	<input type="checkbox" name="available_2" value="  Wind up or crank operated radio">  Wind up or crank operated radio 
-	<input type="checkbox" name="available_3" value="  Wind up or crank cell phone charger">   Wind up or crank cell phone charger
-	<input type="checkbox" name="available_4" value="  Camping lantern">    Camping lantern
-	<input type="checkbox" name="available_5" value="  Camping cook stove">     Camping cook stove 
-	<input type="checkbox" name="available_6" value="  Solar energy storage">       Solar energy storage
-	<input type="checkbox" name="available_7" value="  Portable generator.">     Portable generator.
-	<input type="checkbox" name="available_8" value="  Stand-by generator.">     Stand-by generator.
-	<input type="checkbox" name="available_9" value="  Other non-generator.">    Other non-generator. 
+	<br><input type="checkbox" name="available_2" value="  Wind up or crank operated radio">  Wind up or crank operated radio 
+	<br><input type="checkbox" name="available_3" value="  Wind up or crank cell phone charger">   Wind up or crank cell phone charger
+	<br><input type="checkbox" name="available_4" value="  Camping lantern">    Camping lantern
+	<br><input type="checkbox" name="available_5" value="  Camping cook stove">     Camping cook stove 
+	<br><input type="checkbox" name="available_6" value="  Solar energy storage">       Solar energy storage
+	<br><input type="checkbox" name="available_7" value="  Portable generator.">     Portable generator.
+	<br><input type="checkbox" name="available_8" value="  Stand-by generator.">     Stand-by generator.
+	<br><input type="checkbox" name="available_9" value="  Other non-generator.">    Other non-generator. 
 	
-	<input type="submit" value="Next">
+	<br><br><input type="submit" value="Next">
 </form>
 </body>
 </html>

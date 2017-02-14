@@ -51,8 +51,9 @@ public class Page03Action extends Action {
             if (errors.size() != 0) {
                 return "Page03.jsp";
             }
-            //RespondentBean r = (RespondentBean)session.getAttribute("unique_id"); // store in session
-            RespondentBean r = respondentDAO.read("1234");
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean r = respondentDAO.read(unique_id);
+            System.out.println(r);
             if (r != null) {
                 // store question 1~3 to the response table
                 ResponseBean t = new ResponseBean(); 
