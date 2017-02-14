@@ -89,7 +89,7 @@ public class Page15Action extends Action{
 			responseDAO.create(r);
 			
 			
-			return "Page15.jsp";
+			return "Page16.jsp";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page15.jsp";

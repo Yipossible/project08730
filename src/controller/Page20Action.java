@@ -66,7 +66,7 @@ public class Page20Action extends Action {
 					+ "}");
 			responseDAO.create(r);
 			
-			return "Page20.jsp";
+			return "Page21.jsp";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page20jsp";

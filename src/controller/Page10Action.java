@@ -46,7 +46,7 @@ public class Page10Action extends Action{
 				return "Page18.jsp";
 			}
 			
-			return "Page10.jsp";
+			return "Page11.jsp";
 			
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
