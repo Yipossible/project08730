@@ -23,5 +23,8 @@ major property losses. For example, outages in extreme winter can cause deaths
 <b>NEED TO BE AN INTERACTIVE SLIDES HERE</b>
 </p>
 
+<form>
+	<input type="submit" value="Next" action="page19.do">
+</form>
 </body>
 </html>

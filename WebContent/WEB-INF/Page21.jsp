@@ -189,7 +189,7 @@ RESPONSE MODE - SOCIAL IV
 		</tr>
 	
 	</table>
-	<input type="submit" value="Next">
+	<input type="submit" value="Next" action="page22.do">
 </form>
 </body>
 </html>

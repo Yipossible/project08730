@@ -20,6 +20,6 @@
 			<br>
 			<p>Can you estimate how much electricity does your household use per day?</p>
 			<input type="text" name="estimate_kWh">(kWh) or<input type="text" name="estimate_amps">(Amps) 
-			<input type="submit" class="btn btn-primary btn-lg active" name="submit" value="Next">
+			<input type="submit" class="btn btn-primary btn-lg active" name="submit" value="Next" action="page24.do">
 		</form> 
 </body></html>
