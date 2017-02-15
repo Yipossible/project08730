@@ -1,5 +1,22 @@
-<html><body>
-	<h1>Protocol for the elicitation of judgments about the
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Surveyweb</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Protocol for the elicitation of judgments about the
 value of reliable residential electricity supply</h1>
 	<p>My name is Sunhee Baik. I am a Ph.D. student in the Department of Engineering and Public Policy at Carnegie Mellon University. As part of my research, I am exploring how people use and value electricity in both normal circumstances and when a power outage occurs. As part of my research which is funded by the National Science Foundation, I am exploring how people use and value electricity in both normal circumstances and when a power outage occurs.
 <br><br><strong>What is the purpose of my study?</strong>
@@ -22,4 +39,10 @@ It will take roughly XX minutes to complete the survey.
     <form method="get" action="page03.do">
 		<input type="submit" value="Next"/>
 	</form>	
-</body></html>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap_js/bootstrap.min.js"></script>
+  </body>
+</html>
