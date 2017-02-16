@@ -1,12 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-</head>
+<jsp:include page="top.jsp" />
 <body>
+<br>
+	<div class="col-lg-4">
+	<p>
+	</div>
+	<div class="col-lg-6">
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="30"
+	  aria-valuemin="0" aria-valuemax="100" style="width:30%">
+	    Basic Information
+		  </div>
+		</div>
+	</div>
+	<div class="col-lg-10">
+	  <div class="panel panel-info">
+		 <div class="panel-heading">
+		    <h1>Part A. Information about your household</h1>
+		</div>
+		<div class="panel-body">
 <p>
 In addition, I would like to know how much you would be willing to pay for this 
 one-time partial backup service and to help others within the community during 
@@ -189,7 +200,7 @@ RESPONSE MODE - SOCIAL IV
 		</tr>
 	
 	</table>
-	<input type="submit" value="Next" action="">
+	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
 </body>
 </html>
