@@ -24,7 +24,7 @@ major property losses. For example, outages in extreme winter can cause deaths
 </p>
 
 <form>
-	<input type="submit" value="Next" action="page19.do">
+	<input type="submit" value="Next" action="page18.do">
 </form>
 </body>
 </html>

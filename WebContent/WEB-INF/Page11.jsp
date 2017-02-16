@@ -7,7 +7,7 @@
 <title>Survey Page-11</title>
 </head>
 <body>
-<form method = "post" action ="">
+<form method = "post" action ="page11.do">
 	<h3>
 	Before we continue, I would like to ask you a question to make sure that you understand the scenario:
 	</h3>
@@ -41,7 +41,7 @@
 		<input type="radio" name="page_11_5" value="Yes">Yes<br>
 		<input type="radio" name="page_11_5" value="No">No<br>
 	
-	<input type="submit" value="Next Page" action="page12.do"/>
+	<input type="submit" value="Next Page" action=""/>
 </form>
 
 

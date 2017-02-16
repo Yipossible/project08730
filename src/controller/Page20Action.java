@@ -10,17 +10,21 @@ import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import databeans.RespondentBean;
 import databeans.ResponseBean;
 import formbean.Page20Form;
 import model.Model;
+import model.RespondentDAO;
 import model.ResponseDAO;
 
 public class Page20Action extends Action {
 	private FormBeanFactory<Page20Form> formBeanFactory = FormBeanFactory.getInstance(Page20Form.class);
 	private ResponseDAO responseDAO;
+	private RespondentDAO respondentDAO;
 	
 	public Page20Action (Model model) {
 		responseDAO = model.getResponseDAO();
+		respondentDAO = model.getRespondentDAO();
 	}
 	
 	@Override
@@ -48,6 +52,11 @@ public class Page20Action extends Action {
 				return "Page20.jsp";
 			}
 			
+			 String unique_id = (String) session.getAttribute("unique_id"); // store in session
+	            RespondentBean respondentBean = respondentDAO.read(unique_id);
+	            
+	            if (respondentBean != null) {
+			
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(20);
 			r.setRespondent_id(1);
@@ -65,8 +74,13 @@ public class Page20Action extends Action {
 					+ form.getPage_20_11() + "'"
 					+ "}");
 			responseDAO.create(r);
+	            }
+			else {
+				return "Page20.jsp";
+						}
 			
-			return "Page21.jsp";
+			
+			return "page21.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page20jsp";

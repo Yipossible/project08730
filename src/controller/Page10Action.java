@@ -12,16 +12,18 @@ import org.mybeans.form.FormBeanFactory;
 
 import formbean.Page10Form;
 import model.Model;
+import model.RespondentDAO;
 import model.ResponseDAO;
 
 public class Page10Action extends Action{
 
 	private FormBeanFactory<Page10Form> formBeanFactory = FormBeanFactory.getInstance(Page10Form.class); 
 	private ResponseDAO responseDAO;
-	
+	 private RespondentDAO respondentDAO;
 	
 	public Page10Action(Model model) {
 		responseDAO = model.getResponseDAO();
+		respondentDAO = model.getRespondentDAO();
 	}
 	@Override
 	public String getName() {
@@ -46,7 +48,7 @@ public class Page10Action extends Action{
 				return "Page18.jsp";
 			}
 			
-			return "Page11.jsp";
+			return "page11.do";
 			
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());

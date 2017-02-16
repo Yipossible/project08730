@@ -44,10 +44,10 @@ Please describe how you feel about the food safety information from USDA and how
 </p>
 
 <form>
-	<input type="text"  size ="50" name="text">
+	<input type="text"  size ="50" name="text" action="page14.do">
 
 <br>
-	<input type="submit" value="Next" action="page15.do">
+	<input type="submit" value="Next" action="">
 </form>
 
 </body>
