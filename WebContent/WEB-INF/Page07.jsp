@@ -1,20 +1,5 @@
 <jsp:include page="top.jsp" />
-<body>
-<br>
-	<div class="col-lg-4">
-	<p>
-	</div>
-	<div class="col-lg-6">
-		<div class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="30"
-	  aria-valuemin="0" aria-valuemax="100" style="width:30%">
-	    Basic Information
-		  </div>
-		</div>
-	</div>
-	<div class="col-lg-10">
-	  <div class="panel panel-info">
-		 <div class="panel-heading">
+
 		    <h1>Part A. Information about your household</h1>
 		</div>
 		<div class="panel-body">
@@ -45,7 +30,8 @@ RESPONSE MODE - INITIAL I
 			<td>Not Sure</td>
 			<td>No</td>
 		</tr>
-		
+		<input style="float: left; padding: 3px; margin-right: 3px;" id="fontSlider" type="range" name="points" value="15" min="1" max="100" step="1"/>
+		<input type="text" value="" id="value"/>
 		<tr>
 			<td>Less than $10</td>
 			<td>
@@ -192,6 +178,18 @@ RESPONSE MODE - INITIAL I
 	</table>
 	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
-
+<script>
+ $(document).ready(function () {
+  var Values = $( "#fontSlider" ).val();
+  $("#value").val(Values);   
+        $("#fontSlider").change(        
+            function () {
+            	console.log(Values);
+            var Values = $( "#fontSlider" ).val();
+                $("#value").val(Values);
+            }            
+        );
+    });
+ </script>
 </body>
 </html>

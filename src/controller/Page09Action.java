@@ -84,7 +84,7 @@ public class Page09Action extends Action {
 	            }
 	            
 			
-			return "Page10.do";
+			return "page10.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page09jsp";

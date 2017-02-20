@@ -17,6 +17,7 @@ public class Controller extends HttpServlet {
     public void init() throws ServletException {
         model = new Model(getServletConfig());
         Action.add(new Page01Action(model));
+        Action.add(new Page02Action(model));
         Action.add(new Page03Action(model));
         Action.add(new Page04Action(model));
         Action.add(new Page06Action(model));

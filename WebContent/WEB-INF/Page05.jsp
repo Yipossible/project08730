@@ -1,20 +1,5 @@
 <jsp:include page="top.jsp" />
-<body>
-<br>
-	<div class="col-lg-4">
-	<p>
-	</div>
-	<div class="col-lg-6">
-		<div class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="30"
-	  aria-valuemin="0" aria-valuemax="100" style="width:30%">
-	    Basic Information
-		  </div>
-		</div>
-	</div>
-	<div class="col-lg-10">
-	  <div class="panel panel-info">
-		 <div class="panel-heading">
+
 		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
@@ -31,7 +16,7 @@
 	<input type="radio" name="ans" value="2 weeks">2 weeks
 	<input type="radio" name="ans" value="1 month">1 month
 	<form method="get" action="page06.do">
-		<input type="submit" class="btn btn-info" name="submit" value="Next"/>
+		<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 	</form>
 	
 </body></html>

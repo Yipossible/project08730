@@ -12,25 +12,25 @@ import org.mybeans.form.FormBeanFactory;
 
 import databeans.RespondentBean;
 import databeans.ResponseBean;
-import formbean.Page03Form;
+import formbean.Page02Form;
 import model.Model;
 import model.RespondentDAO;
 import model.ResponseDAO;
 
-public class Page03Action extends Action {
-	private FormBeanFactory<Page03Form> formBeanFactory = FormBeanFactory.getInstance(Page03Form.class);
+public class Page02Action extends Action {
+	private FormBeanFactory<Page02Form> formBeanFactory = FormBeanFactory.getInstance(Page02Form.class);
 	
 	private ResponseDAO responseDAO;
     private RespondentDAO respondentDAO;
 
-    public Page03Action(Model model) {
+    public Page02Action(Model model) {
         responseDAO = model.getResponseDAO();
         respondentDAO = model.getRespondentDAO();
     }
 
     @Override
     public String getName() {
-        return "page03.do";
+        return "page02.do";
     }
 
     @Override
@@ -41,48 +41,39 @@ public class Page03Action extends Action {
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
         try {
-            Page03Form form = formBeanFactory.create(request);
+            Page02Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());
             if (!form.isPresent()) {
-                return "Page03.jsp";
+                return "Page02.jsp";
             }
 
             errors.addAll(form.getValidationErrors());
             if (errors.size() != 0) {
-                return "Page03.jsp";
+                System.out.println(errors);
+                return "Page02.jsp";
             }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
+            System.out.print("test");
+            System.out.println(form.getOver18().equals("Yes") == true);
+            System.out.println(form.getOver18().toString());
             System.out.println(r);
             if (r != null) {
-                // store question 1~3 to the response table
                 ResponseBean t = new ResponseBean(); 
-            	t.setQuestion_id(1);
-            	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime());
-            	t.setRespondent_id(r.getRespondent_id());
-            	responseDAO.create(t);
-                
-                t = new ResponseBean(); 
-                t.setQuestion_id(2);
-                t.setResponse(form.getAge());
+                t.setQuestion_id(0);
+                t.setResponse(form.getOver18() +',' + form.getLivedOver3()+',' + form.getOver2adult()+',' + form.getUnderstand()+',' + form.getParticipate()+',' + form.getEmail());
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
+                r.setEmail(form.getEmail());
                 
-                t = new ResponseBean(); 
-                t.setQuestion_id(3);
-                t.setResponse(form.getPreschool()+','+form.getK12()+','+form.getUnder30()+','+form.getFrom30to65()+','+form.getOver65());
-                t.setRespondent_id(r.getRespondent_id());
-                int adults = Integer.parseInt(form.getUnder30())+Integer.parseInt(form.getFrom30to65())+Integer.parseInt(form.getOver65());
-                responseDAO.create(t);
-                System.out.println(adults);
-                if (Integer.parseInt(form.getCityLiveTime()) < 3 || Integer.parseInt(form.getAge()) < 18 || adults < 2){
+                if (form.getOver18().equals("Yes") == false || form.getLivedOver3().equals("Yes") == false || form.getOver2adult().equals("Yes") == false || form.getUnderstand().equals("Yes") == false || form.getParticipate().equals("Yes") == false) {
                     return "NotEligible.jsp";
                 }
             }
             else {
-                return "Page03.jsp";
+                return "Page02.jsp";
             }
-            return "page04.do";
+            return "page03.do";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";

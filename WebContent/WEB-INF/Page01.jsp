@@ -1,20 +1,5 @@
 <jsp:include page="top.jsp" />
-  <body>
-  <br>
-	<div class="col-lg-4">
-	<p>
-	</div>
-	<div class="col-lg-6">
-		<div class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="30"
-	  aria-valuemin="0" aria-valuemax="100" style="width:30%">
-	    Basic Information
-		  </div>
-		</div>
-	</div>
-	  <div class="col-lg-10">
-	  <div class="panel panel-info">
-		 <div class="panel-heading">
+  
 		    <h1>Protocol for the elicitation of judgments about the
 		value of reliable residential electricity supply</h1>
 		</div>
@@ -39,7 +24,7 @@
 		</p>
 		</div>
 		</div>		
-		    <form method="get" action="page03.do">
+		    <form method="get" action="page02.do">
 				<input type="submit" value="Next" class="btn btn-info" style="float: right;"/>
 			</form>
 		
