@@ -31,7 +31,6 @@ RESPONSE MODE - INITIAL II
 			<td>Yes</td>
 			<td>Not Sure</td>
 			<td>No</td>
-<jsp:include page="top.jsp" />
 		</tr>
 		
 		<tr>

@@ -16,11 +16,13 @@ RESPONSE MODE - INITIAL I
 
 <form method ="post" action="page07.do">
 	<table>
+		
 		<tr>
 			<td></td>
 			<td colspan = "3">
 				<p>
 				Would you be willing to pay this amount <strong>per day</strong> to get full service during the outage?
+				<br><b> 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="100" data-slider-step="10" data-slider-value="[40,70]" style="width:60%"/> <b> 100</b>
 				</p>
 			</td>
 		</tr>
@@ -30,8 +32,7 @@ RESPONSE MODE - INITIAL I
 			<td>Not Sure</td>
 			<td>No</td>
 		</tr>
-		<input style="float: left; padding: 3px; margin-right: 3px;" id="fontSlider" type="range" name="points" value="15" min="1" max="100" step="1"/>
-		<input type="text" value="" id="value"/>
+		
 		<tr>
 			<td>Less than $10</td>
 			<td>
@@ -179,17 +180,10 @@ RESPONSE MODE - INITIAL I
 	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
 <script>
- $(document).ready(function () {
-  var Values = $( "#fontSlider" ).val();
-  $("#value").val(Values);   
-        $("#fontSlider").change(        
-            function () {
-            	console.log(Values);
-            var Values = $( "#fontSlider" ).val();
-                $("#value").val(Values);
-            }            
-        );
-    });
+var slider = new Slider('#ex2', {});
+$(document).ready(function () {
+	console.log($( "#ex2" ).val());
+});	
  </script>
 </body>
 </html>

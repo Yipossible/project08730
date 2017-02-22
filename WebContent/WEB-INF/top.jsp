@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Surveyweb</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap_js/bootstrap-slider.min.js"></script>
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
