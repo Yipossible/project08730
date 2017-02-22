@@ -22,7 +22,9 @@ RESPONSE MODE - INITIAL I
 			<td colspan = "3">
 				<p>
 				Would you be willing to pay this amount <strong>per day</strong> to get full service during the outage?
-				<br><b> 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="100" data-slider-step="10" data-slider-value="[40,70]" style="width:60%"/> <b> 100</b>
+				
+				<!-- Range slider, low and high tracks, and selection: -->
+				<input id="ex12c" type="text"/><br/>
 				</p>
 			</td>
 		</tr>
@@ -180,9 +182,9 @@ RESPONSE MODE - INITIAL I
 	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
 <script>
-var slider = new Slider('#ex2', {});
+var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 10, range: true, value: [3, 7] });
 $(document).ready(function () {
-	console.log($( "#ex2" ).val());
+	console.log($( "#ex12c" ).val());
 });	
  </script>
 </body>

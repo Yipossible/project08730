@@ -7,6 +7,7 @@
 <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/step-tracker.css" rel="stylesheet">
     <script src="bootstrap_js/bootstrap-slider.min.js"></script>
     <link href="css/bootstrap-slider.min.css" rel="stylesheet">
 
@@ -23,28 +24,42 @@
 	<p>
 	</div>
 	<div class="col-lg-8">
-		<div class="progress">
-		  <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (success)</span>Informed consent 
-		  </div>
-		  <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (warning)</span> Eligibility check 
-		  </div>
-		  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (danger)</span>Introduction
-		  </div>
-		  <div class="progress-bar progress-bar-info progress-bar-striped" style="width: 16%">
-		    <span class="sr-only">14% Complete (danger)</span>Non-monetary losses
-		  </div>
-		  <div class="progress-bar progress-bar-primary progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (danger)</span>Monetary losses
-		  </div>
-		  <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (danger)</span>Social losses
-		  </div>
-		  <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 14%">
-		    <span class="sr-only">14% Complete (danger)</span>Wrap up
-		  </div>
-		</div>
+            <div class="row bs-wizard" style="border-bottom:0;">
+                
+                <div class="col-xs-2 bs-wizard-step complete">
+                  <div class="text-center bs-wizard-stepnum">Informed consent</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                
+                <div class="col-xs-2 bs-wizard-step complete"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Eligibility check</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                
+                <div class="col-xs-2 bs-wizard-step active"><!-- complete -->
+                  <div class="text-center bs-wizard-stepnum">Introduction</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                
+                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">Non-monetary losses</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">Monetary losses</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                  <div class="text-center bs-wizard-stepnum">Wrap up</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                </div>
+            </div>
+        <br>
 	  <div class="panel panel-info">
 		 <div class="panel-heading">  
