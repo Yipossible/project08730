@@ -25,6 +25,11 @@ RESPONSE MODE - INITIAL I
 				
 				<!-- Range slider, low and high tracks, and selection: -->
 				<input id="ex12c" type="text"/><br/>
+				<div class="col-lg-2">
+					<div style="background: lightgreen">Yes</div>
+					<div style="background: lightyellow">Not Sure</div>
+					<div style="background: lightpink">No</div>
+				</div>
 				</p>
 			</td>
 		</tr>
