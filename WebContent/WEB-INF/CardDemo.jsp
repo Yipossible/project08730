@@ -7,9 +7,24 @@
     <script type="text/javascript" src="myJs/GoogleChart.js"></script>  
     <script type="text/javascript" src="myJs/AddAppliance.js"></script>
     <script type="text/javascript" src="myJs/changeTime.js"></script>
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
-
+	<script type="text/javascript">
+	var i = 1;
+	$(document).ready(function() {
+		$('#trigger').click(function(){  
+		      var arr =	[['Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave',
+		          'Stove', 'TV', 'Speaker',{ role: 'annotation' } ],
+		         ['Morning', i, 24, 20, 32, 18, 5,0,0],
+		         ['Lunch', 16, 22, 23, 30, 16, 9,0,0],
+		         ['Evening', 28, 19, 29, 30, 12, 13,0,0],
+		         ['Night', 28, 19, 29, 30, 12, 13, 0,0]
+		      ];
+		      i = i + 1;
+			google.charts.setOnLoadCallback(drawChart(arr));
+		});
+     });
+	</script>
 </head>
 <body>
     <!--This is for Appliance List-->
@@ -67,7 +82,7 @@
         </div>
     
             <!--This is for the visualized graph-->
-        <div id="columnchart_material" style="width: 800px; height: 300px;"></div>
+        <div id="chart_div" style="width: 800px; height: 300px;"></div>
     
             <!--This is for the four periods boxes-->
         <div class="level2">
@@ -92,7 +107,7 @@
     </div>
     <!--This is for the button-->
     <div class="bottom">
-        <input type="button" value="Next">
+        <input type="button" value="Next" id="trigger">
     </div>
     
     

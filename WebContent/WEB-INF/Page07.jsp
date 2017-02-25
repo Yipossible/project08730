@@ -24,7 +24,7 @@ RESPONSE MODE - INITIAL I
 				Would you be willing to pay this amount <strong>per day</strong> to get full service during the outage?
 				
 				<!-- Range slider, low and high tracks, and selection: -->
-				<input id="ex12c" type="text"/><br/>
+				<br>10<input id="ex12c" type="text"/>100<br/>
 				<div class="col-lg-2">
 					<div style="background: lightgreen">Yes</div>
 					<div style="background: lightyellow">Not Sure</div>
