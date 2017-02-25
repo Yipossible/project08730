@@ -1,0 +1,39 @@
+.level1 {
+    float: left;
+}
+.bottom {
+    clear: left;
+}
+
+.level3{
+    float: left;
+    width: 170px;
+    height: 250px;
+}
+
+#morningConsumption,#lunchConsumption,#eveningConsumption,#nightConsumption{
+    width: 140px;
+    height: 200px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}
+.table {
+    border: 1px solid black;
+}
+
+
+.input {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.plus-button {
+    height: 20px;
+    width: 20px;
+}
+
+.minus-button {
+    height: 20px;
+    width: 20px;
+}
