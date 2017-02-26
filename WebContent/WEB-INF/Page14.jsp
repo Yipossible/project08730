@@ -38,11 +38,12 @@ Please describe how you feel about the food safety information from USDA and how
  out all the food after the outage?).
 </p>
 
-<form>
-	<input type="text"  size ="50" name="text" action="page14.do">
-
+<textarea rows="10" cols="110" name="text" form="14form">Please write your feelings here. </textarea>
 <br>
-	<input type="submit" class="btn btn-info" action="page23.do" name="submit" value="Next" style="float: right;"/>
+<form id ="14form">
+
+
+	<input type="submit" class="btn btn-info"  name="submit" value="Next" style="float: right;"/>
 </form>
 
 </body>

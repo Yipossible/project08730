@@ -56,6 +56,7 @@ public class Page03Action extends Action {
             System.out.println(r);
             if (r != null) {
                 // store question 1~3 to the response table
+            	System.out.println("enter page 3 answer");
                 ResponseBean t = new ResponseBean(); 
             	t.setQuestion_id(1);
             	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime());

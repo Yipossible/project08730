@@ -72,7 +72,7 @@ Hospitals, police stations, and other government services.
 </table>
 
 <form>
-		<input type="submit" class="btn btn-info" action="page23.do" name="submit" value="Next" style="float: right;"/>
+		<input type="submit" class="btn btn-info" action="page10.do" name="button" value="Next" style="float: right;"/>
 </form>
 
 </body>
