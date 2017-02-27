@@ -1,6 +1,6 @@
 <jsp:include page="top.jsp" />
 
-		    <h1>Part A. Information about your household</h1>
+		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
 <p>
@@ -24,7 +24,7 @@ RESPONSE MODE - INITIAL I
 				Would you be willing to pay this amount <strong>per day</strong> to get full service during the outage?
 				
 				<!-- Range slider, low and high tracks, and selection: -->
-				<br>10<input id="ex12c" type="text"/>100<br/>
+				<br>0<input id="ex12c" type="text"/>100<br/>
 				<div class="col-lg-2">
 					<div style="background: lightgreen">Yes</div>
 					<div style="background: lightyellow">Not Sure</div>
@@ -187,7 +187,7 @@ RESPONSE MODE - INITIAL I
 	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
 <script>
-var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 10, range: true, value: [3, 7] });
+var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 100, range: true, value: [30, 70] });
 $(document).ready(function () {
 	console.log($( "#ex12c" ).val());
 });	

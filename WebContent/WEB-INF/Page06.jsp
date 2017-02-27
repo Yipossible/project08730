@@ -1,6 +1,6 @@
 <jsp:include page="top.jsp" />
 
-		    <h1>Part A. Information about your household</h1>
+		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
 <p>

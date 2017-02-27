@@ -5,14 +5,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="myJs/GoogleChart.js"></script>  
-    <script type="text/javascript" src="myJs/AddAppliance.js"></script>
     <script type="text/javascript" src="myJs/changeTime.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
 	<script type="text/javascript">
 	var i = 1;
+	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Healer':20, 'Microwave':10,
+	          'Stove':20, 'TV':10, 'Speaker':1 };
 	$(document).ready(function() {
-		$('#trigger').click(function(){  
+		$('.trigger').click(function(){  
 		      var arr =	[['Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave',
 		          'Stove', 'TV', 'Speaker',{ role: 'annotation' } ],
 		         ['Morning', i, 24, 20, 32, 18, 5,0,0],
@@ -41,10 +42,10 @@
             </tr>
             <tr >
                 <td class="table"> 
-                <img src="images/vacuum.png" id="largeVacuum" width="58" height="90" onclick = "addtoPanel(this);">
-                <img src="images/Iron.png"  id="largeIron" width="58" height="90" onclick = "addtoPanel(this);">
-                <img src="images/AC.png" id="largeAC" width="58" height=90 onclick = "addtoPanel(this);">
-                <img src="images/WaterHealer.png"  id="largeWH" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/vacuum.png" class="trigger" id="largeVacuum" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/Iron.png"  class="trigger" id="largeIron" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/AC.png" class="trigger" id="largeAC" width="58" height=90 onclick = "addtoPanel(this);">
+                <img src="images/WaterHealer.png"  class="trigger" id="largeWH" width="58" height="90" onclick = "addtoPanel(this);">
                 </td>
             </tr>
              <tr >
