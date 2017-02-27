@@ -26,6 +26,7 @@ public class Page15Form extends FormBean{
 	private String page_15_8_guessbad;
 	private String page_15_9_guessall;
 	private String page_15_9_guessbad;
+	private String text;
 
 	
 	
@@ -137,9 +138,15 @@ public class Page15Form extends FormBean{
 	public void setPage_15_9_guessbad(String page_15_9_guessbad) {
 		this.page_15_9_guessbad = trimAndConvert(page_15_9_guessbad, "<>\"&");
 	}
-
 	
 	
+	
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
 	public double getValueasDouble(String s) {
 		try {
 			Double valueasDouble = Double.parseDouble(s);
@@ -224,6 +231,9 @@ public class Page15Form extends FormBean{
 			errors.add("Please input your answer.");
 		}
 		
+		if(text.length() == 0 || text== null) {
+			errors.add("Please input your answer.");
+		}
 
 
 		

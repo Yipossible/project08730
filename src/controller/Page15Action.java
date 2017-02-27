@@ -43,6 +43,7 @@ public class Page15Action extends Action{
 			
 			
 			Page15Form form = formBeanFactory.create(request);
+			System.out.println(form.isPresent());
 			
 			if (!form.isPresent()) {
 				return "Page15.jsp";
@@ -51,6 +52,7 @@ public class Page15Action extends Action{
 		
 			errors.addAll(form.getValidationErrors());
 			session.setAttribute("errors", errors);
+			System.out.println("These are the errors:" + errors);
 			if (errors.size() > 0) {
 				return "Page15.jsp";
 			}
@@ -79,20 +81,42 @@ public class Page15Action extends Action{
 				+ form.getValueasDouble(form.getPage_15_7_guessbad())
 				+ form.getValueasDouble(form.getPage_15_8_guessbad())
 				+ form.getValueasDouble(form.getPage_15_9_guessbad());
+			
+			System.out.println(sumTotal);
+			System.out.println(sumBad);
+			
 			String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean respondentBean = respondentDAO.read(unique_id);
+            
+            
+            System.out.println(unique_id);
+            System.out.println("bean" + respondentBean != null);
             
             if (respondentBean != null) {
 			
 			ResponseBean r= new ResponseBean();
+			System.out.println("id: " + r.getRespondent_id());
 			r.setQuestion_id(15);
-			r.setRespondent_id(r.getRespondent_id());//get session id);
+			r.setRespondent_id(respondentBean.getRespondent_id());//get session id);
 			r.setResponse("{" 
 					+ sumTotal
 					+ ","
 					+ sumBad
-					+ "}");
+					+ ","
+					+ form.getText()
+					+"}");
+			System.out.println("{" 
+					+ sumTotal
+					+ ","
+					+ sumBad
+					+ ","
+					+ form.getText()
+					+"}");
+			
+			System.out.println(r == null);
+			
 			responseDAO.create(r);
+			
             } else {
             	return "Page15.jsp";
             }
@@ -100,9 +124,11 @@ public class Page15Action extends Action{
 			return "page16.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
+			System.out.println("rollback" + errors);
 			return "Page15.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
+			System.out.println("formbean errors" + errors);
 			return "Page15.jsp";
 		}
 	}

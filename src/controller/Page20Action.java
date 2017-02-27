@@ -59,7 +59,7 @@ public class Page20Action extends Action {
 			
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(20);
-			r.setRespondent_id(1);
+			r.setRespondent_id(respondentBean.getRespondent_id());
 			r.setResponse( "{"
 					+ form.getPage_20_1() + "'"
 					+ form.getPage_20_2() + "'"

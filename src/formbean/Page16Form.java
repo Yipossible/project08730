@@ -100,41 +100,38 @@ public class Page16Form extends FormBean{
 			errors.add("Please fill row 3.");
 		}
 		
-		if(page_16_3 == null || page_16_4.length() == 0) {
+		if(page_16_4 == null || page_16_4.length() == 0) {
 			errors.add("Please fill row 4.");
 		}
 		
-		if(page_16_4 == null || page_16_5.length() == 0) {
+		if(page_16_5 == null || page_16_5.length() == 0) {
 			errors.add("Please fill row 5.");
 		}
 		
-		if(page_16_5 == null || page_16_6.length() == 0) {
+		if(page_16_6 == null || page_16_6.length() == 0) {
 			errors.add("Please fill row 6.");
 		}
 		
-		if(page_16_6 == null || page_16_7.length() == 0) {
+		if(page_16_7 == null || page_16_7.length() == 0) {
 			errors.add("Please fill row 7.");
 		}
 		
-		if(page_16_7 == null || page_16_8.length() == 0) {
+		if(page_16_8 == null || page_16_8.length() == 0) {
 			errors.add("Please fill row 8.");
 		}
 		
-		if(page_16_8 == null || page_16_9.length() == 0) {
+		if(page_16_9 == null || page_16_9.length() == 0) {
 			errors.add("Please fill row 9.");
 		}
 		
-		if(page_16_9 == null || page_16_10.length() == 0) {
+		if(page_16_10 == null || page_16_10.length() == 0) {
 			errors.add("Please fill row 10.");
 		}
 		
-		if(page_16_10 == null || page_16_11.length() == 0) {
+		if(page_16_11 == null || page_16_11.length() == 0) {
 			errors.add("Please fill row 11.");
 		}
-		
-		if(page_16_11 == null || page_16_1.length() == 0) {
-			errors.add("Please fill row 1.");
-		}
+
 		
 		if (errors.size() > 0) {
 			return errors;
