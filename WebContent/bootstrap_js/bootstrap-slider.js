@@ -533,6 +533,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 
 					var inner = document.createElement("div");
 					inner.className = "tooltip-inner";
+					inner.innerHTML = "hey";
 
 					tooltipElem.appendChild(arrow);
 					tooltipElem.appendChild(inner);
@@ -542,6 +543,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				var sliderTooltip = document.createElement("div");
 				sliderTooltip.className = "tooltip tooltip-main";
 				sliderTooltip.setAttribute('role', 'presentation');
+				sliderTooltip.innerHTML = "hey";
 				createAndAppendTooltipSubElements(sliderTooltip);
 
 				var sliderTooltipMin = document.createElement("div");
@@ -1293,7 +1295,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 						this._css(this.tooltip, "margin-" + this.stylePos, -this.tooltip.offsetWidth / 2 + "px");
 					}
 
-					var innerTooltipMinText = this.options.formatter(this._state.value[0]);
+					var innerTooltipMinText = "Hehe";
 					this._setText(this.tooltipInner_min, innerTooltipMinText);
 
 					var innerTooltipMaxText = this.options.formatter(this._state.value[1]);

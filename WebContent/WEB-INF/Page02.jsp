@@ -3,6 +3,9 @@
 		    <h1>Before proceeding, please make sure that you are eligible:</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 			<form action="" method="POST">
 			<p>I am in age 18 or older.</p>
 			<div class="input-group">

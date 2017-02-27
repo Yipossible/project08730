@@ -39,6 +39,7 @@ public class Page02Action extends Action {
         List<String> successMessage = new ArrayList<String>();
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
+        session.setAttribute("nextPage", "page03.do");
         session.setAttribute("errors", errors);
         try {
             Page02Form form = formBeanFactory.create(request);

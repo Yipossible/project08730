@@ -1,8 +1,7 @@
 <jsp:include page="top.jsp" />
-
+		<h1>6. How inconvenient would it be if an outage lasted …? </h1>
 		</div>
 		<div class="panel-body">
-<p>6. How inconvenient would it be if an outage lasted …? </p>
 <br>
 
 <form method ="post" action="page25.do">
@@ -14,17 +13,17 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td>Not at all</td>
-			<td>Slightly</td>
-			<td>Moderately</td>
-			<td>Very</td>
-			<td>Extremely</td>
+			<td><span style="margin-right:10px">Not at all</span></td>
+			<td><span style="margin-right:10px">Slightly</span></td>
+			<td><span style="margin-right:10px">Moderately</span></td>
+			<td><span style="margin-right:10px">Very</span></td>
+			<td><span style="margin-right:10px">Extremely</span></td>
 		</tr>
 		
 		<tr>
 			<td>Less than 1 hour</td>
 			<td>
-			<input type="radio" name="page_25_1" value="Not at all">
+			<input type="radio" name="page_25_1" value="Not at all"">
 			</td>
 			<td>
 			<input type="radio" name="page_25_1" value="Slightly">

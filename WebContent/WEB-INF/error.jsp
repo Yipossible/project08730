@@ -1,7 +1,7 @@
-
-<!--  Rework link to go to previous page. Set to "home" for now. -->
-<p>
-	Error.
-    <a href="page01.do">Oops! Something went wrong! </a> 
-</p>
+<jsp:include page="top.jsp" />
+	<h1>Oops! You already submitted this page!</h1>
+	</div>
+	<div class="panel-body">
+    	 You already submitted this page, please go to <a href="${nextPage}">next page</a> to proceed the survey. 
+    </div>
 

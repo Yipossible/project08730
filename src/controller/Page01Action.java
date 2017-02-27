@@ -49,7 +49,7 @@ public class Page01Action extends Action {
             System.out.println(r);
             respondentDAO.create(r);
             session.setAttribute("unique_id", unique_id);
-            return "CardDemo.jsp";
+            return "Page01.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";

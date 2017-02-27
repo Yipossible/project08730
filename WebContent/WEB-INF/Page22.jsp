@@ -1,10 +1,7 @@
 <jsp:include page="top.jsp" />
-
+		<h1>6) Wrapping it up</h1>
 		</div>
 		<div class="panel-body">
-<p>
-6) Wrapping it up
-
 </p>
 <br>
 <p>

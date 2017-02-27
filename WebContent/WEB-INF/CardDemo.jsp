@@ -11,7 +11,6 @@
 	<script type="text/javascript" src="myJs/startPage.js"></script>
     
 	<script type="text/javascript">
-	var i = 1;
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
 	          'Stove':20, 'TV':10, 'Speaker':1 };
 	$(document).ready(function() {
@@ -41,14 +40,12 @@
 				var ir = tmp.value * dict["Iron"];
 			}
 			
-		      var arr =	[['Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave',
-		          'Stove', 'TV', 'Speaker',{ role: 'annotation' } ],
+		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
 		         ['Morning', v, ir, ac, wh, 0, 0,0,0],
 		         ['Lunch', 16, 22, 23, 30, 16, 9,0,0],
 		         ['Evening', 28, 19, 29, 30, 12, 13,0,0],
 		         ['Night', 28, 19, 29, 30, 12, 13, 0,0]
 		      ];
-		      i = i + 1;
 			google.charts.setOnLoadCallback(drawChart(arr));
 		});
      });
