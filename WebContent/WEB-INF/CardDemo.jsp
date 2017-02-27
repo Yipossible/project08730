@@ -7,6 +7,7 @@
     <script type="text/javascript" src="myJs/GoogleChart.js"></script>  
     <script type="text/javascript" src="myJs/changeTime.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    <script type="text/javascript" src="myJs/startPage.js"></script>
     
 	<script type="text/javascript">
 	var i = 1;
@@ -30,7 +31,7 @@
 <body>
     <!--This is for Appliance List-->
     <div class="level1" style="width:300px;">
-        <p id = "reference">MorningTime</p>
+        <p id = "reference">startTime</p>
         <table class="table">
             <tr >
                 <td class="table"> Your Appliances
@@ -76,14 +77,18 @@
         
     </div >
     <!--This is for the action board-->
-    <div class="level1" style="width:900px;">
+    <div class="level1" id = 'board' style="width:900px;">
             <!--This is for the scenario description-->
         <div class="level2">
             <img src="images/Normal-morning-thumb.png" id = "banner" width="800" height="120">
         </div>
     
             <!--This is for the visualized graph-->
-        <div id="chart_div" style="width: 800px; height: 300px;"></div>
+             <div id="tutorial" style="width: 800px; height: 300px;">
+            <img src="images/tutorial.png" id = 'tutorialimage' onclick="startTutorial()">
+        	</div>
+            
+        <!--  <div id="chart_div" style="width: 800px; height: 300px;"></div> -->
     
             <!--This is for the four periods boxes-->
         <div class="level2">

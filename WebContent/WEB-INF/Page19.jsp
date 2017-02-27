@@ -175,7 +175,7 @@ RESPONSE MODE - INITIAL II
 		</tr>
 	
 	</table>
-	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
+	<input type="submit" class="btn btn-info" value="Next" style="float: right;"/>
 </form>
 </body>
 </html>

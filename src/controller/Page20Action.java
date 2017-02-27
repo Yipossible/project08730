@@ -83,7 +83,7 @@ public class Page20Action extends Action {
 			return "page21.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
-			return "Page20jsp";
+			return "Page20.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
 			return "Page20.jsp";

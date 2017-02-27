@@ -78,10 +78,61 @@ function clickplus (e) {
 }
 
 function clickminus(e) {
-    clicks--;   
+    clicks--; 
+    if (clicks < 0) {
+        clicks = 0;
+        remove(e);
+    }
     document.getElementById(e).value = clicks;
 }
 
+function remove(e) {
+    var button1 = e.substring(3) + 'plus';
+    var button2 = e.substring(3) + 'minus';
+    if (e == 'newmorninglargeVacuum') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorninglargeIron') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorninglargeAC') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorningkitchenMV') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorningkitchenStove') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorningsmallTV') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+        if (e == 'newmorningsmallSpeaker') {
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+    }
+    
+}
 
 function addtoPanel(e) {
 
@@ -92,13 +143,13 @@ function addtoPanel(e) {
     
     var button1 = document.createElement('button');
         button1.setAttribute('type', 'button');
-        button1.setAttribute('class', 'plusbutton');
+        button1.setAttribute('class', 'trigger');
         button1.setAttribute('data-type',"plus");
         button1.innerHTML = '+';
     
     
     var input = document.createElement('input');
-        input.setAttribute('type', 'text');
+        input.setAttribute('type', 'number');
         input.setAttribute('class', 'input');
         input.setAttribute('value', '1');
         input.setAttribute('size', '5');
@@ -106,7 +157,7 @@ function addtoPanel(e) {
         
     var button2 = document.createElement('button');
         button2.setAttribute('type', 'button');
-        button2.setAttribute('class', 'minusbutton');
+        button2.setAttribute('class', 'trigger');
         button2.setAttribute('data-type',"minus");
         button2.setAttribute('min','1');
         button2.innerHTML = '-';
@@ -116,9 +167,14 @@ function addtoPanel(e) {
         var table = document.getElementById("morningConsumption");
         var imageid = "morning" + newImage.id;
         var inputid = "newmorning" + newImage.id;
+        var button1id = "morning" + newImage.id + "plus";
+        var button2id = "morning" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
+        newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
+        button1.setAttribute('id',button1id);
+        button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
         table.appendChild(newImage);
         table.appendChild(button1);
@@ -130,9 +186,14 @@ function addtoPanel(e) {
         var table = document.getElementById("lunchConsumption");
         var imageid = "lunch" + newImage.id;
         var inputid = "newlunch" + newImage.id;
+        var button1id = "morning" + newImage.id + "plus";
+        var button2id = "morning" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
+        newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
+        button1.setAttribute('id',button1id);
+        button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
         table.appendChild(newImage);
         table.appendChild(button1);
@@ -144,9 +205,14 @@ function addtoPanel(e) {
         var table = document.getElementById("eveningConsumption");
         var imageid = "Evening" + newImage.id;
         var inputid = "newEvening" + newImage.id;
+        var button1id = "morning" + newImage.id + "plus";
+        var button2id = "morning" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
+        newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
+        button1.setAttribute('id',button1id);
+        button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
         table.appendChild(newImage);
         table.appendChild(button1);
@@ -158,9 +224,14 @@ function addtoPanel(e) {
         var table = document.getElementById("nightConsumption");
         var imageid = "night" + newImage.id;
         var inputid = "newnight" + newImage.id;
+        var button1id = "morning" + newImage.id + "plus";
+        var button2id = "morning" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
+        newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
+        button1.setAttribute('id',button1id);
+        button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
         table.appendChild(newImage);
         table.appendChild(button1);

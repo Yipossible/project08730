@@ -55,6 +55,8 @@ public class Page17Action extends Action {
 			String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean respondentBean = respondentDAO.read(unique_id);
             
+            System.out.println(respondentBean == null);
+            
             if (respondentBean != null) {
 			
 			ResponseBean r = new ResponseBean();
@@ -74,6 +76,7 @@ public class Page17Action extends Action {
 					+ form.getPage_17_11() + "'"
 					+ "}");
 			responseDAO.create(r);
+			System.out.println("answer saved");
             } else {
             	return "Page17.jsp";
             }
@@ -81,7 +84,7 @@ public class Page17Action extends Action {
 			return "page18.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
-			return "Page17jsp";
+			return "Page17.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
 			return "Page17.jsp";
