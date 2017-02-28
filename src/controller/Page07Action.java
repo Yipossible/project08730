@@ -58,22 +58,10 @@ public class Page07Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(7);
 			r.setRespondent_id(p.getRespondent_id());
-			r.setResponse( "{"
-			        + form.getPage_07_1() + ","
-                    + form.getPage_07_2() + ","
-                    + form.getPage_07_3() + ","
-                    + form.getPage_07_4() + ","
-                    + form.getPage_07_5() + ","
-                    + form.getPage_07_6() + ","
-                    + form.getPage_07_7() + ","
-                    + form.getPage_07_8() + ","
-                    + form.getPage_07_9() + ","
-                    + form.getPage_07_10() + ","
-                    + form.getPage_07_11() + ","
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
 			
-			return "Page08.jsp";
+			return "page08.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			System.out.println(errors);

@@ -1,12 +1,12 @@
 <jsp:include page="top.jsp" />
 
-		    <h1>Part A. Information about your household</h1>
+		    <h1>5) An outage and critical private/social services</h1>
 		</div>
 		<div class="panel-body">
 
 <p>
 <b>
-5) An outage and critical private/social services
+
 </b>
 </p>
 

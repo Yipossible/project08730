@@ -31,6 +31,6 @@ public class Page08Action extends Action{
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        return "Page09.jsp";
+        return "Page08.jsp";
     }
 }

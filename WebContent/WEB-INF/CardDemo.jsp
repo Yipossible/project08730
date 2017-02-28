@@ -12,40 +12,47 @@
     
 	<script type="text/javascript">
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
-	          'Stove':20, 'TV':10, 'Speaker':1 };
+	          'Stove':20, 'TV':10, 'Speaker':10 };
+	var mid = ["newmorninglargeVacuum", "newmorninglargeWH", "newmorninglargeAC", "newmorninglargeIron", "newmorningkitchenStove", "newmorningkitchenMV", "newmorningsmallTV", "newmorningsmallSpeaker"];
+	var lid = ["newlunchlargeVacuum", "newlunchlargeWH", "newlunchlargeAC", "newlunchlargeIron", "newlunchkitchenStove", "newlunchkitchenMV", "newlunchsmallTV", "newlunchsmallSpeaker"];
+	var eid = ["newEveninglargeVacuum", "newEveninglargeWH", "newEveninglargeAC", "newEveninglargeIron", "newEveningkitchenStove", "newEveningkitchenMV", "newEveningsmallTV", "newEveningsmallSpeaker"];
+	var nid = ["newnightlargeVacuum", "newnightlargeWH", "newnightlargeAC", "newnightlargeIron", "newnightkitchenStove", "newnightkitchenMV", "newnightsmallTV", "newnightsmallSpeaker"];
+	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
+	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
+	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
+	var evening = [0, 0, 0, 0, 0, 0, 0, 0];
+	var night = [0, 0, 0, 0, 0, 0, 0, 0];
 	$(document).ready(function() {
 		$('.trigger').click(function(){  
-			var tmp = document.getElementById("newmorninglargeVacuum")
-			if (typeof tmp === 'undefined' || !tmp) {
-				var v = 0;
-			} else {
-				var v = tmp.value * dict["Vacuum"];
+			for (i = 0; i < 8; i++) {
+				var tmp = document.getElementById(mid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					morning[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(lid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					lunch[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(eid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					evening[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(nid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					night[i] = tmp.value * dict[app[i]];
+				}
 			}
-			var tmp = document.getElementById("newmorninglargeWH")
-			if (typeof tmp === 'undefined' || !tmp) {
-				var wh = 0;
-			} else {
-				var wh = tmp.value * dict["Water Heater"];
-			}
-			var tmp = document.getElementById("newmorninglargeAC")
-			if (typeof tmp === 'undefined' || !tmp) {
-				var ac = 0;
-			} else {
-				var ac = tmp.value * dict["AC"];
-			}
-			var tmp = document.getElementById("newmorninglargeIron")
-			if (typeof tmp === 'undefined' || !tmp) {
-				var ir = 0;
-			} else {
-				var ir = tmp.value * dict["Iron"];
-			}
-			
 		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
-		         ['Morning', v, ir, ac, wh, 0, 0,0,0],
-		         ['Lunch', 16, 22, 23, 30, 16, 9,0,0],
-		         ['Evening', 28, 19, 29, 30, 12, 13,0,0],
-		         ['Night', 28, 19, 29, 30, 12, 13, 0,0]
+		    	 ['Morning'].concat(morning),
+		         ['Lunch'].concat(lunch),
+		         ['Evening'].concat(evening),
+		         ['Night'].concat(night)
 		      ];
+		      console.log(arr);
 			google.charts.setOnLoadCallback(drawChart(arr));
 		});
      });
@@ -78,8 +85,8 @@
             </tr>
             <tr>
                 <td  class="table"> 
-                <img src="images/Microwave.png"  id="kitchenMV" width="58" height="90" onclick = "addtoPanel(this);">
-                <img src="images/stove.png" id="kitchenStove" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/Microwave.png"  class="trigger" id="kitchenMV" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/stove.png" class="trigger" id="kitchenStove" width="58" height="90" onclick = "addtoPanel(this);">
                 </td>
             </tr>
              <tr>
@@ -88,8 +95,8 @@
             </tr>
             <tr>
                 <td  class="table"> 
-                <img src="images/TV.png"  id="smallTV" width="58" height="90" onclick = "addtoPanel(this);">
-                <img src="images/Speaker.png"  id="smallSpeaker" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/TV.png"  class="trigger" id="smallTV" width="58" height="90" onclick = "addtoPanel(this);">
+                <img src="images/Speaker.png"  class="trigger" id="smallSpeaker" width="58" height="90" onclick = "addtoPanel(this);">
 
                 </td>
             </tr>

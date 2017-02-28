@@ -20,10 +20,12 @@ RESPONSE MODE - INITIAL I
 				
 				<!-- Range slider, low and high tracks, and selection: -->
 				<br><br>
-				I am willing to pay 0 to <span id="yes" style="background: lightgreen;"></span> dollars <br>
-				I might pay <span id="notSure" style="background: lightyellow;"></span> dollars <br>
-				I am not willing to pay <span id="no" style="background: lightpink;"></span> to 100 dollars<br><br>
-				0<input id="ex12c" type="text" style="width:700px;">100<br/>
+				<table>
+				<td class="col-xs-4" style="background: lightgreen;">I am willing to pay 0 to <span id="yes"></span> dollars </td>
+				<td class="col-xs-4" style="background: lightyellow;">I might pay <span id="notSure"></span> dollars </td>
+				<td class="col-xs-4" style="background: lightpink;"> I am not willing to pay <span id="no"></span> to 100 dollars</td>
+				</table>
+				$0<input name="price" id="ex12c" type="text" style="width:750px;">$100<br/>
 				<br><br><br>
 	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
@@ -31,15 +33,10 @@ RESPONSE MODE - INITIAL I
 var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 100, range: true, value: [30, 70] });
 $(document).ready(function () {
 	console.log($( "#ex12c" ).val());
-	/* var x = $( "#ex12c" ).val().split(',')[0];
-	document.getElementById("yes").innerHTML = " " + x + " ";
-	document.getElementById("yes2").innerHTML = " " + x + " ";
-	var y = $( "#ex12c" ).val().split(',')[1];
-	document.getElementById("no").innerHTML = " " + y + " ";
-	document.getElementById("no2").innerHTML = " " + y + " ";
- */	$("#ex12c").on("slide", function(slideEvt) {
+
+ 	$("#ex12c").on("slide", function(slideEvt) {
 	 	$("#yes").text(slideEvt.value[0]);
-	 	$("#notSure").text(slideEvt.value);
+	 	$("#notSure").text(slideEvt.value[0] + " to " + slideEvt.value[1]);
 	 	$("#no").text(slideEvt.value[1]);
 	});
 });	

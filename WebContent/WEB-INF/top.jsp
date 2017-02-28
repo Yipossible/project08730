@@ -45,17 +45,17 @@
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
                 
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 2</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>

@@ -15,8 +15,8 @@
 			<p>5.	Are there any life-critical devices in your house that require electricity (e.g., life sustaining medical equipment that runs on electric power)? 
  </p>
 			<div class="input-group">
-			<input type="radio" name="workFromHome" value="Yes"> Yes
-			<input type="radio" name="workFromHome" value="No"> No
+			<input type="radio" name="device" value="Yes"> Yes
+			<input type="radio" name="device" value="No"> No
 			</div>
 			If yes, do those devices have backup power? How long can they operate without electricity? Please explain: <br>
 			<textarea name="deviceExplain" rows="4" cols="50" class="form-control" ></textarea>
