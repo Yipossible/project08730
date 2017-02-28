@@ -1,4 +1,4 @@
-<jsp:include page="top.jsp" />
+<jsp:include page="top6.jsp" />
 
 		    <h1>Part A. Information about your household</h1>
 		</div>

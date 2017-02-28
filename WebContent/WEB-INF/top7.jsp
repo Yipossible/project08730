@@ -27,40 +27,40 @@
 	<div class="col-lg-10">
             <div class="row bs-wizard" style="border-bottom:0;">
                 
-                <div class="col-xs-2 bs-wizard-step active">
+                <div class="col-xs-2 bs-wizard-step complete">
                   <div class="text-center bs-wizard-stepnum">Informed consent</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
                 
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- complete -->
+                <div class="col-xs-2 bs-wizard-step complete"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Prescreening</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
                 
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- complete -->
+                <div class="col-xs-2 bs-wizard-step complete"><!-- complete -->
                   <div class="text-center bs-wizard-stepnum">Introduction</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
                 
-                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step complete"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 1</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step complete"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 2</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-xs-1 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-1 bs-wizard-step complete"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Stage 3</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>
-                <div class="col-xs-2 bs-wizard-step disabled"><!-- active -->
+                <div class="col-xs-2 bs-wizard-step active"><!-- active -->
                   <div class="text-center bs-wizard-stepnum">Wrap up</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>

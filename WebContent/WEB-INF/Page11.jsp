@@ -1,4 +1,4 @@
-<jsp:include page="top.jsp" />
+<jsp:include page="top4.jsp" />
 <h3>
 	Before we continue, I would like to ask you a question to make sure that you understand the scenario:
 	</h3>

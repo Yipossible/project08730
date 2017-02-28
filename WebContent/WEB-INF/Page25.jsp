@@ -1,4 +1,4 @@
-<jsp:include page="top.jsp" />
+<jsp:include page="top7.jsp" />
 		<h1>6. How inconvenient would it be if an outage lasted …? </h1>
 		</div>
 		<div class="panel-body">
