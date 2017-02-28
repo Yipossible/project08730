@@ -117,19 +117,19 @@
         <div class="level2">
             <div class="level3" >
                 <button id = "morningTime" onclick="changeTime(this)">Morning</button>
-                <div id="morningConsumption"></div>
+                <div id="morningConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
             <div class="level3" >
                 <button id = "lunchTime" onclick="changeTime(this)">Lunch</button>
-                <div id="lunchConsumption"></div>
+                <div id="lunchConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
             <div class="level3" > 
                 <button id = "eveningTime" onclick="changeTime(this)">Evening</button>
-                <div id="eveningConsumption"></div>
+                <div id="eveningConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
             <div class="level3" >
                 <button id = "nightTime" onclick="changeTime(this)">Night</button>
-                <div id="nightConsumption"></div>
+                <div id="nightConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
         </div>
     

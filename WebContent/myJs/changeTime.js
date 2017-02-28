@@ -6,10 +6,10 @@ function changeTime(e) {
     if (reference == 'startTime') {
     document.getElementById("banner").src = "images/Normal-morning-thumb.png";
         //add class attribute to images to disable click;
-    document.getElementById("morningConsumption").style.backgroundColor = "#cccccc";
-    document.getElementById("lunchConsumption").style.backgroundColor = "#cccccc";
-    document.getElementById("eveningConsumption").style.backgroundColor = "#cccccc";
-    document.getElementById("nightConsumption").style.backgroundColor = "#cccccc";
+    document.getElementById("morningConsumption").style.backgroundColor = "red";
+    document.getElementById("lunchConsumption").style.backgroundColor = "red";
+    document.getElementById("eveningConsumption").style.backgroundColor = "red";
+    document.getElementById("nightConsumption").style.backgroundColor = "red";
     }
     if (reference == "MorningTime") {
     document.getElementById("banner").src = "images/Normal-morning-thumb.png";
