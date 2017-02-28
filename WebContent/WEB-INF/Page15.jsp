@@ -6,8 +6,10 @@
 <p>
 Please use the calculator below to estimate the value of the food you have, and would need to replace if the power went out for one to two weeks.
 </p>
-
-
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<!--  <p style="font-size:medium; color:red">
+  ${errors}
+	</p> -->
 
 <form method="POST" id="15form" action="page15.do">
 <table align="center" style="margin: 0px auto;">
@@ -18,7 +20,7 @@ Please use the calculator below to estimate the value of the food you have, and 
 		<td></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Meat, Poultry, Seafood</td>
+		<td style="overflow:hidden; width:400px;">1. Meat, Poultry, Seafood</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -30,22 +32,32 @@ Gravy, stuffing, broth, Lunchmeats, hot dogs, bacon, sausage, dried beef, Pizza 
 Canned hams labeled ‘keep refrigerated’, Opened canned meats and fish,
 Casseroles, soups, stews</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_1_guessall" id = "page15_1_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_1_guessall" id = "page15_1_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_1_guessbad" id = "page15_1_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_1_guessbad" id = "page15_1_guessbad" value="">
 		</td>
 		<td id="page_15_1"></td>
 		
 		<script>
-		if(document.getElementById("page_15_1_guessbad").value > document.getElementById("page_15_1_guessall").value) {
-			document.getElementById("page_15_1").innerHTML = "The value of Perished Food should be no more than Total Value";
-		}
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_1_guessbad").value;
+			var total1 = document.getElementById("page15_1_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_1").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_1").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_1").innerHTML = "";
+			}
+			});
+		
 		</script>
 	</tr>
 	
 	<tr>
-		<td>Dairy</td>
+		<td>2. Dairy</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -54,16 +66,32 @@ Casseroles, soups, stews</td>
 		<td style="overflow:hidden; width:400px;">Milk, cream, sour cream, Buttermilk, evaporated milk, 
 Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_2_guessall" id = "page15_2_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_2_guessall" id = "page15_2_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text"  size = "15"name="page_15_2_guessbad" id = "page15_2_guessbad" value="">
+			 <input class = "target" type="text"  size = "15"name="page_15_2_guessbad" id = "page15_2_guessbad" value="">
 		</td>
 		<td id="page_15_2"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_2_guessbad").value;
+			var total1 = document.getElementById("page15_2_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_2").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_2").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_2").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
-		<td>Eggs</td>
+		<td>3. Eggs</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -71,16 +99,31 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td style="overflow:hidden; width:400px;">Fresh eggs, hard-cooked in shell Custards and puddings, quiche</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_3_guessall" id = "page15_3_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_3_guessall" id = "page15_3_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_3_guessbad" id = "page15_3_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_3_guessbad" id = "page15_3_guessbad" value="">
 		</td>
 		<td id="page_15_3"></td>
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_3_guessbad").value;
+			var total1 = document.getElementById("page15_3_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_3").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_3").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_3").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 
 	<tr>
-		<td>Fruits</td>
+		<td>4. Fruits</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -88,16 +131,32 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 	<tr>
 		<td>Opened canned fruits and juices</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_4_guessall" id = "page15_4_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_4_guessall" id = "page15_4_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_4_guessbad" id = "page15_4_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_4_guessbad" id = "page15_4_guessbad" value="">
 		</td>
 		<td id="page_15_4"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_4_guessbad").value;
+			var total1 = document.getElementById("page15_4_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_4").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_4").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_4").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
-		<td>Sauces</td>
+		<td>5.Sauces</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -106,16 +165,32 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td style="overflow:hidden; width:400px;">Opened mayonnaise, Tartar sauce, Horseradish,Fish sauces, oyster sauce
 Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_5_guessall" id = "page15_5_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_5_guessall" id = "page15_5_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text"  size = "15" name="page_15_5_guessbad" id = "page15_5_guessbad" value="">
+			 <input class = "target" type="text"  size = "15" name="page_15_5_guessbad" id = "page15_5_guessbad" value="">
 		</td>
 		<td id="page_15_5"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_5_guessbad").value;
+			var total1 = document.getElementById("page15_5_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_5").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_5").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_5").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
-		<td>Bread, Cakes, Cookies, Pasta, etc.</td>
+		<td>6. Bread, Cakes, Cookies, Pasta, etc.</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -124,45 +199,108 @@ Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td style="overflow:hidden; width:400px;">Refrigerator biscuits, rolls, cookie dough, Cooked pasta, rice, potatoes,
 Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_6_guessall" id = "page15_6_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_6_guessall" id = "page15_6_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_6_guessbad" id = "page15_6_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_6_guessbad" id = "page15_6_guessbad" value="">
 		</td>
 		<td id="page_15_6"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_6_guessbad").value;
+			var total1 = document.getElementById("page15_6_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_6").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_6").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_6").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
-		<td>Perishable Pies and Pastry</td>
+		<td>7. Perishable Pies and Pastry</td>
 		<td>$
-			 <input type="text" size = "15"  name="page_15_7_guessall" id = "page15_7_guessall" value="">
+			 <input class = "target" type="text" size = "15"  name="page_15_7_guessall" id = "page15_7_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_7_guessbad" id = "page15_7_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_7_guessbad" id = "page15_7_guessbad" value="">
 		</td>
 		<td id="page_15_7"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_7_guessbad").value;
+			var total1 = document.getElementById("page15_7_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_7").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_7").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_7").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
 		<td>Perishable Vegetables (except raw vegetables)</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_8_guessall" id = "page15_8_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_8_guessall" id = "page15_8_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_8_guessbad" id = "page15_8_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_8_guessbad" id = "page15_8_guessbad" value="">
 		</td>
 		<td id="page_15_8"></td>
+		
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_8_guessbad").value;
+			var total1 = document.getElementById("page15_8_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_8").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_8").style.color = "red";
+				
+			} else {
+				document.getElementById("page_15_8").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 	<tr>
-		<td>Soft Cheese</td>
+		<td>8. Soft Cheese</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_9_guessall" id = "page15_9_guessall" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_9_guessall" id = "page15_9_guessall" value="">
 		</td>
 		<td>$
-			 <input type="text" size = "15" name="page_15_9_guessbad" id = "page15_9_guessbad" value="">
+			 <input class = "target" type="text" size = "15" name="page_15_9_guessbad" id = "page15_9_guessbad" value="">
 		</td>
 		<td id="page_15_9"></td>
+				<script>
+		
+		$('.target').on('input',function(e){
+			var bad1= document.getElementById("page15_9_guessbad").value;
+			var total1 = document.getElementById("page15_9_guessall").value;
+			if( bad1 > total1) {
+				document.getElementById("page_15_9").innerHTML = "The value of Perished Food should be no more than Total Value";
+				document.getElementById("page_15_9").style.color = "red";
+				
+			}  else {
+				document.getElementById("page_15_9").innerHTML = "";
+			}
+			});
+		
+		</script>
 	</tr>
 	
 		<tr>

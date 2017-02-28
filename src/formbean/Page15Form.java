@@ -231,6 +231,38 @@ public class Page15Form extends FormBean{
 			errors.add("Please input your answer.");
 		}
 		
+		//check input rationality
+		if ((page_15_1_guessall.length() != 0) & (page_15_1_guessbad.length() != 0) && (Double.parseDouble(page_15_1_guessall) < Double.parseDouble(page_15_1_guessbad))) {
+			errors.add("Perish value should be no more than total value for (1) Meat, Poultry, Seafood");
+		}
+		if ((page_15_2_guessall.length() != 0) & (page_15_2_guessbad.length() != 0) && (Double.parseDouble(page_15_2_guessall) < Double.parseDouble(page_15_2_guessbad))) {
+			errors.add("Perish value should be no more than total value for (2) Dairy");
+		}
+		if ((page_15_3_guessall.length() != 0) & (page_15_3_guessbad.length() != 0) && (Double.parseDouble(page_15_3_guessall) < Double.parseDouble(page_15_3_guessbad))) {
+			errors.add("Perish value should be no more than total value for (3) Eggs");
+		}
+		if ((page_15_4_guessall.length() != 0) & (page_15_4_guessbad.length() != 0) && (Double.parseDouble(page_15_4_guessall) < Double.parseDouble(page_15_4_guessbad))) {
+			errors.add("Perish value should be no more than total value for (4) Fruits");
+		}
+		if ((page_15_5_guessall.length() != 0) & (page_15_5_guessbad.length() != 0) && (Double.parseDouble(page_15_5_guessall) < Double.parseDouble(page_15_5_guessbad))) {
+			errors.add("Perish value should be no more than total value for (5) Sauces");
+		}
+		if ((page_15_6_guessall.length() != 0) & (page_15_6_guessbad.length() != 0) && (Double.parseDouble(page_15_6_guessall) < Double.parseDouble(page_15_6_guessbad))) {
+			errors.add("Perish value should be no more than total value for (6) Bread, Cakes, Cookies, Pasta");
+		}
+		if ((page_15_7_guessall.length() != 0) & (page_15_7_guessbad.length() != 0) && (Double.parseDouble(page_15_7_guessall) < Double.parseDouble(page_15_7_guessbad))) {
+			errors.add("Perish value should be no more than total value for (7) Perishable Pies and Pastry");
+		}
+		if ((page_15_8_guessall.length() != 0) & (page_15_8_guessbad.length() != 0) && (Double.parseDouble(page_15_8_guessall) < Double.parseDouble(page_15_8_guessbad))) {
+			errors.add("Perish value should be no more than total value for (8) Perishable Vegetables");
+		}		
+		if ((page_15_9_guessall.length() != 0) & (page_15_9_guessbad.length() != 0) && (Double.parseDouble(page_15_9_guessall) < Double.parseDouble(page_15_9_guessbad))) {
+			errors.add("Perish value should be no more than total value for (9) Soft Cheese");
+		}
+		
+		
+		
+		
 		if(text.length() == 0 || text== null) {
 			errors.add("Please input your answer.");
 		}
