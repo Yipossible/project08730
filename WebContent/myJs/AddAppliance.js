@@ -1,3 +1,8 @@
+var morningList = {};
+var lunchList = {};
+var eveningList = {};
+var nightList = {};
+
 
 var clicks = 0;
 //var data = google.visualization.arrayToDataTable([
@@ -79,11 +84,12 @@ function clickplus (e) {
 
 function clickminus(e) {
     clicks--; 
+    document.getElementById(e).value = clicks;
     if (clicks < 0) {
         clicks = 0;
         remove(e);
     }
-    document.getElementById(e).value = clicks;
+
 }
 
 function remove(e) {
@@ -176,10 +182,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        
+        if (!morningList.hasOwnProperty(inputid)){
         table.appendChild(newImage);
         table.appendChild(button1);
         table.appendChild(input);
         table.appendChild(button2);
+        morningList[inputid] = 1;
+        }
     }
     
         if (reference == "LunchTime") {
@@ -195,10 +205,15 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        
+        if (!lunchList.hasOwnProperty(inputid)){
         table.appendChild(newImage);
         table.appendChild(button1);
         table.appendChild(input);
         table.appendChild(button2);
+        lunchList[inputid] = 1;
+        }
+        
     }
     
         if (reference == "EveningTime") {
@@ -214,10 +229,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        
+        if (!eveningList.hasOwnProperty(inputid)){
         table.appendChild(newImage);
         table.appendChild(button1);
         table.appendChild(input);
         table.appendChild(button2);
+        eveningList[inputid] = 1;
+        }
     }
     
         if (reference == "NightTime") {
@@ -233,10 +252,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        
+        if (!nightList.hasOwnProperty(inputid)){
         table.appendChild(newImage);
         table.appendChild(button1);
         table.appendChild(input);
         table.appendChild(button2);
+        nightList[inputid] = 1;
+        }
     }
 
 }
