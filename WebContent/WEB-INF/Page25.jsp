@@ -1,7 +1,11 @@
 <jsp:include page="top7.jsp" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<h1>6. How inconvenient would it be if an outage lasted …? </h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 <br>
 
 <form method ="post" action="page25.do">

@@ -1,4 +1,5 @@
 <jsp:include page="top.jsp" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 		    <h1>Before proceeding, please make sure that you are eligible:</h1>
 		</div>

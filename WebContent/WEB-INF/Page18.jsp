@@ -1,8 +1,11 @@
 <jsp:include page="top6.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		    <h1>5) An outage and critical private/social services</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 
 <p>
 <b>

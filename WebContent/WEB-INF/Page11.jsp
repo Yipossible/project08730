@@ -1,9 +1,13 @@
 <jsp:include page="top4.jsp" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <h3>
 	Before we continue, I would like to ask you a question to make sure that you understand the scenario:
 	</h3>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 <form method = "post" action ="page11.do">
 	
 	<p id="page11-1">

@@ -36,7 +36,7 @@ public class Page22Action extends Action {
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
-		
+		session.setAttribute("nextPage", "page23.do");
 		try {
 			Page22Form form = formBeanFactory.create(request);
 			

@@ -40,6 +40,7 @@ public class Page24Action extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
+        session.setAttribute("nextPage", "page25.do");
         try {
             Page24Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());

@@ -40,6 +40,7 @@ public class Page03Action extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
+        session.setAttribute("nextPage", "page04.do");
         try {
             Page03Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());
@@ -49,6 +50,7 @@ public class Page03Action extends Action {
 
             errors.addAll(form.getValidationErrors());
             if (errors.size() != 0) {
+                System.out.println("errors" + errors);
                 return "Page03.jsp";
             }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session

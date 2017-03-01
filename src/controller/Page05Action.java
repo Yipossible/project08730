@@ -17,18 +17,18 @@ import model.Model;
 import model.RespondentDAO;
 import model.ResponseDAO;
 
-public class Page06Action extends Action {	
+public class Page05Action extends Action {	
 	private ResponseDAO responseDAO;
     private RespondentDAO respondentDAO;
 
-    public Page06Action(Model model) {
+    public Page05Action(Model model) {
         responseDAO = model.getResponseDAO();
         respondentDAO = model.getRespondentDAO();
     }
 
     @Override
     public String getName() {
-        return "page06.do";
+        return "page05.do";
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Page06Action extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        session.setAttribute("nextPage", "page07.do");
-        return "Page06.jsp";
+        session.setAttribute("nextPage", "page06.do");
+        return "Page05.jsp";
     }
 }

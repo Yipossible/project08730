@@ -1,8 +1,11 @@
 <jsp:include page="top6.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		    <h1>Part A. Information about your household</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 <p>
 In addition, I would like to know how much you would be willing to pay for this 
 one-time partial backup service and to help others within the community during 

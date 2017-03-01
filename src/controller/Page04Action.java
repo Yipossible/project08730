@@ -40,6 +40,7 @@ public class Page04Action extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
+        session.setAttribute("nextPage", "page05.do");
         try {
             Page04Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());
@@ -77,7 +78,7 @@ public class Page04Action extends Action {
             else {
                 return "Page04.jsp";
             }
-            return "Page05.jsp";
+            return "page05.do";
         } catch (RollbackException e) {
             errors.add(e.toString());
             return "error.jsp";

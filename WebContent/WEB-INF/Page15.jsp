@@ -1,8 +1,11 @@
 <jsp:include page="top5.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		    <h1>Part A. Information about your household</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 <p>
 Please use the calculator below to estimate the value of the food you have, and would need to replace if the power went out for one to two weeks.
 </p>

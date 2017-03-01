@@ -1,7 +1,10 @@
 <jsp:include page="top7.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 	<h4>Also, please fill out the follow questions Information about yourself and your experiences from outages.</h4>
 		<form action="page23.do" method="POST">
 			<p>1. How would you categorize yourself in terms of race or ethnicity?</p>

@@ -1,8 +1,11 @@
 <jsp:include page="top3.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 			<p>1) Hypothetical blackout scenario</p>
 			In this section, I would like you to imagine the following situation: 
 			A large regional blackout occurs in late December at a time when you and all your household members are at home. 

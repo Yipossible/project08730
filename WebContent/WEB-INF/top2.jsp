@@ -20,6 +20,8 @@
     <![endif]-->
   </head>
 <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
   <br>
 	<div class="col-lg-1">
 	<p>

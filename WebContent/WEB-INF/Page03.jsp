@@ -1,8 +1,11 @@
 <jsp:include page="top2.jsp" />
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		    <h1>Part A. Information about your household</h1>
 		</div>
 		<div class="panel-body">
+		<c:forEach var="error" items="${errors}">
+			<h3 style="color:red"> ${error} </h3>
+		</c:forEach>
 		<form action="" method="POST">
 			<p>1. Where do you live? Please input your zip code.</p>
 			<input type="text" name="zipcode"placeholder="Please input zip code" class="form-control" ></td>
