@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="col-xs-2 bs-wizard-step active"><!-- active -->
-                  <div class="text-center bs-wizard-stepnum">Prescreening</div>
+                  <div class="text-center bs-wizard-stepnum">Pre-survey</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
                 </div>

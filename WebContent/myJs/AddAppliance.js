@@ -78,11 +78,58 @@ function getSummary() {
 
 
 function clickplus (e) {    
+	console.log(e);
     clicks++;
     document.getElementById(e).value = clicks;
+    console.log("test click plus");
+    var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
+	          'Stove':20, 'TV':10, 'Speaker':10 };
+	var mid = ["newmorninglargeVacuum", "newmorninglargeWH", "newmorninglargeAC", "newmorninglargeIron", "newmorningkitchenStove", "newmorningkitchenMV", "newmorningsmallTV", "newmorningsmallSpeaker"];
+	var lid = ["newlunchlargeVacuum", "newlunchlargeWH", "newlunchlargeAC", "newlunchlargeIron", "newlunchkitchenStove", "newlunchkitchenMV", "newlunchsmallTV", "newlunchsmallSpeaker"];
+	var eid = ["newEveninglargeVacuum", "newEveninglargeWH", "newEveninglargeAC", "newEveninglargeIron", "newEveningkitchenStove", "newEveningkitchenMV", "newEveningsmallTV", "newEveningsmallSpeaker"];
+	var nid = ["newnightlargeVacuum", "newnightlargeWH", "newnightlargeAC", "newnightlargeIron", "newnightkitchenStove", "newnightkitchenMV", "newnightsmallTV", "newnightsmallSpeaker"];
+	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
+	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
+	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
+	var evening = [0, 0, 0, 0, 0, 0, 0, 0];
+	var night = [0, 0, 0, 0, 0, 0, 0, 0];
+ 
+			for (i = 0; i < 8; i++) {
+				var tmp = document.getElementById(mid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					morning[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(lid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					lunch[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(eid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					evening[i] = tmp.value * dict[app[i]];
+				}
+				var tmp = document.getElementById(nid[i]);
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					night[i] = tmp.value * dict[app[i]];
+				}
+			}
+		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
+		    	 ['Morning'].concat(morning),
+		         ['Lunch'].concat(lunch),
+		         ['Evening'].concat(evening),
+		         ['Night'].concat(night)
+		      ];
+		      console.log(arr);
+			google.charts.setOnLoadCallback(drawChart(arr));
+			console.log(morning);
+
 }
 
 function clickminus(e) {
+	console.log(e);
     clicks--; 
     document.getElementById(e).value = clicks;
     if (clicks < 0) {
@@ -93,6 +140,7 @@ function clickminus(e) {
 }
 
 function remove(e) {
+	console.log(e);
     var button1 = e.substring(3) + 'plus';
     var button2 = e.substring(3) + 'minus';
     if (e == 'newmorninglargeVacuum') {
@@ -142,7 +190,7 @@ function remove(e) {
 
 function addtoPanel(e) {
 
-
+	console.log(e);
     var reference = document.getElementById("reference").innerHTML;
     
     var newImage = document.getElementById(e.id).cloneNode(true);

@@ -46,6 +46,7 @@
 					night[i] = tmp.value * dict[app[i]];
 				}
 			}
+			console.log(morning);
 		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
 		    	 ['Morning'].concat(morning),
 		         ['Lunch'].concat(lunch),
