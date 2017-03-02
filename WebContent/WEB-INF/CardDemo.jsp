@@ -13,10 +13,10 @@
 	<script type="text/javascript">
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
 	          'Stove':20, 'TV':10, 'Speaker':10 };
-	var mid = ["newmorninglargeVacuum", "newmorninglargeWH", "newmorninglargeAC", "newmorninglargeIron", "newmorningkitchenStove", "newmorningkitchenMV", "newmorningsmallTV", "newmorningsmallSpeaker"];
-	var lid = ["newlunchlargeVacuum", "newlunchlargeWH", "newlunchlargeAC", "newlunchlargeIron", "newlunchkitchenStove", "newlunchkitchenMV", "newlunchsmallTV", "newlunchsmallSpeaker"];
-	var eid = ["newEveninglargeVacuum", "newEveninglargeWH", "newEveninglargeAC", "newEveninglargeIron", "newEveningkitchenStove", "newEveningkitchenMV", "newEveningsmallTV", "newEveningsmallSpeaker"];
-	var nid = ["newnightlargeVacuum", "newnightlargeWH", "newnightlargeAC", "newnightlargeIron", "newnightkitchenStove", "newnightkitchenMV", "newnightsmallTV", "newnightsmallSpeaker"];
+	var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
+	var lid = ["newlunchlargeVacuum", "newlunchlargeIron", "newlunchlargeAC", "newlunchlargeWH",  "newlunchkitchenMV", "newlunchkitchenStove","newlunchsmallTV", "newlunchsmallSpeaker"];
+	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
+	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
 	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
 	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -143,8 +143,11 @@
     
     </div>
     <!--This is for the button-->
+    
     <div class="bottom">
-        <input type="button" value="Next" id="trigger">
+        <form method = "get" action = "page14.do">
+        <input type="submit" name = "submit" value="Next">
+        </form>
     </div>
     
     

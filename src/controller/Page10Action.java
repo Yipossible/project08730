@@ -45,7 +45,7 @@ public class Page10Action extends Action{
 			errors.addAll(form.getValidationErrors());
 			session.setAttribute("errors", errors);
 			if (errors.size() > 0) {
-				return "Page18.jsp";
+				return "Page10.jsp";
 			}
 			
 			return "page11.do";

@@ -35,14 +35,8 @@ var eveningList = {};
 var nightList = {};
 
 
-var clicks = 0;
-//var data = google.visualization.arrayToDataTable([
-//        ['Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave','Stove', 'TV', 'Speaker',{ role: 'annotation' } ],
-//        ['Morning', 10, 24, 20, 32, 18, 5,'',''],
-//        ['Lunch', 16, 22, 23, 30, 16, 9,'',''],
-//        ['Evening', 28, 19, 29, 30, 12, 13,'',''],
-//        ['Night', 28, 19, 29, 30, 12, 13, '','']
-//      ])
+
+
 
 function getSummary() {
     var morningSummary = document.getElementById("morningConsumption").getElementsByTagName("input");
@@ -106,10 +100,10 @@ function getSummary() {
 function generateArr() {
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
 	        'Stove':20, 'TV':10, 'Speaker':10 };
-	var mid = ["newmorninglargeVacuum", "newmorninglargeWH", "newmorninglargeAC", "newmorninglargeIron", "newmorningkitchenStove", "newmorningkitchenMV", "newmorningsmallTV", "newmorningsmallSpeaker"];
-	var lid = ["newlunchlargeVacuum", "newlunchlargeWH", "newlunchlargeAC", "newlunchlargeIron", "newlunchkitchenStove", "newlunchkitchenMV", "newlunchsmallTV", "newlunchsmallSpeaker"];
-	var eid = ["newEveninglargeVacuum", "newEveninglargeWH", "newEveninglargeAC", "newEveninglargeIron", "newEveningkitchenStove", "newEveningkitchenMV", "newEveningsmallTV", "newEveningsmallSpeaker"];
-	var nid = ["newnightlargeVacuum", "newnightlargeWH", "newnightlargeAC", "newnightlargeIron", "newnightkitchenStove", "newnightkitchenMV", "newnightsmallTV", "newnightsmallSpeaker"];
+	var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
+	var lid = ["newlunchlargeVacuum", "newlunchlargeIron", "newlunchlargeAC", "newlunchlargeWH",  "newlunchkitchenMV", "newlunchkitchenStove","newlunchsmallTV", "newlunchsmallSpeaker"];
+	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
+	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
 	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
 	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -147,11 +141,187 @@ function generateArr() {
 	return arr;
 }
 
+var clicksnewmorninglargeVacuum = 0;
+var clicksnewmorninglargeIron = 0;
+var clicksnewmorninglargeAC = 0;
+var clicksnewmorninglargeWH = 0;
+var clicksnewmorningkitchenMV = 0;
+var clicksnewmorningkitchenStove = 0;
+var clicksnewmorningsmallTV = 0;
+var clicksnewmorningsmallSpeaker = 0;
+
+var clicksnewlunchlargeVacuum = 0;
+var clicksnewlunchlargeIron = 0;
+var clicksnewlunchlargeAC = 0;
+var clicksnewlunchlargeWH = 0;
+var clicksnewlunchkitchenMV = 0;
+var clicksnewlunchkitchenStove = 0;
+var clicksnewlunchsmallTV = 0;
+var clicksnewlunchsmallSpeaker = 0;
+
+var clicksneweveninglargeVacuum = 0;
+var clicksneweveninglargeIron = 0;
+var clicksneweveninglargeAC = 0;
+var clicksneweveninglargeWH = 0;
+var clicksneweveningkitchenMV = 0;
+var clicksneweveningkitchenStove = 0;
+var clicksneweveningsmallTV = 0;
+var clicksneweveningsmallSpeaker = 0;
+
+var clicksnewnightlargeVacuum = 0;
+var clicksnewnightlargeIron = 0;
+var clicksnewnightlargeAC = 0;
+var clicksnewnightlargeWH = 0;
+var clicksnewnightkitchenMV = 0;
+var clicksnewnightkitchenStove = 0;
+var clicksnewnightsmallTV = 0;
+var clicksnewnightsmallSpeaker = 0;
+
+
+
+
+
+
+
+
+
 
 function clickplus (e) {    
 	console.log(e);
-    clicks++;
-    document.getElementById(e).value = clicks;
+
+    
+    if (e == 'newmorninglargeVacuum') {
+    	clicksnewmorninglargeVacuum++;
+    	document.getElementById(e).value =clicksnewmorninglargeVacuum;
+    }
+        if (e == 'newmorninglargeIron') {
+        	clicksnewmorninglargeIron++;
+        	document.getElementById(e).value =clicksnewmorninglargeIron;
+    }
+        if (e == 'newmorninglargeAC') {
+        	clicksnewmorninglargeAC++;
+        	document.getElementById(e).value =clicksnewmorninglargeAC;
+    }
+        if (e == 'newmorninglargeWH') {
+        	clicksnewmorninglargeWH++;
+        	document.getElementById(e).value =clicksnewmorninglargeWH;
+    }
+        if (e == 'newmorningkitchenMV') {
+        	clicksnewmorningkitchenMV++;
+        	document.getElementById(e).value =clicksnewmorningkitchenMV;
+    }
+        if (e == 'newmorningkitchenStove') {
+        	clicksnewmorningkitchenStove++;
+        	document.getElementById(e).value =clicksnewmorningkitchenStove;
+    }
+        if (e == 'newmorningsmallTV') {
+        	clicksnewmorningsmallTV++;
+        	document.getElementById(e).value =clicksnewmorningsmallTV;
+    }
+        if (e == 'newmorningsmallSpeaker') {
+        	clicksnewmorningsmallSpeaker++;
+        	document.getElementById(e).value =clicksnewmorningsmallSpeaker;
+    }
+    
+        if (e == 'newlunchlargeVacuum') {
+        	clicksnewlunchlargeVacuum++;
+        	document.getElementById(e).value =clicksnewlunchlargeVacuum;
+        }
+            if (e == 'newlunchlargeIron') {
+            	clicksnewlunchlargeIron++;
+            	document.getElementById(e).value =clicksnewlunchlargeIron;
+        }
+            if (e == 'newlunchlargeAC') {
+            	clicksnewlunchlargeAC++;
+            	document.getElementById(e).value =clicksnewlunchlargeAC;
+        }
+            if (e == 'newlunchlargeWH') {
+            	clicksneweveninglargeWH++;      
+            	document.getElementById(e).value =clicksneweveninglargeWH;      
+        }
+            if (e == 'newlunchkitchenMV') {
+            	clicksneweveningkitchenMV++;
+            	document.getElementById(e).value =clicksneweveningkitchenMV;
+        }
+            if (e == 'newlunchkitchenStove') {
+            	clicksnewlunchkitchenStove++;
+            	document.getElementById(e).value =clicksnewlunchkitchenStove;
+        }
+            if (e == 'newlunchsmallTV') {
+            	clicksnewlunchsmallTVr++;
+            	document.getElementById(e).value =clicksnewlunchsmallTV;
+        }
+            if (e == 'newlunchsmallSpeaker') {
+            	clicksnewlunchsmallSpeaker++;
+            	document.getElementById(e).value =clicksnewlunchsmallSpeaker;
+        }
+            if (e == 'neweveninglargeVacuum') {
+            	clicksneweveninglargeVacuum++;
+            	document.getElementById(e).value =clicksneweveninglargeVacuum;
+            }
+                if (e == 'neweveninglargeIron') {
+                	clicksneweveninglargeIron++;
+                	document.getElementById(e).value =clicksneweveninglargeIron;
+            }
+                if (e == 'neweveninglargeAC') {
+                	clicksneweveninglargeAC++;
+                	document.getElementById(e).value =clicksneweveninglargeAC;
+            }
+                if (e == 'neweveninglargeWH') {
+                	clicksneweveninglargeWH++;
+                	document.getElementById(e).value =clicksneweveninglargeWH;
+            }
+                if (e == 'neweveningkitchenMV') {
+              clicksneweveningkitchenMV++;
+              document.getElementById(e).value =clicksneweveningkitchenMV;
+            }
+                if (e == 'neweveningkitchenStove') {
+                	clicksneweveningkitchenStove++;
+                	document.getElementById(e).value =clicksneweveningkitchenStove;
+            }
+                if (e == 'neweveningsmallTV') {
+               clicksneweveningsmallTV++;
+               document.getElementById(e).value =clicksneweveningsmallTV;
+            }
+                if (e == 'neweveningsmallSpeaker') {
+               clicksneweveningsmallSpeaker++;
+               document.getElementById(e).value =clicksneweveningsmallSpeaker;
+            }
+                if (e == 'newnightlargeVacuum') {
+                   clicksnewnightlargeVacuum++;
+                   document.getElementById(e).value =clicksnewnightlargeVacuum;
+                }
+                    if (e == 'newnightlargeIron') {
+                 clicksnewnightlargeIron++;
+                 document.getElementById(e).value =clicksnewnightlargeIron;
+                }
+                    if (e == 'newnightlargeAC') {
+                   clicksnewnightlargeAC++;
+                   document.getElementById(e).value =clicksnewnightlargeAC;
+                }
+                    if (e == 'newnightkitchenMV') {
+                   clicksnewnightkitchenMV++;
+                   document.getElementById(e).value =clicksnewnightkitchenMV;
+                }
+                    if (e == 'newnightlargeWH') {
+                    	clicksnewnightlargeWH++;
+                    	document.getElementById(e).value =clicksnewnightlargeWH;
+                }
+                    if (e == 'newnightkitchenStove') {
+                   clicksnewnightkitchenStove++;
+                   document.getElementById(e).value =clicksnewnightkitchenStove;
+                }
+                    if (e == 'newnightsmallTV') {
+                 clicksnewnightsmallTV++;
+                 document.getElementById(e).value =clicksnewnightsmallTV;
+                }
+                    if (e == 'newnightsmallSpeaker') {
+                    	clicksnewnightsmallSpeaker++;
+                    	document.getElementById(e).value =clicksnewnightsmallSpeaker;
+                }
+    
+    
+    
     arr = generateArr();
     google.charts.setOnLoadCallback(drawChart(arr));
 
@@ -159,14 +329,147 @@ function clickplus (e) {
 
 function clickminus(e) {
 	console.log(e);
-    clicks--; 
-    document.getElementById(e).value = clicks;
-    arr = generateArr();
-    google.charts.setOnLoadCallback(drawChart(arr));
-    if (clicks < 0) {
-        clicks = 0;
-        remove(e);
+
+    if (e == 'newmorninglargeVacuum') {
+    	clicksnewmorninglargeVacuum--;
+    	document.getElementById(e).value =clicksnewmorninglargeVacuum;
     }
+        if (e == 'newmorninglargeIron') {
+        	clicksnewmorninglargeIron--;
+        	document.getElementById(e).value =clicksnewmorninglargeIron;
+    }
+        if (e == 'newmorninglargeAC') {
+        	clicksnewmorninglargeAC--;
+        	document.getElementById(e).value =clicksnewmorninglargeAC;
+    }
+        if (e == 'newmorninglargeWH') {
+        	clicksnewmorninglargeWH--;
+        	document.getElementById(e).value =clicksnewmorninglargeWH;
+    }
+        if (e == 'newmorningkitchenMV') {
+        	clicksnewmorningkitchenMV--;
+        	document.getElementById(e).value =clicksnewmorningkitchenMV;
+    }
+        if (e == 'newmorningkitchenStove') {
+        	clicksnewmorningkitchenStove--;
+        	document.getElementById(e).value =clicksnewmorningkitchenStove;
+    }
+        if (e == 'newmorningsmallTV') {
+        	clicksnewmorningsmallTV--;
+        	document.getElementById(e).value =clicksnewmorningsmallTV;
+    }
+        if (e == 'newmorningsmallSpeaker') {
+        	clicksnewmorningsmallSpeaker--;
+        	document.getElementById(e).value =clicksnewmorningsmallSpeaker;
+    }
+    
+        if (e == 'newlunchlargeVacuum') {
+        	clicksnewlunchlargeVacuum--;
+        	document.getElementById(e).value =clicksnewlunchlargeVacuum;
+        }
+            if (e == 'newlunchlargeIron') {
+            	clicksnewlunchlargeIron--;
+            	document.getElementById(e).value =clicksnewlunchlargeIron;
+        }
+            if (e == 'newlunchlargeAC') {
+            	clicksnewlunchlargeAC--;
+            	document.getElementById(e).value =clicksnewlunchlargeAC;
+        }
+            if (e == 'newlunchlargeWH') {
+            	clicksneweveninglargeWH--;      
+            	document.getElementById(e).value =clicksneweveninglargeWH;      
+        }
+            if (e == 'newlunchkitchenMV') {
+            	clicksneweveningkitchenMV--;
+            	document.getElementById(e).value =clicksneweveningkitchenMV;
+        }
+            if (e == 'newlunchkitchenStove') {
+            	clicksnewlunchkitchenStove--;
+            	document.getElementById(e).value =clicksnewlunchkitchenStove;
+        }
+            if (e == 'newlunchsmallTV') {
+            	clicksnewlunchsmallTVr--;
+            	document.getElementById(e).value =clicksnewlunchsmallTVr;
+        }
+            if (e == 'newlunchsmallSpeaker') {
+            	clicksnewlunchsmallSpeaker--;
+            	document.getElementById(e).value =clicksnewlunchsmallSpeaker;
+        }
+            if (e == 'neweveninglargeVacuum') {
+            	clicksneweveninglargeVacuum--;
+            	document.getElementById(e).value =clicksneweveninglargeVacuum;
+            }
+                if (e == 'neweveninglargeIron') {
+                	clicksneweveninglargeIron--;
+                	document.getElementById(e).value =clicksneweveninglargeIron;
+            }
+                if (e == 'neweveninglargeAC') {
+                	clicksneweveninglargeAC--;
+                	document.getElementById(e).value =clicksneweveninglargeAC;
+            }
+                if (e == 'neweveninglargeWH') {
+                	clicksneweveninglargeWH--;
+                	document.getElementById(e).value =clicksneweveninglargeWH;
+            }
+                if (e == 'neweveningkitchenMV') {
+              clicksneweveningkitchenMV--;
+              document.getElementById(e).value =clicksneweveningkitchenMV;
+            }
+                if (e == 'neweveningkitchenStove') {
+                	clicksneweveningkitchenStove--;
+                	document.getElementById(e).value =clicksneweveningkitchenStove;
+            }
+                if (e == 'neweveningsmallTV') {
+               clicksneweveningsmallTV--;
+               document.getElementById(e).value =clicksneweveningsmallTV;
+            }
+                if (e == 'neweveningsmallSpeaker') {
+               clicksneweveningsmallSpeaker--;
+               document.getElementById(e).value =clicksneweveningsmallSpeaker;
+            }
+                if (e == 'newnightlargeVacuum') {
+                   clicksnewnightlargeVacuum--;
+                   document.getElementById(e).value =clicksnewnightlargeVacuum;
+                }
+                    if (e == 'newnightlargeIron') {
+                 clicksnewnightlargeIron--;
+                 document.getElementById(e).value =clicksnewnightlargeIron;
+                }
+                    if (e == 'newnightlargeAC') {
+                   clicksnewnightlargeAC--;
+                   document.getElementById(e).value =clicksnewnightlargeAC;
+                }
+                    if (e == 'newnightkitchenMV') {
+                   clicksnewnightkitchenMV--;
+                   document.getElementById(e).value =clicksnewnightkitchenMV;
+                }
+                    if (e == 'newnightlargeWH') {
+                    	clicksnewnightlargeWH--;
+                    	document.getElementById(e).value =clicksnewnightlargeWH;
+                }
+                    if (e == 'newnightkitchenStove') {
+                   clicksnewnightkitchenStove--;
+                   document.getElementById(e).value =clicksnewnightkitchenStove;
+                }
+                    if (e == 'newnightsmallTV') {
+                 clicksnewnightsmallTV--;
+                 document.getElementById(e).value =clicksnewnightsmallTV;
+                }
+                    if (e == 'newnightsmallSpeaker') {
+                    	clicksnewnightsmallSpeaker--;
+                    	document.getElementById(e).value =clicksnewnightsmallSpeaker;
+                }
+   
+                    
+    if (document.getElementById(e).value < 0 || document.getElementById(e).value == 0) {
+    	document.getElementById(e).value = 0;
+    	remove(e);
+        console.log("item removed");
+     }
+                    
+     arr = generateArr();
+    google.charts.setOnLoadCallback(drawChart(arr));
+
 
 }
 
@@ -194,6 +497,13 @@ function remove(e) {
         document.getElementById('morningConsumption').removeChild(document.getElementById(e));
         document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
         delete morningList[e];
+    }
+        if (e == 'newmorninglargeWH') {
+            document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
+            document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
+            document.getElementById('morningConsumption').removeChild(document.getElementById(e));
+            document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+            delete morningList[e];
     }
         if (e == 'newmorningkitchenMV') {
         document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
@@ -245,6 +555,13 @@ function remove(e) {
             document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
             delete lunchList[e];
         }
+            if (e == 'newlunchlargeWH') {
+                document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
+                document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
+                document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
+                document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+                delete morningList[e];
+        }
             if (e == 'newlunchkitchenMV') {
             document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
             document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
@@ -293,6 +610,13 @@ function remove(e) {
                 document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
                 document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
                 delete eveningList[e];
+            }
+                if (e == 'neweveninglargeWH') {
+                    document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
+                    document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
+                    document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
+                    document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                    delete morningList[e];
             }
                 if (e == 'neweveningkitchenMV') {
                 document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
@@ -349,6 +673,13 @@ function remove(e) {
                     document.getElementById('nightConsumption').removeChild(document.getElementById(e));
                     document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
                     delete nightList[e];
+                }
+                    if (e == 'newnightlargeWH') {
+                        document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
+                        document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
+                        document.getElementById('nightConsumption').removeChild(document.getElementById(e));
+                        document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
+                        delete morningList[e];
                 }
                     if (e == 'newnightkitchenStove') {
                     document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
@@ -429,8 +760,8 @@ function addtoPanel(e) {
         var table = document.getElementById("lunchConsumption");
         var imageid = "lunch" + newImage.id;
         var inputid = "newlunch" + newImage.id;
-        var button1id = "morning" + newImage.id + "plus";
-        var button2id = "morning" + newImage.id + "minus";
+        var button1id = "lunch" + newImage.id + "plus";
+        var button2id = "lunch" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -451,10 +782,10 @@ function addtoPanel(e) {
     
         if (reference == "EveningTime") {
         var table = document.getElementById("eveningConsumption");
-        var imageid = "Evening" + newImage.id;
-        var inputid = "newEvening" + newImage.id;
-        var button1id = "morning" + newImage.id + "plus";
-        var button2id = "morning" + newImage.id + "minus";
+        var imageid = "evening" + newImage.id;
+        var inputid = "newevening" + newImage.id;
+        var button1id = "evening" + newImage.id + "plus";
+        var button2id = "evening" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -476,8 +807,8 @@ function addtoPanel(e) {
         var table = document.getElementById("nightConsumption");
         var imageid = "night" + newImage.id;
         var inputid = "newnight" + newImage.id;
-        var button1id = "morning" + newImage.id + "plus";
-        var button2id = "morning" + newImage.id + "minus";
+        var button1id = "night" + newImage.id + "plus";
+        var button2id = "night" + newImage.id + "minus";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);

@@ -71,7 +71,7 @@ public class Page11Action extends Action{
             	return "Page11.jsp";
             }
 					
-			return "page14.do";
+			return "CardDemo.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page11.jsp";
