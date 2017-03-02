@@ -8,7 +8,7 @@
     <script type="text/javascript" src="myJs/changeTime.js"></script>
     <script type="text/javascript" src="myJs/AddAppliance.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="myJs/startPage.js"></script>
+	
     
 	<script type="text/javascript">
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
@@ -115,14 +115,14 @@
         </div>
     
             <!--This is for the visualized graph-->
-             <div id="tutorial" style="width: 800px; height: 300px;">
+       <div class = "level2" id="tutorial" style="width: 800px; height: 300px;">
             <img src="images/tutorial.png" id = 'tutorialimage' onclick="startTutorial()">
-        	</div>
+        </div>
             
         <!--  <div id="chart_div" style="width: 800px; height: 300px;"></div> -->
     
             <!--This is for the four periods boxes-->
-        <div class="level2">
+        <div class="level2" id ="tablelevel">
             <div class="level3" >
                 <button id = "morningTime" onclick="changeTime(this)">Morning</button>
                 <div id="morningConsumption" style="background-color: rgb(204, 204, 204);"></div>
