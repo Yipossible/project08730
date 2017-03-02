@@ -60,19 +60,7 @@ public class Page16Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(16);
 			r.setRespondent_id(respondentBean.getRespondent_id());
-			r.setResponse( "{"
-					+ form.getPage_16_1() + "'"
-					+ form.getPage_16_2() + "'"
-					+ form.getPage_16_3() + "'"
-					+ form.getPage_16_4() + "'"
-					+ form.getPage_16_5() + "'"
-					+ form.getPage_16_6() + "'"
-					+ form.getPage_16_7() + "'"
-					+ form.getPage_16_8() + "'"
-					+ form.getPage_16_9() + "'"
-					+ form.getPage_16_10() + "'"
-					+ form.getPage_16_11() + "'"
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
             } else {
             	return "Page16.jsp";

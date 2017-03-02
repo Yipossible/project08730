@@ -60,19 +60,7 @@ public class Page19Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(19);
 			r.setRespondent_id(respondentBean.getRespondent_id());
-			r.setResponse( "{"
-					+ form.getPage_19_1() + "'"
-					+ form.getPage_19_2() + "'"
-					+ form.getPage_19_3() + "'"
-					+ form.getPage_19_4() + "'"
-					+ form.getPage_19_5() + "'"
-					+ form.getPage_19_6() + "'"
-					+ form.getPage_19_7() + "'"
-					+ form.getPage_19_8() + "'"
-					+ form.getPage_19_9() + "'"
-					+ form.getPage_19_10() + "'"
-					+ form.getPage_19_11() + "'"
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
 	            } else {
 	            	return "Page19.jsp";

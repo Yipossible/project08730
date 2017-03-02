@@ -38,8 +38,6 @@ public class Page09Action extends Action {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
 		session.setAttribute("nextPage", "page10.do");
-      
-      
         
 		try {
 			Page09Form form = formBeanFactory.create(request);
@@ -64,19 +62,7 @@ public class Page09Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(9);
 			r.setRespondent_id(r.getRespondent_id());
-			r.setResponse( "{"
-					+ form.getPage_09_1() + "'"
-					+ form.getPage_09_2() + "'"
-					+ form.getPage_09_3() + "'"
-					+ form.getPage_09_4() + "'"
-					+ form.getPage_09_5() + "'"
-					+ form.getPage_09_6() + "'"
-					+ form.getPage_09_7() + "'"
-					+ form.getPage_09_8() + "'"
-					+ form.getPage_09_9() + "'"
-					+ form.getPage_09_10() + "'"
-					+ form.getPage_09_11() + "'"
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
 			
 	            }else {

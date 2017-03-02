@@ -60,19 +60,7 @@ public class Page20Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(20);
 			r.setRespondent_id(respondentBean.getRespondent_id());
-			r.setResponse( "{"
-					+ form.getPage_20_1() + "'"
-					+ form.getPage_20_2() + "'"
-					+ form.getPage_20_3() + "'"
-					+ form.getPage_20_4() + "'"
-					+ form.getPage_20_5() + "'"
-					+ form.getPage_20_6() + "'"
-					+ form.getPage_20_7() + "'"
-					+ form.getPage_20_8() + "'"
-					+ form.getPage_20_9() + "'"
-					+ form.getPage_20_10() + "'"
-					+ form.getPage_20_11() + "'"
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
 	            }
 			else {

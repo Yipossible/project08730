@@ -62,19 +62,7 @@ public class Page17Action extends Action {
 			ResponseBean r = new ResponseBean();
 			r.setQuestion_id(17);
 			r.setRespondent_id(respondentBean.getRespondent_id());
-			r.setResponse( "{"
-					+ form.getPage_17_1() + "'"
-					+ form.getPage_17_2() + "'"
-					+ form.getPage_17_3() + "'"
-					+ form.getPage_17_4() + "'"
-					+ form.getPage_17_5() + "'"
-					+ form.getPage_17_6() + "'"
-					+ form.getPage_17_7() + "'"
-					+ form.getPage_17_8() + "'"
-					+ form.getPage_17_9() + "'"
-					+ form.getPage_17_10() + "'"
-					+ form.getPage_17_11() + "'"
-					+ "}");
+			r.setResponse(form.getPrice());
 			responseDAO.create(r);
 			System.out.println("answer saved");
             } else {
