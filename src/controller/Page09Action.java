@@ -38,7 +38,6 @@ public class Page09Action extends Action {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
 		session.setAttribute("nextPage", "page10.do");
-        
 		try {
 			Page09Form form = formBeanFactory.create(request);
 			
@@ -46,36 +45,31 @@ public class Page09Action extends Action {
 				return "Page09.jsp";
 			}
 			
-
 			errors.addAll(form.getValidationErrors());
-			System.out.println(errors);
-			session.setAttribute("errors", errors);
-			if (errors.size() > 0) {
-				return "Page09.jsp";
-			}
-			
-			 String unique_id = (String) session.getAttribute("unique_id"); // store in session
-	            RespondentBean respondentBean = respondentDAO.read(unique_id);
-	            
-	            if (respondentBean != null) {
-			
-			ResponseBean r = new ResponseBean();
-			r.setQuestion_id(9);
-			r.setRespondent_id(r.getRespondent_id());
-			r.setResponse(form.getPrice());
-			responseDAO.create(r);
-			
-	            }else {
-	            	return "Page09.jsp";
-	            }
-	            
-			
+            System.out.println(errors);
+            session.setAttribute("errors", errors);
+            if (errors.size() > 0) {
+                return "Page09.jsp";
+            }
+            
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            System.out.println(p);
+            
+            ResponseBean r = new ResponseBean();
+            r.setQuestion_id(9);
+            r.setRespondent_id(p.getRespondent_id());
+            r.setResponse(form.getPrice());
+            responseDAO.create(r);
+
 			return "page10.do";
 		} catch (RollbackException e) {
+		    System.out.println("in transaction");
 			errors.add(e.getMessage());
 			return "Page09.jsp";
 		} catch (FormBeanException e) {
-			errors.add(e.getMessage());
+		    System.out.println("in form bean");
+		    errors.add(e.getMessage());
 			return "Page09.jsp";
 		}
 		

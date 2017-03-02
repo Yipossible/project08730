@@ -1,5 +1,6 @@
 <jsp:include page="top4.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<h1>2) 	More information about your home and community during blackout.</h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
@@ -8,7 +9,7 @@
 
 <p>
 <b>
-2) 	More information about your home and community during blackout.
+
 </b>
 </p>
 

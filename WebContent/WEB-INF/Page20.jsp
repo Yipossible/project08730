@@ -1,6 +1,6 @@
 <jsp:include page="top6.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		    <h1>Part A. Information about your household</h1>
+		    <h1></h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">

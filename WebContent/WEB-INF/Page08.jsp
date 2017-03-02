@@ -26,7 +26,7 @@ normally used. Assume your cell phone has enough power to call to get that
 </p>
 
 <form method="get" action="page09.do">
-	<input type="submit" value="Next"/>
+	<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 </form>
 
 

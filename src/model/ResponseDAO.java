@@ -20,6 +20,7 @@ public class ResponseDAO extends GenericDAO<ResponseBean>{
 			Transaction.begin();
 			ResponseBean response[] = match(MatchArg.and(MatchArg.equals("respondent_id", r.getRespondent_id()),
 					MatchArg.equals("question_id", r.getQuestion_id())));
+			System.out.println(response.length + "in transaction" + r.getQuestion_id() + r.getRespondent_id());
 			if(response.length > 0) {
 				throw new RollbackException("User has already answered this question.");
 			}

@@ -51,6 +51,7 @@ public class Page07Action extends Action {
 			if (errors.size() > 0) {
 				return "Page07.jsp";
 			}
+			
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean p = respondentDAO.read(unique_id);
             System.out.println(p);
