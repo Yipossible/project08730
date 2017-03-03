@@ -20,6 +20,8 @@ public class Page03Form extends FormBean {
     private String under30;
     private String from30to65;
     private String over65;
+    private String coordinates;
+    private String address;
     
     /**
      * @return the zipcode
@@ -133,7 +135,25 @@ public class Page03Form extends FormBean {
         this.over65 = trimAndConvert(over65, "<>&\"");
     }
 
-    public List<String> getValidationErrors() {
+    
+    
+    public String getCoordinates() {
+		return coordinates;
+	}
+
+	public void setCoordinates(String coordinates) {
+		this.coordinates = coordinates;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public List<String> getValidationErrors() {
         List<String> errors = new ArrayList<String>();
         if (zipcode == null || zipcode.length() == 0) {
             errors.add("zipcode is required");

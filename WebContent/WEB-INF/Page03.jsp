@@ -37,24 +37,43 @@
 			</table>
 			<br>
 			</div>
+			
 			<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
+		<input type = "text" name = "coordinates" id="demo"/>
+		<input type ="text" name="address" id="address"/>
 		</form> 
 		<button onclick="getLocation()">Try It</button>
-		<p id="demo"></p>
-		<script>
-var x = document.getElementById("demo");
+		
+ 
+    <script>
+    var x = document.getElementById("demo");
+    var y = document.getElementById("address");
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
     }
-}
+    
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+        
+        var coordinates = {lat: parseFloat(position.coords.latitude), lng: parseFloat(position.coords.longitude)};
+        var geocoder = new google.maps.Geocoder;
+    	
+ 	   geocoder.geocode({'location': coordinates}, function(results, status) {
+ 	          if (status === 'OK') {
+ 	              y.innerHTML = results[1].formatted_address;
+ 	            } 
+ 	        });
+    }
 
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi8Ud-RPCQYpTX-TO-fgGzoxfv5qcgtuQ&callback=getLocation">
+    </script>
+
 </body></html>
