@@ -13,24 +13,29 @@ Please use the calculator below to estimate the value of the food you have, and 
 	<!--  <p style="font-size:medium; color:red">
   ${errors}
 	</p> -->
+<style type="text/css">
+    .extra {
+        border: 0px; 
+    }
+</style>
 
 <form method="POST" id="15form" action="page15.do">
-<table align="center" style="margin: 0px auto;">
+<table align="center" border = "1" style="margin: 5px auto;">
 	<tr>
-		<td style="overflow:hidden; width:400px;"></td>
-		<td width = "80px">Your best guess of the value of food that is in your refrigerator:</td>
-		<td width = "80px">Your best guess of the value of food that will go bad and need to be replaced:</td>
-		<td></td>
+		<td width = "600px"></td>
+		<td width = "150px">Your best guess of the value of food that is in your refrigerator:</td>
+		<td width = "150px">Your best guess of the value of food that will go bad and need to be replaced:</td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">1. Meat, Poultry, Seafood</td>
+		<td width = "600px">1. Meat, Poultry, Seafood</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Raw or leftover cooked meat, Thawing meat or poultry, Salads: meat, tuna, shrimp, Chicken, or egg salad, 
+		<td width = "600px">Raw or leftover cooked meat, Thawing meat or poultry, Salads: meat, tuna, shrimp, Chicken, or egg salad, 
 Gravy, stuffing, broth, Lunchmeats, hot dogs, bacon, sausage, dried beef, Pizza – with any topping,
 Canned hams labeled ‘keep refrigerated’, Opened canned meats and fish,
 Casseroles, soups, stews</td>
@@ -40,7 +45,7 @@ Casseroles, soups, stews</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_1_guessbad" id = "page15_1_guessbad" value="">
 		</td>
-		<td id="page_15_1"></td>
+		<td class="extra" id="page_15_1"></td>
 		
 		<script>
 		
@@ -63,10 +68,10 @@ Casseroles, soups, stews</td>
 		<td>2. Dairy</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Milk, cream, sour cream, Buttermilk, evaporated milk, 
+		<td width = "600px">Milk, cream, sour cream, Buttermilk, evaporated milk, 
 Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_2_guessall" id = "page15_2_guessall" value="">
@@ -74,7 +79,7 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
 			 <input class = "target" type="text"  size = "15"name="page_15_2_guessbad" id = "page15_2_guessbad" value="">
 		</td>
-		<td id="page_15_2"></td>
+		<td class="extra" id="page_15_2"></td>
 		
 				<script>
 		
@@ -97,17 +102,17 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>3. Eggs</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Fresh eggs, hard-cooked in shell Custards and puddings, quiche</td>
+		<td width = "600px">Fresh eggs, hard-cooked in shell Custards and puddings, quiche</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_3_guessall" id = "page15_3_guessall" value="">
 		</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_3_guessbad" id = "page15_3_guessbad" value="">
 		</td>
-		<td id="page_15_3"></td>
+		<td class="extra" id="page_15_3"></td>
 				<script>
 		
 		$('.target').on('input',function(e){
@@ -129,7 +134,7 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>4. Fruits</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
 		<td>Opened canned fruits and juices</td>
@@ -139,7 +144,7 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_4_guessbad" id = "page15_4_guessbad" value="">
 		</td>
-		<td id="page_15_4"></td>
+		<td class="extra" id="page_15_4"></td>
 		
 				<script>
 		
@@ -162,10 +167,10 @@ Yogurt, eggnog, soy milk,Open baby formula</td>
 		<td>5.Sauces</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Opened mayonnaise, Tartar sauce, Horseradish,Fish sauces, oyster sauce
+		<td width = "600px">Opened mayonnaise, Tartar sauce, Horseradish,Fish sauces, oyster sauce
 Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_5_guessall" id = "page15_5_guessall" value="">
@@ -173,7 +178,7 @@ Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>$
 			 <input class = "target" type="text"  size = "15" name="page_15_5_guessbad" id = "page15_5_guessbad" value="">
 		</td>
-		<td id="page_15_5"></td>
+		<td class="extra" id="page_15_5"></td>
 		
 				<script>
 		
@@ -196,10 +201,10 @@ Opened creamy-based dressings Spaghetti sauce, opened jar</td>
 		<td>6. Bread, Cakes, Cookies, Pasta, etc.</td>
 		<td></td>
 		<td></td>
-		<td></td>
+		<td class="extra"></td>
 	</tr>
 	<tr>
-		<td style="overflow:hidden; width:400px;">Refrigerator biscuits, rolls, cookie dough, Cooked pasta, rice, potatoes,
+		<td width = "600px">Refrigerator biscuits, rolls, cookie dough, Cooked pasta, rice, potatoes,
 Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_6_guessall" id = "page15_6_guessall" value="">
@@ -207,7 +212,7 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_6_guessbad" id = "page15_6_guessbad" value="">
 		</td>
-		<td id="page_15_6"></td>
+		<td class="extra" id="page_15_6"></td>
 		
 				<script>
 		
@@ -234,7 +239,7 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_7_guessbad" id = "page15_7_guessbad" value="">
 		</td>
-		<td id="page_15_7"></td>
+		<td class="extra" id="page_15_7"></td>
 		
 				<script>
 		
@@ -261,7 +266,7 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_8_guessbad" id = "page15_8_guessbad" value="">
 		</td>
-		<td id="page_15_8"></td>
+		<td class="extra" id="page_15_8"></td>
 		
 				<script>
 		
@@ -288,7 +293,7 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		<td>$
 			 <input class = "target" type="text" size = "15" name="page_15_9_guessbad" id = "page15_9_guessbad" value="">
 		</td>
-		<td id="page_15_9"></td>
+		<td class="extra" id="page_15_9"></td>
 				<script>
 		
 		$('.target').on('input',function(e){
@@ -306,15 +311,8 @@ Pasta salads with mayonnaise or vinaigrette,Fresh pasta, Cheesecake</td>
 		</script>
 	</tr>
 	
-		<tr>
-		<td></td>
-		<td>$
-			 <input type="text" size = "25" value="">
-		</td>
-		<td>$
-			 <input type="text" size = "25" value="">
-		</td>
-	</tr>
+		
+	
 	
 
 

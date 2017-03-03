@@ -98,11 +98,11 @@ public class Page15Action extends Action{
 			System.out.println("id: " + r.getRespondent_id());
 			r.setQuestion_id(15);
 			r.setRespondent_id(respondentBean.getRespondent_id());//get session id);
-			r.setResponse("{" 
+			r.setResponse("{Total $: " 
 					+ sumTotal
-					+ ","
+					+ ", Perished Total: $"
 					+ sumBad
-					+ ","
+					+ ", Additional Comments: "
 					+ form.getText()
 					+"}");
 			System.out.println("{" 
@@ -113,7 +113,7 @@ public class Page15Action extends Action{
 					+ form.getText()
 					+"}");
 			
-			System.out.println(r == null);
+			System.out.println(r.getResponse());
 			
 			responseDAO.create(r);
 			

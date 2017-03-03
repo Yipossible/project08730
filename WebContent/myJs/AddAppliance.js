@@ -20,7 +20,13 @@ function drawChart(arr) {
 	  height: 300,
 	  legend: { position: 'top', maxLines: 3 },
 	  bar: { groupWidth: '50%' },
-	  vAxis: { gridlines: { count: 4 } },
+	  vAxis: { gridlines: { count: 9 }, 
+		  viewWindow:{
+              max:200,
+              min:0
+            }
+	  },
+
 	  isStacked: true,
 	};
 	
@@ -475,232 +481,135 @@ function clickminus(e) {
 
 function remove(e) {
 	console.log(e);
-    var button1 = e.substring(3) + 'plus';
-    var button2 = e.substring(3) + 'minus';
+    var section = e.substring(3) + 'table';
     if (e == 'newmorninglargeVacuum') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
         if (e == 'newmorninglargeIron') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
-        delete morningList[e];
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
+        	delete morningList[e];
     }
         if (e == 'newmorninglargeAC') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
         if (e == 'newmorninglargeWH') {
-            document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-            document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
             delete morningList[e];
     }
         if (e == 'newmorningkitchenMV') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
         if (e == 'newmorningkitchenStove') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
         if (e == 'newmorningsmallTV') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
         if (e == 'newmorningsmallSpeaker') {
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e.substring(3)));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button1));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(e));
-        document.getElementById('morningConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('morningConsumption').removeChild(document.getElementById(section));
         delete morningList[e];
     }
     
         if (e == 'newlunchlargeVacuum') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+        	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'newlunchlargeIron') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'newlunchlargeAC') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
-            delete lunchList[e];
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
+                delete lunchList[e];
         }
             if (e == 'newlunchlargeWH') {
-                document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-                document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
                 delete morningList[e];
         }
             if (e == 'newlunchkitchenMV') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'newlunchkitchenStove') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'newlunchsmallTV') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'newlunchsmallSpeaker') {
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e.substring(3)));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button1));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(e));
-            document.getElementById('lunchConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('lunchConsumption').removeChild(document.getElementById(section));
             delete lunchList[e];
         }
             if (e == 'neweveninglargeVacuum') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+            	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveninglargeIron') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveninglargeAC') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveninglargeWH') {
-                    document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                     delete morningList[e];
             }
                 if (e == 'neweveningkitchenMV') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveningkitchenStove') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveningsmallTV') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'neweveningsmallSpeaker') {
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e.substring(3)));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button1));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(e));
-                document.getElementById('eveningConsumption').removeChild(document.getElementById(button2));
+                	document.getElementById('eveningConsumption').removeChild(document.getElementById(section));
                 delete eveningList[e];
             }
                 if (e == 'newnightlargeVacuum') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                	 delete nightList[e];
                 }
                     if (e == 'newnightlargeIron') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
                     delete nightList[e];
                 }
                     if (e == 'newnightlargeAC') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete nightList[e];
                 }
                     if (e == 'newnightkitchenMV') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete nightList[e];
                 }
                     if (e == 'newnightlargeWH') {
-                        document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                        document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                        document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                        document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                        delete morningList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete morningList[e];
                 }
                     if (e == 'newnightkitchenStove') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete nightList[e];
                 }
                     if (e == 'newnightsmallTV') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete nightList[e];
                 }
                     if (e == 'newnightsmallSpeaker') {
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e.substring(3)));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button1));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(e));
-                    document.getElementById('nightConsumption').removeChild(document.getElementById(button2));
-                    delete nightList[e];
+                    	document.getElementById('nightConsumption').removeChild(document.getElementById(section));
+                    	delete nightList[e];
                 }
 }
 
@@ -711,27 +620,30 @@ function addtoPanel(e) {
     
     var newImage = document.getElementById(e.id).cloneNode(true);
     
-    var button1 = document.createElement('button');
+    var button1 = document.createElement('img');
         button1.setAttribute('type', 'button');
         button1.setAttribute('class', 'trigger');
-        button1.setAttribute('data-type',"plus");
-        button1.innerHTML = '+';
+        button1.setAttribute('height',"20");
+        button1.setAttribute('width',"20");
+        button1.setAttribute('src',"images/upbutton.png");
+        
     
     
-    var input = document.createElement('input');
-        input.setAttribute('type', 'number');
+    var input = document.createElement('p');
         input.setAttribute('class', 'input');
-        input.setAttribute('value', '1');
-        input.setAttribute('size', '3');
+        input.setAttribute('hidden', 'true');
+
         
         
-    var button2 = document.createElement('button');
+    var button2 = document.createElement('img');
         button2.setAttribute('type', 'button');
         button2.setAttribute('class', 'trigger');
-        button2.setAttribute('data-type',"minus");
-        button2.setAttribute('min','1');
-        button2.innerHTML = '-';
+        button2.setAttribute('height',"20");
+        button2.setAttribute('width',"20");
+        button2.setAttribute('src',"images/downbutton.png");
     
+    var container = document.createElement('div');
+    	container.setAttribute('style','float: left;');
     
     if (reference == "MorningTime") {
         var table = document.getElementById("morningConsumption");
@@ -739,6 +651,7 @@ function addtoPanel(e) {
         var inputid = "newmorning" + newImage.id;
         var button1id = "morning" + newImage.id + "plus";
         var button2id = "morning" + newImage.id + "minus";
+        var containerid = "morning" + newImage.id + "table";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -746,12 +659,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        container.setAttribute('id', containerid);
         
         if (!morningList.hasOwnProperty(inputid)){
-        table.appendChild(newImage);
-        table.appendChild(button1);
-        table.appendChild(input);
-        table.appendChild(button2);
+        	table.appendChild(container);
+        	container.appendChild(button1);
+        	container.appendChild(newImage);
+        	container.appendChild(button2);
+        	container.appendChild(input);
         morningList[inputid] = 1;
         }
     }
@@ -762,6 +677,7 @@ function addtoPanel(e) {
         var inputid = "newlunch" + newImage.id;
         var button1id = "lunch" + newImage.id + "plus";
         var button2id = "lunch" + newImage.id + "minus";
+        var containerid = "lunch" + newImage.id + "table";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -769,12 +685,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        container.setAttribute('id', containerid);
         
         if (!lunchList.hasOwnProperty(inputid)){
-        table.appendChild(newImage);
-        table.appendChild(button1);
-        table.appendChild(input);
-        table.appendChild(button2);
+        	table.appendChild(container);
+        	container.appendChild(button1);
+        	container.appendChild(newImage);
+        	container.appendChild(button2);
+        	container.appendChild(input);
         lunchList[inputid] = 1;
         }
         
@@ -786,6 +704,7 @@ function addtoPanel(e) {
         var inputid = "newevening" + newImage.id;
         var button1id = "evening" + newImage.id + "plus";
         var button2id = "evening" + newImage.id + "minus";
+        var containerid = "evening" + newImage.id + "table";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -793,12 +712,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        container.setAttribute('id', containerid);
         
         if (!eveningList.hasOwnProperty(inputid)){
-        table.appendChild(newImage);
-        table.appendChild(button1);
-        table.appendChild(input);
-        table.appendChild(button2);
+        	table.appendChild(container);
+        	container.appendChild(button1);
+        	container.appendChild(newImage);
+        	container.appendChild(button2);
+        	container.appendChild(input);
         eveningList[inputid] = 1;
         }
     }
@@ -809,6 +730,7 @@ function addtoPanel(e) {
         var inputid = "newnight" + newImage.id;
         var button1id = "night" + newImage.id + "plus";
         var button2id = "night" + newImage.id + "minus";
+        var containerid = "night" + newImage.id + "table";
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -816,12 +738,14 @@ function addtoPanel(e) {
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
         button2.setAttribute('onclick','clickminus("' + inputid + '")');
+        container.setAttribute('id', containerid);
         
         if (!nightList.hasOwnProperty(inputid)){
-        table.appendChild(newImage);
-        table.appendChild(button1);
-        table.appendChild(input);
-        table.appendChild(button2);
+        	table.appendChild(container);
+        	container.appendChild(button1);
+        	container.appendChild(newImage);
+        	container.appendChild(button2);
+        	container.appendChild(input);
         nightList[inputid] = 1;
         }
     }

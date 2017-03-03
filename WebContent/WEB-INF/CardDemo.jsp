@@ -8,7 +8,7 @@
     <script type="text/javascript" src="myJs/changeTime.js"></script>
     <script type="text/javascript" src="myJs/AddAppliance.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	
+
     
 	<script type="text/javascript">
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
@@ -150,7 +150,9 @@
         </form>
     </div>
     
-    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap_js/bootstrap.min.js"></script>  
     
     
 </body>

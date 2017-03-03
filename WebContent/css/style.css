@@ -8,12 +8,17 @@
 .level3{
     float: left;
     width: 170px;
-    height: 250px;
+
+}
+
+.level2{
+	height: auto;
+	display:inline;
+	
 }
 
 #morningConsumption,#lunchConsumption,#eveningConsumption,#nightConsumption{
-    width: 140px;
-    height: 200px;
+
     margin: 5px;
     padding: 5px;
     border: 1px solid black;
@@ -26,11 +31,12 @@
 .input {
     border: 1px solid black;
     text-align: center;
+    width: 50px;
 }
 
 .plus-button {
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
 }
 
 .minus-button {

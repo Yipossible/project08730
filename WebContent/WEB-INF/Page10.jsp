@@ -21,7 +21,7 @@ that will and will not work in your home and community when the power is out
 for the entire region:
 </p>
 
-<table>
+<table border="1">
 	<tr>
 		<td colspan = "2">
 		In your home
