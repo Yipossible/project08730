@@ -60,7 +60,7 @@ public class Page04Action extends Action {
             }
             System.out.println(r);
             if (r != null) {
-                // store question 4~5 to the response table
+                // store ques   tion 4~5 to the response table
                 ResponseBean t = new ResponseBean(); 
                 t.setQuestion_id(4);
                 t.setResponse(form.getWorkFromHome() +',' + form.getWorkFromHomeExplain());
