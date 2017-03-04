@@ -70,7 +70,7 @@ public class Page25Action extends Action {
 					+ "}");
 			responseDAO.create(r);
 			
-			return "page03.do";
+			return "payment.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page25jsp";
