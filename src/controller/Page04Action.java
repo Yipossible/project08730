@@ -74,7 +74,7 @@ public class Page04Action extends Action {
 
                 t = new ResponseBean(); 
                 t.setQuestion_id(6);
-                t.setResponse(form.getHouseType() + ',' + form.getHouseLiveTime());
+                t.setResponse(form.getHouseType() + ',' + form.getHouseLiveTime() + "years");
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
             }

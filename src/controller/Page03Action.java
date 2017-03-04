@@ -64,13 +64,13 @@ public class Page03Action extends Action {
             	System.out.println("enter page 3 answer");
                 ResponseBean t = new ResponseBean(); 
             	t.setQuestion_id(1);
-            	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime());
+            	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime() + "years");
             	t.setRespondent_id(r.getRespondent_id());
             	responseDAO.create(t);
                 
                 t = new ResponseBean(); 
                 t.setQuestion_id(2);
-                t.setResponse(form.getAge());
+                t.setResponse(form.getAge() +  "years old");
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
                 
