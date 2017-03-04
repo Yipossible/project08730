@@ -8,31 +8,31 @@
 		</c:forEach>
 		<form action="" method="POST">
 			<p>1. Where do you live? Please input your zip code.</p>
-			<input type="text" name="zipcode"placeholder="Please input zip code" class="form-control" ></td>
+			<input type="text" name="zipcode" placeholder="Please input zip code" class="form-control"  style="width:200px;" ></td>
 			<p>How long have you lived in (State, City)?</p>
-			<input type="text" name="cityLiveTime" class="form-control" ></td>	 years
+			<input type="text" name="cityLiveTime" placeholder="Please input number" class="form-control" style="width:200px;display:inline-block; margin-right:10px">years
 			<p>2. What is your age?</p>
-			<input type="text" name="age" class="form-control" ></td>	 years old
+			<input type="text" name="age" placeholder="Please input number" class="form-control" style="width:200px; display:inline-block; margin-right:10px">years old	 
 			<p>3. How many people are there in your household in each of the following age groups:</p>
 			<table>
 				<tr> 
 					<td>Preschool children:</td>
-					<td> <input type="text" name="preschool" class="form-control" ></td>
+					<td> <input type="text" placeholder="Please input number" name="preschool" class="form-control" ></td>
 				</tr>
 					<td>K-12 children:</td>
-					<td> <input type="text" name="k12" class="form-control" ></td>
+					<td> <input type="text" placeholder="Please input number" name="k12" class="form-control" ></td>
 				</tr>
 				<tr> 
 					<td>Adults under 30 years old:</td>
-					<td> <input type="text" name="under30" class="form-control" ></td>
+					<td> <input type="text" placeholder="Please input number" name="under30" class="form-control" ></td>
 				</tr>
 				<tr>
 					<td>30-65 years old:</td>
-					<td> <input type="text" name="from30to65" class="form-control" ></td>
+					<td> <input type="text" placeholder="Please input number" name="from30to65" class="form-control" ></td>
 				</tr>
 				<tr> 
 					<td>Over 65 years old:</td>
-					<td> <input type="text" name="over65" class="form-control" ></td>
+					<td> <input type="text" placeholder="Please input number" name="over65" class="form-control" ></td>
 				</tr>
 			</table>
 			<br>

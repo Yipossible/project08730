@@ -7,9 +7,9 @@
 .slider-selection {
     background: lightyellow;
 }
-.slider-handle max-slider-handle round {
+.slider-handle max-slider-handle  {
 	background: lightpink;
 }
-.slider-handle min-slider-handle round {
+.slider-handle min-slider-handle  {
 	background: lightgreen;
 }

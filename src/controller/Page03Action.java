@@ -55,7 +55,10 @@ public class Page03Action extends Action {
             }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
-            System.out.println(r);
+            if (!r.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
+            System.out.println("full" + r.isFull_payment());
             if (r != null) {
                 // store question 1~3 to the response table
             	System.out.println("enter page 3 answer");
@@ -80,6 +83,7 @@ public class Page03Action extends Action {
                 responseDAO.create(t);
                 System.out.println(adults);
                 if (Integer.parseInt(form.getCityLiveTime()) < 3 || Integer.parseInt(form.getAge()) < 18 || adults < 2){
+                    r.setFull_payment(false);
                     return "NotEligible.jsp";
                 }
             }
