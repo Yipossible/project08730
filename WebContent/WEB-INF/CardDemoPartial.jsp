@@ -6,8 +6,19 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="myJs/GoogleChart.js"></script>  
     <script type="text/javascript" src="myJs/changeTime.js"></script>
-    <script type="text/javascript" src="myJs/AddAppliance.js"></script>
+    <script type="text/javascript" src="myJs/AddAppliancePartial.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style>
+	.overlay {
+		width: 850px;
+		height: 10px;
+		position: absolute;
+		top: 100px;
+		left: 50px;
+	}
+	
+	</style>
+
 
     
 	<script type="text/javascript">
@@ -18,17 +29,30 @@
 	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
 	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
-	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
-	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
-	var evening = [0, 0, 0, 0, 0, 0, 0, 0];
-	var night = [0, 0, 0, 0, 0, 0, 0, 0];
+	var morning = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var lunch = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var evening = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var night = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var morningSum = 150;
+	var lunchSum = 150;
+	var eveningSum = 150;
+	var nightSum = 150;
+	
+	var result = document.getElementById('result');
+	
 	$(document).ready(function() {
 		$('.trigger').click(function(){  
-			for (i = 0; i < 8; i++) {
+			for (i = 0; i < 9; i++) {
 				var tmp = document.getElementById(mid[i]);
 				if (typeof tmp === 'undefined' || !tmp) {
 				} else {
-					morning[i] = tmp.value * dict[app[i]];
+					morningSum = morningSum + tmp.value * dict[app[i]];
+					if (morningSum < 220) {
+					console.log("morningSum2:" + morningSum);
+					morning[i] = tmp.value * dict[app[i]];} else {
+						morningSum = morningSum - tmp.value * dict[app[i]];
+						
+					}
 				}
 				var tmp = document.getElementById(lid[i]);
 				if (typeof tmp === 'undefined' || !tmp) {
@@ -46,14 +70,16 @@
 					night[i] = tmp.value * dict[app[i]];
 				}
 			}
-			console.log(morning);
-		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
+			
+		      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'threshold'],
 		    	 ['Morning'].concat(morning),
 		         ['Lunch'].concat(lunch),
 		         ['Evening'].concat(evening),
 		         ['Night'].concat(night)
 		      ];
+		      console.log ("morningSum:" + morningSum);
 		      console.log(arr);
+		      
 			google.charts.setOnLoadCallback(drawChart(arr));
 		});
      });
@@ -122,7 +148,11 @@
         <!--  <div id="chart_div" style="width: 800px; height: 300px;"></div> -->
     
             <!--This is for the four periods boxes-->
+        
         <div class="level2" id ="tablelevel">
+        <div>
+        	<p id= "result"></p>
+        </div>
             <div class="level3" >
                 <button id = "morningTime" onclick="changeTime(this)">Morning</button>
                 <div id="morningConsumption" style="background-color: rgb(204, 204, 204);"></div>
@@ -145,7 +175,7 @@
     <!--This is for the button-->
     
     <div class="bottom">
-        <form method = "get" action = "CardDemoPartial.do">
+        <form method = "get" action = "page14.do">
         <input type="submit" name = "submit" value="Next">
         </form>
     </div>

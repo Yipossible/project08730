@@ -27,6 +27,7 @@ public class Controller extends HttpServlet {
         Action.add(new Page10Action(model));
         Action.add(new Page11Action(model));
         Action.add(new Page12CardAction(model));
+        Action.add(new Page13CardPartialAction(model));
         Action.add(new Page14Action(model));
         Action.add(new Page15Action(model));
         Action.add(new Page16Action(model));

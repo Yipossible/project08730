@@ -10,19 +10,19 @@ import model.Model;
 import model.RespondentDAO;
 import model.ResponseDAO;
 
-public class Page12CardAction extends Action{
+public class Page13CardPartialAction extends Action{
 
 	private ResponseDAO responseDAO;
     private RespondentDAO respondentDAO;
 
-    public Page12CardAction(Model model) {
+    public Page13CardPartialAction(Model model) {
         responseDAO = model.getResponseDAO();
         respondentDAO = model.getRespondentDAO();
     }
 
     @Override
     public String getName() {
-        return "CardDemo.do";
+        return "CardDemoPartial.do";
     }
 
     @Override
@@ -32,7 +32,8 @@ public class Page12CardAction extends Action{
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        session.setAttribute("nextPage", "CardDemoPartial.do");
-        return "CardDemo.jsp";
+        session.setAttribute("nextPage", "page14.do");
+        return "CardDemoPartial.jsp";
     }	
 }
+

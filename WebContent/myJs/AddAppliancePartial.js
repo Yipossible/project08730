@@ -3,24 +3,26 @@ function startTutorial () {
     googlechart.setAttribute('id','columnchart_material');
     googlechart.setAttribute('style','width: 800px; height: 300px;');
     document.getElementById('board').removeChild(document.getElementById('tutorial'));
+    
     var board = document.getElementById('board');
     board.insertBefore(googlechart, document.getElementById('tablelevel'));
+    
+    
 }
 
-
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load('current', {packages:['corechart'], callback: drawChart});
 
 
 function drawChart(arr) {
           
 	var data = google.visualization.arrayToDataTable(arr);
-	console.log("testing", arr);
+
 	var options = {
 	  width: 900,
 	  height: 300,
 	  legend: { position: 'top', maxLines: 3 },
 	  bar: { groupWidth: '50%' },
-	  vAxis: { gridlines: { count: 10 }, 
+	  vAxis: { gridlines: { count: 9 }, 
 		  viewWindow:{
               max:200,
               min:0
@@ -28,9 +30,16 @@ function drawChart(arr) {
 	  },
 
 	  isStacked: true,
+	  interpolateNulls: true,
+	  seriesType: 'bars',
+	  series: {8: {
+	      type: "line", 
+	      color: '#FF0000' 
+	    }
+	  }
 	};
 	
-	  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+	  var chart = new google.visualization.ComboChart(document.getElementById('columnchart_material'));
 	  chart.draw(data, options);
 }
 	
