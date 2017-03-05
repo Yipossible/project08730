@@ -55,7 +55,9 @@ public class Page09Action extends Action {
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean p = respondentDAO.read(unique_id);
             System.out.println(p);
-            
+            if (!p.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
             ResponseBean r = new ResponseBean();
             r.setQuestion_id(9);
             r.setRespondent_id(p.getRespondent_id());

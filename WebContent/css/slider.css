@@ -1,3 +1,13 @@
+.slider-handle max-slider-handle  {
+	background: lightpink;
+	background-image: lightpink;
+	background-color: lightpink;
+}
+.slider-handle min-slider-handle  {
+	background-color: lightgreen;
+	background-image: lightgreen;
+;
+}
 .slider-track-high {
     background: lightpink;
 }

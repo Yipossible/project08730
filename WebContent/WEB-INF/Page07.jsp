@@ -1,6 +1,6 @@
 <jsp:include page="top3.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		    <h1>Main Survey: Blackout in late December</h1>
+		    <h1>RESPONSE MODE - INITIAL I</h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
@@ -13,9 +13,6 @@ please indicate whether you would be willing to pay that amount of money
 in exchange for the partial service. 
 </p>
 
-<h3>
-RESPONSE MODE - INITIAL I
-</h3>
 
 <form method ="post" action="page07.do">
 				<p>

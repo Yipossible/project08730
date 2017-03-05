@@ -55,6 +55,10 @@ public class Page02Action extends Action {
             }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
+            if (!r.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
+            
             System.out.print("test");
             System.out.println(form.getOver18().equals("Yes") == true);
             System.out.println(form.getOver18().toString());
@@ -68,6 +72,7 @@ public class Page02Action extends Action {
                 r.setEmail(form.getEmail());
                 
                 if (form.getOver18().equals("Yes") == false || form.getLivedOver3().equals("Yes") == false || form.getOver2adult().equals("Yes") == false || form.getUnderstand().equals("Yes") == false || form.getParticipate().equals("Yes") == false) {
+                    r.setFull_payment(false);
                     return "NotEligible.jsp";
                 }
             }

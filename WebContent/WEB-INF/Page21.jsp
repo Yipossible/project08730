@@ -1,6 +1,6 @@
 <jsp:include page="top6.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		    <h1></h1>
+		    <h1>RESPONSE MODE - SOCIAL IV</h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
@@ -22,9 +22,6 @@ to help the entire community during the outage?
 <p>
 <b>INSERT A PICTURE HERE</b>
 </p>
-<h3>
-RESPONSE MODE - SOCIAL IV
-</h3>
 
 <form method ="post" action="page21.do">
 	<table>

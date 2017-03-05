@@ -55,9 +55,12 @@ public class Page04Action extends Action {
             }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
+            if (!r.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
             System.out.println(r);
             if (r != null) {
-                // store question 4~5 to the response table
+                // store ques   tion 4~5 to the response table
                 ResponseBean t = new ResponseBean(); 
                 t.setQuestion_id(4);
                 t.setResponse(form.getWorkFromHome() +',' + form.getWorkFromHomeExplain());
@@ -71,7 +74,7 @@ public class Page04Action extends Action {
 
                 t = new ResponseBean(); 
                 t.setQuestion_id(6);
-                t.setResponse(form.getHouseType() + ',' + form.getHouseLiveTime());
+                t.setResponse(form.getHouseType() + ',' + form.getHouseLiveTime() + "years");
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
             }
