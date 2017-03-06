@@ -45,6 +45,7 @@ public class Page01Action extends Action {
             String unique_id = new BigInteger(130, random).toString(32);
             RespondentBean r = new RespondentBean();
             r.setUnique_id(unique_id);
+            r.setFull_payment(true);
             System.out.println(unique_id);
             System.out.println(r);
             respondentDAO.create(r);
