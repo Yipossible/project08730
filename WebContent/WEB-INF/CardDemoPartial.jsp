@@ -77,7 +77,7 @@
 		         ['Evening'].concat(evening),
 		         ['Night'].concat(night)
 		      ];
-		      console.log ("morningSum:" + morningSum);
+		      console.log ("morningSum in html:" + morningSum);
 		      console.log(arr);
 		      
 			google.charts.setOnLoadCallback(drawChart(arr));

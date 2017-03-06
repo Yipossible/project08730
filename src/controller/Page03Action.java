@@ -82,6 +82,7 @@ public class Page03Action extends Action {
                 int adults = Integer.parseInt(form.getUnder30())+Integer.parseInt(form.getFrom30to65())+Integer.parseInt(form.getOver65());
                 responseDAO.create(t);
                 System.out.println(adults);
+                System.out.println("response: " + t.getResponse());
                 if (Integer.parseInt(form.getCityLiveTime()) < 3 || Integer.parseInt(form.getAge()) < 18 || adults < 2){
                     r.setFull_payment(false);
                     return "NotEligible.jsp";

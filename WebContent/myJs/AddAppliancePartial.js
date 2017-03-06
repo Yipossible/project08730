@@ -114,22 +114,32 @@ function getSummary() {
 
 function generateArr() {
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
-	        'Stove':20, 'TV':10, 'Speaker':10 };
+	          'Stove':20, 'TV':10, 'Speaker':10 };
 	var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
 	var lid = ["newlunchlargeVacuum", "newlunchlargeIron", "newlunchlargeAC", "newlunchlargeWH",  "newlunchkitchenMV", "newlunchkitchenStove","newlunchsmallTV", "newlunchsmallSpeaker"];
 	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
 	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
-	var morning = [0, 0, 0, 0, 0, 0, 0, 0];
-	var lunch = [0, 0, 0, 0, 0, 0, 0, 0];
-	var evening = [0, 0, 0, 0, 0, 0, 0, 0];
-	var night = [0, 0, 0, 0, 0, 0, 0, 0];
+	var morning = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var lunch = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var evening = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var night = [0, 0, 0, 0, 0, 0, 0, 0,150];
+	var morningSum = 150;
+	var lunchSum = 150;
+	var eveningSum = 150;
+	var nightSum = 150;
 	
-	for (i = 0; i < 8; i++) {
+	for (i = 0; i < 9; i++) {
 		var tmp = document.getElementById(mid[i]);
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			morning[i] = tmp.value * dict[app[i]];
+			morningSum = morningSum + tmp.value * dict[app[i]];
+			if (morningSum < 220) {
+			console.log("morningSum2:" + morningSum);
+			morning[i] = tmp.value * dict[app[i]];} else {
+				morningSum = morningSum - tmp.value * dict[app[i]];
+				
+			}
 		}
 		var tmp = document.getElementById(lid[i]);
 		if (typeof tmp === 'undefined' || !tmp) {
@@ -147,13 +157,16 @@ function generateArr() {
 			night[i] = tmp.value * dict[app[i]];
 		}
 	}
-	var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
-   	 ['Morning'].concat(morning),
-     ['Lunch'].concat(lunch),
-     ['Evening'].concat(evening),
-     ['Night'].concat(night)
-     ];
+	
+      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'threshold'],
+    	 ['Morning'].concat(morning),
+         ['Lunch'].concat(lunch),
+         ['Evening'].concat(evening),
+         ['Night'].concat(night)
+      ];
 	return arr;
+	console.log ("morningSum in js:" + morningSum);
+    console.log(arr);
 }
 
 var clicksnewmorninglargeVacuum = 0;
@@ -202,7 +215,7 @@ var clicksnewnightsmallSpeaker = 0;
 
 
 function clickplus (e) {    
-	console.log(e);
+	
 
     
     if (e == 'newmorninglargeVacuum') {
@@ -343,7 +356,7 @@ function clickplus (e) {
 }
 
 function clickminus(e) {
-	console.log(e);
+
 
     if (e == 'newmorninglargeVacuum') {
     	clicksnewmorninglargeVacuum--;

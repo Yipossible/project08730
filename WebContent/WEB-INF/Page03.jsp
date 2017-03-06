@@ -42,8 +42,8 @@
 		<input type = "text" name = "coordinates" id="demo"/>
 		<input type ="text" name="address" id="address"/>
 		</form> 
-		<button onclick="getLocation()">Try It</button>
-		
+		<button onload="getLocation()">Try It</button>
+
  
     <script>
     var x = document.getElementById("demo");
@@ -53,12 +53,12 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
+            x.value = "Geolocation is not supported by this browser.";
         }
     }
     
     function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
+        x.value = "Latitude: " + position.coords.latitude + 
         "<br>Longitude: " + position.coords.longitude;
         
         var coordinates = {lat: parseFloat(position.coords.latitude), lng: parseFloat(position.coords.longitude)};
@@ -66,7 +66,7 @@
     	
  	   geocoder.geocode({'location': coordinates}, function(results, status) {
  	          if (status === 'OK') {
- 	              y.innerHTML = results[1].formatted_address;
+ 	              y.value = results[1].formatted_address;
  	            } 
  	        });
     }
