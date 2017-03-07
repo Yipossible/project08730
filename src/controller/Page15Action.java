@@ -131,7 +131,7 @@ public class Page15Action extends Action{
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			System.out.println("rollback" + errors);
-			return "Page15.jsp";
+			return "error.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
 			System.out.println("formbean errors" + errors);

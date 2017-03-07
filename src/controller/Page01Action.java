@@ -47,7 +47,7 @@ public class Page01Action extends Action {
             r.setUnique_id(unique_id);
             r.setFull_payment(true);
             System.out.println(unique_id);
-            System.out.println(r);
+            System.out.println(r.isFull_payment());
             respondentDAO.create(r);
             session.setAttribute("unique_id", unique_id);
             return "Page01.jsp";

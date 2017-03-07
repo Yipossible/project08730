@@ -75,7 +75,7 @@ public class Page25Action extends Action {
 			return "payment.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
-			return "Page25jsp";
+			return "error.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
 			return "Page25.jsp";

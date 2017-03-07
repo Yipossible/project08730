@@ -1,6 +1,6 @@
 <jsp:include page="top5.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		    <h1>Part A. Information about your household</h1>
+		    <h1>4) Value of perishable food - calculator</h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
