@@ -36,9 +36,7 @@ public class Page15Action extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
-		HttpSession session = request.getSession();
-		session.setAttribute("nextPage", "page16.do");
-		
+		HttpSession session = request.getSession();		
 		try {
 			
 			
@@ -122,8 +120,14 @@ public class Page15Action extends Action{
             } else {
             	return "Page15.jsp";
             }
+            if (respondentBean.getRespondent_id() % 2 == 0) {
+                session.setAttribute("nextPage", "page16.do");
+                return "page16.do";
+            } else {
+                session.setAttribute("nextPage", "page17.do");
+                return "page17.do";
+            }
 			
-			return "page16.do";
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			System.out.println("rollback" + errors);

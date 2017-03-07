@@ -6,6 +6,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.genericdao.RollbackException;
+
+import databeans.RespondentBean;
 import model.Model;
 import model.RespondentDAO;
 import model.ResponseDAO;
@@ -31,7 +34,19 @@ public class Page08Action extends Action{
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        session.setAttribute("nextPage", "page09.do");
+        try {
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            if (p.getRespondent_id() % 2 == 0) {
+                session.setAttribute("nextPage", "page09.do");
+            } else {
+                session.setAttribute("nextPage", "page07.do");
+            }
+        } catch (RollbackException e) {
+            errors.add(e.getMessage());
+            System.out.println(errors);
+            return "error.jsp";
+        } 
         return "Page08.jsp";
     }
 }

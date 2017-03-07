@@ -38,7 +38,20 @@ public class Page05Action extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        session.setAttribute("nextPage", "page06.do");
+        try {
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            System.out.println(p.getRespondent_id() % 2);
+            if (p.getRespondent_id() % 2 == 0) {
+                session.setAttribute("nextPage", "page06.do");
+            } else {
+                session.setAttribute("nextPage", "page08.do");
+            }
+        } catch (RollbackException e) {
+            errors.add(e.getMessage());
+            System.out.println(errors);
+            return "error.jsp";
+        } 
         return "Page05.jsp";
     }
 }

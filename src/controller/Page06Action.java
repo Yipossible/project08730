@@ -39,6 +39,7 @@ public class Page06Action extends Action {
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
         session.setAttribute("nextPage", "page07.do");
+        
         return "Page06.jsp";
     }
 }

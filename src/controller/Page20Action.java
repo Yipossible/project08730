@@ -36,7 +36,6 @@ public class Page20Action extends Action {
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
-		session.setAttribute("nextPage", "page21.do");
 		try {
 			Page20Form form = formBeanFactory.create(request);
 			
@@ -70,7 +69,13 @@ public class Page20Action extends Action {
 						}
 			
 			
-			return "page21.do";
+            if (respondentBean.getRespondent_id() % 2 == 0) {
+                session.setAttribute("nextPage", "page21.do");
+                return "page21.do";
+            } else {
+                session.setAttribute("nextPage", "page19.do");
+                return "page19.do";
+            }
 		} catch (RollbackException e) {
 			errors.add(e.getMessage());
 			return "Page20.jsp";
