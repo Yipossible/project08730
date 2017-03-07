@@ -14,7 +14,7 @@ google.charts.load('current', {'packages':['corechart']});
 function drawChart(arr) {
           
 	var data = google.visualization.arrayToDataTable(arr);
-	console.log("testing", arr);
+	
 	var options = {
 	  width: 900,
 	  height: 300,
@@ -147,41 +147,41 @@ function generateArr() {
 	return arr;
 }
 
-var clicksnewmorninglargeVacuum = 0;
-var clicksnewmorninglargeIron = 0;
-var clicksnewmorninglargeAC = 0;
-var clicksnewmorninglargeWH = 0;
-var clicksnewmorningkitchenMV = 0;
-var clicksnewmorningkitchenStove = 0;
-var clicksnewmorningsmallTV = 0;
-var clicksnewmorningsmallSpeaker = 0;
+var clicksnewmorninglargeVacuum = 1;
+var clicksnewmorninglargeIron = 1;
+var clicksnewmorninglargeAC = 1;
+var clicksnewmorninglargeWH = 1;
+var clicksnewmorningkitchenMV = 1;
+var clicksnewmorningkitchenStove = 1;
+var clicksnewmorningsmallTV = 1;
+var clicksnewmorningsmallSpeaker = 1;
 
-var clicksnewlunchlargeVacuum = 0;
-var clicksnewlunchlargeIron = 0;
-var clicksnewlunchlargeAC = 0;
-var clicksnewlunchlargeWH = 0;
-var clicksnewlunchkitchenMV = 0;
-var clicksnewlunchkitchenStove = 0;
-var clicksnewlunchsmallTV = 0;
-var clicksnewlunchsmallSpeaker = 0;
+var clicksnewlunchlargeVacuum = 1;
+var clicksnewlunchlargeIron = 1;
+var clicksnewlunchlargeAC = 1;
+var clicksnewlunchlargeWH = 1;
+var clicksnewlunchkitchenMV = 1;
+var clicksnewlunchkitchenStove = 1;
+var clicksnewlunchsmallTV = 1;
+var clicksnewlunchsmallSpeaker = 1;
 
-var clicksneweveninglargeVacuum = 0;
-var clicksneweveninglargeIron = 0;
-var clicksneweveninglargeAC = 0;
-var clicksneweveninglargeWH = 0;
-var clicksneweveningkitchenMV = 0;
-var clicksneweveningkitchenStove = 0;
-var clicksneweveningsmallTV = 0;
-var clicksneweveningsmallSpeaker = 0;
+var clicksneweveninglargeVacuum = 1;
+var clicksneweveninglargeIron = 1;
+var clicksneweveninglargeAC = 1;
+var clicksneweveninglargeWH = 1;
+var clicksneweveningkitchenMV = 1;
+var clicksneweveningkitchenStove = 1;
+var clicksneweveningsmallTV = 1;
+var clicksneweveningsmallSpeaker = 1;
 
-var clicksnewnightlargeVacuum = 0;
-var clicksnewnightlargeIron = 0;
-var clicksnewnightlargeAC = 0;
-var clicksnewnightlargeWH = 0;
-var clicksnewnightkitchenMV = 0;
-var clicksnewnightkitchenStove = 0;
-var clicksnewnightsmallTV = 0;
-var clicksnewnightsmallSpeaker = 0;
+var clicksnewnightlargeVacuum = 1;
+var clicksnewnightlargeIron = 1;
+var clicksnewnightlargeAC = 1;
+var clicksnewnightlargeWH = 1;
+var clicksnewnightkitchenMV = 1;
+var clicksnewnightkitchenStove = 1;
+var clicksnewnightsmallTV = 1;
+var clicksnewnightsmallSpeaker = 1;
 
 
 
@@ -655,6 +655,7 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
+        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
