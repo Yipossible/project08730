@@ -10,11 +10,11 @@ function startTutorial () {
     
 }
 
-google.charts.load('current', {packages:['corechart'], callback: drawChart});
+google.charts.load('current', {packages:['corechart']});
 
 
 function drawChart(arr) {
-          
+    console.log(arr);      
 	var data = google.visualization.arrayToDataTable(arr);
 
 	var options = {
@@ -112,6 +112,24 @@ function getSummary() {
     }
 }
 
+
+
+
+var threshold = 150;
+var thresholdGate = document.getElementById('threshold');
+
+// if have reached threshold, cannot add more items.
+
+function thresholdControl() {
+	if (morningSum > threshold) {
+		thresholdGate.innerHTML = "False";
+	} else {
+		thresholdGate.innerHTML = "True";
+	}
+}
+
+
+
 function generateArr() {
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
 	          'Stove':20, 'TV':10, 'Speaker':10 };
@@ -120,25 +138,33 @@ function generateArr() {
 	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
 	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
-	var morning = [0, 0, 0, 0, 0, 0, 0, 0,150];
-	var lunch = [0, 0, 0, 0, 0, 0, 0, 0,150];
-	var evening = [0, 0, 0, 0, 0, 0, 0, 0,150];
-	var night = [0, 0, 0, 0, 0, 0, 0, 0,150];
-	var morningSum = 150;
-	var lunchSum = 150;
-	var eveningSum = 150;
-	var nightSum = 150;
+	var morning = [0, 0, 0, 0, 0, 0, 0, 0, 150];
+	var lunch = [0, 0, 0, 0, 0, 0, 0, 0, 150];
+	var evening = [0, 0, 0, 0, 0, 0, 0, 0, 150];
+	var night = [0, 0, 0, 0, 0, 0, 0, 0, 150];
+
+	var morningSum = 0;
+	var lunchSum = 0;
+	var eveningSum = 0;
+	var nightSum = 0;
 	
-	for (i = 0; i < 9; i++) {
+	console.log ("morning" + morningSum);
+	console.log ("lunch" + lunchSum);
+	console.log ("evening" + eveningSum);
+	console.log ("night" + nightSum);
+	
+	for (i = 0; i < 8; i++) {
 		var tmp = document.getElementById(mid[i]);
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			morningSum = morningSum + tmp.value * dict[app[i]];
-			if (morningSum < 220) {
-			console.log("morningSum2:" + morningSum);
-			morning[i] = tmp.value * dict[app[i]];} else {
-				morningSum = morningSum - tmp.value * dict[app[i]];
-				
+			
+			if ((morningSum + tmp.value * dict[app[i]]) < 151) {
+			
+			morning[i] = tmp.value * dict[app[i]];
+			morningSum = morningSum + morning[i];
+			} else {
+				morning[i] = (tmp.value - 1) * dict[app[i]];
+				alert("You have reached consumption threshold, cannot add more!");
 			}
 		}
 		var tmp = document.getElementById(lid[i]);
@@ -158,7 +184,7 @@ function generateArr() {
 		}
 	}
 	
-      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'threshold'],
+      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'Threshold'],
     	 ['Morning'].concat(morning),
          ['Lunch'].concat(lunch),
          ['Evening'].concat(evening),
@@ -169,41 +195,41 @@ function generateArr() {
     console.log(arr);
 }
 
-var clicksnewmorninglargeVacuum = 0;
-var clicksnewmorninglargeIron = 0;
-var clicksnewmorninglargeAC = 0;
-var clicksnewmorninglargeWH = 0;
-var clicksnewmorningkitchenMV = 0;
-var clicksnewmorningkitchenStove = 0;
-var clicksnewmorningsmallTV = 0;
-var clicksnewmorningsmallSpeaker = 0;
+var clicksnewmorninglargeVacuum = 1;
+var clicksnewmorninglargeIron = 1;
+var clicksnewmorninglargeAC = 1;
+var clicksnewmorninglargeWH = 1;
+var clicksnewmorningkitchenMV = 1;
+var clicksnewmorningkitchenStove = 1;
+var clicksnewmorningsmallTV = 1;
+var clicksnewmorningsmallSpeaker = 1;
 
-var clicksnewlunchlargeVacuum = 0;
-var clicksnewlunchlargeIron = 0;
-var clicksnewlunchlargeAC = 0;
-var clicksnewlunchlargeWH = 0;
-var clicksnewlunchkitchenMV = 0;
-var clicksnewlunchkitchenStove = 0;
-var clicksnewlunchsmallTV = 0;
-var clicksnewlunchsmallSpeaker = 0;
+var clicksnewlunchlargeVacuum = 1;
+var clicksnewlunchlargeIron = 1;
+var clicksnewlunchlargeAC = 1;
+var clicksnewlunchlargeWH = 1;
+var clicksnewlunchkitchenMV = 1;
+var clicksnewlunchkitchenStove = 1;
+var clicksnewlunchsmallTV = 1;
+var clicksnewlunchsmallSpeaker = 1;
 
-var clicksneweveninglargeVacuum = 0;
-var clicksneweveninglargeIron = 0;
-var clicksneweveninglargeAC = 0;
-var clicksneweveninglargeWH = 0;
-var clicksneweveningkitchenMV = 0;
-var clicksneweveningkitchenStove = 0;
-var clicksneweveningsmallTV = 0;
-var clicksneweveningsmallSpeaker = 0;
+var clicksneweveninglargeVacuum = 1;
+var clicksneweveninglargeIron = 1;
+var clicksneweveninglargeAC = 1;
+var clicksneweveninglargeWH = 1;
+var clicksneweveningkitchenMV = 1;
+var clicksneweveningkitchenStove = 1;
+var clicksneweveningsmallTV = 1;
+var clicksneweveningsmallSpeaker = 1;
 
-var clicksnewnightlargeVacuum = 0;
-var clicksnewnightlargeIron = 0;
-var clicksnewnightlargeAC = 0;
-var clicksnewnightlargeWH = 0;
-var clicksnewnightkitchenMV = 0;
-var clicksnewnightkitchenStove = 0;
-var clicksnewnightsmallTV = 0;
-var clicksnewnightsmallSpeaker = 0;
+var clicksnewnightlargeVacuum = 1;
+var clicksnewnightlargeIron = 1;
+var clicksnewnightlargeAC = 1;
+var clicksnewnightlargeWH = 1;
+var clicksnewnightkitchenMV = 1;
+var clicksnewnightkitchenStove = 1;
+var clicksnewnightsmallTV = 1;
+var clicksnewnightsmallSpeaker = 1;
 
 
 
@@ -677,6 +703,7 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
+        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -690,6 +717,7 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         morningList[inputid] = 1;
+        
         }
     }
     
@@ -703,6 +731,7 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
+        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -716,6 +745,7 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         lunchList[inputid] = 1;
+        
         }
         
     }
@@ -730,6 +760,7 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
+        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -743,6 +774,7 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         eveningList[inputid] = 1;
+       
         }
     }
     
@@ -756,6 +788,7 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
+        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -769,6 +802,7 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         nightList[inputid] = 1;
+        
         }
     }
 

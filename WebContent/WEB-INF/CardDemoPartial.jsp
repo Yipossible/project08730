@@ -33,12 +33,14 @@
 	var lunch = [0, 0, 0, 0, 0, 0, 0, 0,150];
 	var evening = [0, 0, 0, 0, 0, 0, 0, 0,150];
 	var night = [0, 0, 0, 0, 0, 0, 0, 0,150];
-	var morningSum = 150;
-	var lunchSum = 150;
-	var eveningSum = 150;
-	var nightSum = 150;
+	var morningSum = 0;
+	var lunchSum = 0;
+	var eveningSum = 0;
+	var nightSum = 0;
 	
-	var result = document.getElementById('result');
+	var check = document.getElementById('check');
+	
+	if (check.innerHTML == "True") {
 	
 	$(document).ready(function() {
 		$('.trigger').click(function(){  
@@ -46,13 +48,7 @@
 				var tmp = document.getElementById(mid[i]);
 				if (typeof tmp === 'undefined' || !tmp) {
 				} else {
-					morningSum = morningSum + tmp.value * dict[app[i]];
-					if (morningSum < 220) {
-					console.log("morningSum2:" + morningSum);
-					morning[i] = tmp.value * dict[app[i]];} else {
-						morningSum = morningSum - tmp.value * dict[app[i]];
-						
-					}
+					morning[i] = tmp.value * dict[app[i]];
 				}
 				var tmp = document.getElementById(lid[i]);
 				if (typeof tmp === 'undefined' || !tmp) {
@@ -83,12 +79,18 @@
 			google.charts.setOnLoadCallback(drawChart(arr));
 		});
      });
+	} else {
+		alert ("You cannot add items!");
+	}
 	</script>
 </head>
 <body>
     <!--This is for Appliance List-->
     <div class="level1" style="width:300px;">
         <p id = "reference">startTime</p>
+       
+		<p id = "check">True</p>
+		
         <table class="table">
             <tr >
                 <td class="table"> Your Appliances
