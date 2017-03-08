@@ -21,7 +21,7 @@
 
 
     
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,
 	          'Stove':20, 'TV':10, 'Speaker':10 };
 	var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
@@ -82,7 +82,7 @@
 	} else {
 		alert ("You cannot add items!");
 	}
-	</script>
+	</script>  -->
 </head>
 <body>
     <!--This is for Appliance List-->
