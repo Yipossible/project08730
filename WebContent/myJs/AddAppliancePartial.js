@@ -135,12 +135,16 @@ function getSummary() {
 
 // set up score board as global variable
 // set up click board as global variable --> click base is referred here
+
+
+
 var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,'Stove':20, 'TV':10, 'Speaker':10 };
 var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
 var lid = ["newlunchlargeVacuum", "newlunchlargeIron", "newlunchlargeAC", "newlunchlargeWH",  "newlunchkitchenMV", "newlunchkitchenStove","newlunchsmallTV", "newlunchsmallSpeaker"];
 var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
 var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
 var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
+var appMap = {"largeVacuum":0, "largeIron":1, "largeAC":2, "largeWH":3,  "kitchenMV":4, "kitchenStove":5,"smallTV":6, "smallSpeaker":7};
 var morningScore = [0, 0, 0, 0, 0, 0, 0, 0, 150];
 var lunchScore = [0, 0, 0, 0, 0, 0, 0, 0, 150];
 var eveningScore = [0, 0, 0, 0, 0, 0, 0, 0, 150];
@@ -158,63 +162,6 @@ var nightSum = 0;
 
 var gate = true;
 
-
-function generateArr() {
-
-	
-	
-//	console.log ("lunch" + lunchSum);
-//	console.log ("evening" + eveningSum);
-//	console.log ("night" + nightSum);
-//	
-	for (i = 0; i < 8; i++) {
-		var tmp = morningClick[i];
-		if (typeof tmp === 'undefined' || !tmp) {
-		} else {
-			
-			if ((morningSum + dict[app[i]]) < 151) {
-				console.log ("morning" + morningSum);
-				gate = true;
-				console.log (gate);
-				morningScore[i] = tmp * dict[app[i]];
-				morningSum = morningSum + dict[app[i]];
-			
-			} else {
-				gate = false;
-				console.log (gate);
-				tmp--;
-				morningClick[i] = tmp;
-				//morning[i] = tmp * dict[app[i]];
-				alert("You have reached consumption threshold, cannot add more!");
-			}
-		}
-//		var tmp = document.getElementById(lid[i]);
-//		if (typeof tmp === 'undefined' || !tmp) {
-//		} else {
-//			lunch[i] = tmp.value * dict[app[i]];
-//		}
-//		var tmp = document.getElementById(eid[i]);
-//		if (typeof tmp === 'undefined' || !tmp) {
-//		} else {
-//			evening[i] = tmp.value * dict[app[i]];
-//		}
-//		var tmp = document.getElementById(nid[i]);
-//		if (typeof tmp === 'undefined' || !tmp) {
-//		} else {
-//			night[i] = tmp.value * dict[app[i]];
-//		}
-	}
-	
-      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'Threshold'],
-    	 ['Morning'].concat(morningScore),
-         //['Lunch'].concat(lunchScore),
-         //['Evening'].concat(eveningScore),
-         //['Night'].concat(nightScore)
-      ];
-	return arr;
-	console.log ("morningSum in js:" + morningSum);
-    console.log(arr);
-}
 
 var clicksnewmorninglargeVacuum = morningClick[0];
 var clicksnewmorninglargeIron = morningClick[1];
@@ -252,6 +199,100 @@ var clicksnewnightkitchenStove = nightClick[5];
 var clicksnewnightsmallTV = nightClick[6];
 var clicksnewnightsmallSpeaker = nightClick[7];
 
+function generateArr() {
+
+	var dict = {"Vacuum":20,'Iron': 10, 'AC':10, 'Water Heater':20, 'Microwave':10,'Stove':20, 'TV':10, 'Speaker':10 };
+	var mid = ["newmorninglargeVacuum", "newmorninglargeIron", "newmorninglargeAC", "newmorninglargeWH",  "newmorningkitchenMV", "newmorningkitchenStove","newmorningsmallTV", "newmorningsmallSpeaker"];
+	var lid = ["newlunchlargeVacuum", "newlunchlargeIron", "newlunchlargeAC", "newlunchlargeWH",  "newlunchkitchenMV", "newlunchkitchenStove","newlunchsmallTV", "newlunchsmallSpeaker"];
+	var eid = ["neweveninglargeVacuum",  "neweveninglargeIron","neweveninglargeAC",  "neweveninglargeWH","neweveningkitchenMV", "neweveningkitchenStove", "neweveningsmallTV", "neweveningsmallSpeaker"];
+	var nid = ["newnightlargeVacuum", "newnightlargeIron", "newnightlargeAC", "newnightlargeWH", "newnightkitchenMV",  "newnightkitchenStove","newnightsmallTV", "newnightsmallSpeaker"];
+	var app = ['Vacuum','Iron', 'AC', 'Water Heater', 'Microwave','Stove', 'TV', 'Speaker'];
+	
+//	console.log ("lunch" + lunchSum);
+//	console.log ("evening" + eveningSum);
+//	console.log ("night" + nightSum);
+//	
+	
+	for (var i = 0; i < 8; i++){
+		var tmp = morningClick[i];
+		if (typeof tmp === 'undefined' || !tmp) {
+		} else {
+			morningSum = morningSum + tmp * dict[app[i]];
+			if (morningSum > 150) {
+				gate = false;
+				console.log (gate);
+				alert("You have reached consumption threshold, cannot add more!");
+				tmp--;
+				morningClick[i] = tmp;
+			} else {
+				morningScore[i] = tmp * dict[app[i]];
+				gate = true;
+				console.log (gate);
+			}
+
+		}
+		
+		
+	}
+	 morningSum = 0;
+	
+	
+	
+	
+	/*for (i = 0; i < 8; i++) {
+		var tmp = morningClick[i];
+		if (typeof tmp === 'undefined' || !tmp) {
+		} else {
+			
+			if ((morningSum + dict[app[i]]) < 151) {
+				console.log ("morning" + morningSum);
+				gate = true;
+				console.log (gate);
+				morningScore[i] = tmp * dict[app[i]];
+				morningSum = morningSum + dict[app[i]];
+			
+			} else {
+				gate = false;
+				console.log (gate);
+				tmp--;
+				morningClick[i] = tmp;
+				//morning[i] = tmp * dict[app[i]];
+				alert("You have reached consumption threshold, cannot add more!");
+			}
+		}*/
+		
+		
+		
+		
+//		var tmp = document.getElementById(lid[i]);
+//		if (typeof tmp === 'undefined' || !tmp) {
+//		} else {
+//			lunch[i] = tmp.value * dict[app[i]];
+//		}
+//		var tmp = document.getElementById(eid[i]);
+//		if (typeof tmp === 'undefined' || !tmp) {
+//		} else {
+//			evening[i] = tmp.value * dict[app[i]];
+//		}
+//		var tmp = document.getElementById(nid[i]);
+//		if (typeof tmp === 'undefined' || !tmp) {
+//		} else {
+//			night[i] = tmp.value * dict[app[i]];
+//		}
+	
+	
+      var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'Threshold'],
+    	 ['Morning'].concat(morningScore),
+         //['Lunch'].concat(lunchScore),
+         //['Evening'].concat(eveningScore),
+         //['Night'].concat(nightScore)
+      ];
+	return arr;
+	console.log ("morningSum in js:" + morningSum);
+    console.log(arr);
+}
+
+
 
 
 
@@ -287,15 +328,16 @@ function clickminus(e) {
  			temp--;
  			morningClick[i] = temp;
  		}
+ 	   if (morningClick[i] < 0 || morningClick[i] == 0) {
+ 	    	morningClick[i] = 0;
+ 	    	remove(e);
+ 	        console.log("item removed");
+ 	     }
+ 	       
 	}
    
                     
-    if (morningClick[i] < 0 || morningClick[i] == 0) {
-    	morningClick[i] = 0;
-    	remove(e);
-        console.log("item removed");
-     }
-        
+  
     
     
   
@@ -478,6 +520,7 @@ function addtoPanel(e) {
         var button1id = "morning" + newImage.id + "plus";
         var button2id = "morning" + newImage.id + "minus";
         var containerid = "morning" + newImage.id + "table";
+        var mapid = newImage.id;
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
@@ -495,8 +538,9 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         morningList[inputid] = 1;
-        
-        }
+        morningClick[appMap[mapid]] = 1;
+        console.log("new item key" + appMap[mapid]);
+;        }
     }
     
         if (reference == "LunchTime") {

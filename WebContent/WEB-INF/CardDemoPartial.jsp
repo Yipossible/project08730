@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="myJs/GoogleChart.js"></script>  
-    <script type="text/javascript" src="myJs/changeTime.js"></script>
+    <script type="text/javascript" src="myJs/changeTimePartial.js"></script>
     <script type="text/javascript" src="myJs/AddAppliancePartial.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<style>
