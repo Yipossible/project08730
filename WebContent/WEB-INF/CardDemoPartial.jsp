@@ -88,8 +88,7 @@
     <!--This is for Appliance List-->
     <div class="level1" style="width:300px;">
         <p id = "reference">startTime</p>
-       
-		<p id = "check">True</p>
+
 		
         <table class="table">
             <tr >
@@ -139,7 +138,7 @@
     <div class="level1" id = 'board' style="width:900px;">
             <!--This is for the scenario description-->
         <div class="level2">
-            <img src="images/Normal-morning-thumb.png" id = "banner" width="800" height="120">
+            <img src="images/Limited-morning-thumb.png" id = "banner" width="800" height="120">
         </div>
     
             <!--This is for the visualized graph-->
@@ -157,19 +156,19 @@
         </div>
             <div class="level3" >
                 <button id = "morningTime" onclick="changeTime(this)">Morning</button>
-                <div id="morningConsumption" style="background-color: rgb(204, 204, 204);"></div>
+                <div id="morningConsumption" style="background-color: rgb(204, 204, 204); width: 170px; height: auto;"></div>
             </div>
             <div class="level3" >
                 <button id = "lunchTime" onclick="changeTime(this)">Lunch</button>
-                <div id="lunchConsumption" style="background-color: rgb(204, 204, 204);"></div>
+                <div id="lunchConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
             </div>
             <div class="level3" > 
                 <button id = "eveningTime" onclick="changeTime(this)">Evening</button>
-                <div id="eveningConsumption" style="background-color: rgb(204, 204, 204);"></div>
+                <div id="eveningConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
             </div>
             <div class="level3" >
                 <button id = "nightTime" onclick="changeTime(this)">Night</button>
-                <div id="nightConsumption" style="background-color: rgb(204, 204, 204);"></div>
+                <div id="nightConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
             </div>
         </div>
     
