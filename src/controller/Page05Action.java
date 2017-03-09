@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -20,7 +21,7 @@ import model.ResponseDAO;
 public class Page05Action extends Action {	
 	private ResponseDAO responseDAO;
     private RespondentDAO respondentDAO;
-
+    
     public Page05Action(Model model) {
         responseDAO = model.getResponseDAO();
         respondentDAO = model.getRespondentDAO();

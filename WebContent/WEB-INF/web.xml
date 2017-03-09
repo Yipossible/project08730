@@ -11,6 +11,7 @@
     <servlet>
         <servlet-name>SurveyWeb</servlet-name>
         <servlet-class>   controller.Controller   </servlet-class>
+        
         <init-param>
         	<param-name>  requireSSL             </param-name>
         	<param-value> false                  </param-value>
@@ -33,7 +34,10 @@
         <servlet-name>SurveyWeb</servlet-name>
         <url-pattern>    *.do                     </url-pattern>
     </servlet-mapping>
-
+	<context-param>
+	  <param-name>LANDING_DEFAULT_URL</param-name>
+	  <param-value>https://www.youtube.com/embed/inxHu5Xlal8</param-value>
+	</context-param>
     <welcome-file-list>
         <welcome-file>   page01.do                </welcome-file>
     </welcome-file-list>
