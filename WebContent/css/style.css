@@ -2,7 +2,7 @@
     float: left;
 }
 .bottom {
-    clear: left;
+    float: right;
 }
 
 .level3{
@@ -46,3 +46,4 @@
     height: 20px;
     width: 20px;
 }
+

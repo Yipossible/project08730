@@ -135,7 +135,7 @@
         
     </div >
     <!--This is for the action board-->
-    <div class="level1" id = 'board' style="width:900px;">
+    <div class="level1" id = 'board' style="width:1000px;">
             <!--This is for the scenario description-->
         <div class="level2">
             <img src="images/Limited-morning-thumb.png" id = "banner" width="800" height="120">
@@ -156,27 +156,49 @@
         </div>
             <div class="level3" >
                 <button id = "morningTime" onclick="changeTime(this)">Morning</button>
-                <div id="morningConsumption" style="background-color: rgb(204, 204, 204); width: 170px; height: auto;"></div>
+                <div id="morningConsumption" style="background-color: rgb(204, 204, 204); "></div>
             </div>
             <div class="level3" >
                 <button id = "lunchTime" onclick="changeTime(this)">Lunch</button>
-                <div id="lunchConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
+                <div id="lunchConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
             <div class="level3" > 
                 <button id = "eveningTime" onclick="changeTime(this)">Evening</button>
-                <div id="eveningConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
+                <div id="eveningConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
             <div class="level3" >
                 <button id = "nightTime" onclick="changeTime(this)">Night</button>
-                <div id="nightConsumption" style="background-color: rgb(204, 204, 204);width: 170px; height: auto;"></div>
+                <div id="nightConsumption" style="background-color: rgb(204, 204, 204);"></div>
             </div>
         </div>
     
     </div>
-    <!--This is for the button-->
     
+    
+    <!-- this is for the insturction section -->
+    <div class="level1"  id = "instruction">
+    <table width="400">
+    <tr> <td>
+    <p>Card Stack Game Instructions:</p> <br> </td></tr>
+     <tr><td><p>1) Click on a time slot button (eg. Morning) to start with. Once clicked, the section will
+     be white and you cannot edit other time of the day. To test other times of the day, simply 
+     click the time slot buttons.</p> <br></td></tr>
+     <tr> <td><p>2) Click on the images on the left side to add a consumption. Your choice will show up in 
+     the time of the day you selected earlier. </p><br></td></tr>
+     <tr> <td><p>3) You can click the up button to increase the consumption or the down button to decrease 
+     the consumption</p><br></td></tr>
+      <tr><td><p>4) if you consumption of one appliance is decreased to zero by clicking the down button, 
+     it will be removed from the board automatically.</p><br></td></tr>
+      <tr><td><p>5）if you can a new appliance after reaching the consumption threshold, it will be removed automotically 
+	after you click any of the up buttons.</p><br></td></tr>
+     </table>
+    </div>
+    
+    
+    
+    <!--This is for the button-->
     <div class="bottom">
-        <form method = "get" action = "page14.do">
+        <form method = "get"  action = "page14.do">
         <input type="submit" name = "submit" value="Next">
         </form>
     </div>

@@ -142,6 +142,25 @@
         </div>
     
     </div>
+    
+     <!-- this is for the insturction section -->
+    <div class="level1"  id = "instruction">
+    <table width="400">
+    <tr> <td>
+    <p>Card Stack Game Instructions:</p> <br> </td></tr>
+     <tr><td><p>1) Click on a time slot button (eg. Morning) to start with. Once clicked, the section will
+     be white and you cannot edit other time of the day. To test other times of the day, simply 
+     click the time slot buttons.</p> <br></td></tr>
+     <tr> <td><p>2) Click on the images on the left side to add a consumption. Your choice will show up in 
+     the time of the day you selected earlier. </p><br></td></tr>
+     <tr> <td><p>3) You can click the up button to increase the consumption or the down button to decrease 
+     the consumption</p><br></td></tr>
+      <tr><td><p>4) if you consumption of one appliance is decreased to zero by clicking the down button, 
+     it will be removed from the board automatically.</p><br></td></tr>
+      <tr><td><p>5）if you can a new appliance after reaching the consumption threshold, it will be removed automotically 
+	after you click any of the up buttons.</p><br></td></tr>
+     </table>
+    </div>
     <!--This is for the button-->
     
     <div class="bottom">
