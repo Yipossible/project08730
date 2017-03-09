@@ -39,10 +39,10 @@
 			</div>
 			
 			<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
-		<input type = "text" name = "coordinates" id="demo"/>
-		<input type ="text" name="address" id="address"/>
+		<input type = "hidden" name = "coordinates" id="demo"/>
+		<input type ="hidden" name="address" id="address"/>
 		</form> 
-		<button onload="getLocation()">Try It</button>
+		
 
  
     <script>

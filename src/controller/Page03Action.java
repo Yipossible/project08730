@@ -67,17 +67,20 @@ public class Page03Action extends Action {
             	t.setResponse(form.getZipcode() +',' + form.getCityLiveTime() + "years");
             	t.setRespondent_id(r.getRespondent_id());
             	responseDAO.create(t);
-                
+            	r.setZipcode(form.getZipcode());
+            	
                 t = new ResponseBean(); 
                 t.setQuestion_id(2);
                 t.setResponse(form.getAge() +  "years old");
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
                 
+                
                 t = new ResponseBean(); 
                 t.setQuestion_id(3);
                 t.setResponse(form.getPreschool()+','+form.getK12()+','+form.getUnder30()+','+form.getFrom30to65()+','+form.getOver65()
-                + "," + form.getCoordinates() + "," + form.getAddress());
+                + "," + form.getAddress());
+                r.setGeo_info(form.getAddress());
                 t.setRespondent_id(r.getRespondent_id());
                 int adults = Integer.parseInt(form.getUnder30())+Integer.parseInt(form.getFrom30to65())+Integer.parseInt(form.getOver65());
                 responseDAO.create(t);
@@ -87,6 +90,7 @@ public class Page03Action extends Action {
                     r.setFull_payment(false);
                     return "NotEligible.jsp";
                 }
+                r.setAge(Integer.parseInt(form.getAge()));
             }
             else {
                 return "Page03.jsp";

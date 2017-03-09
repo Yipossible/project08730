@@ -67,6 +67,7 @@ public class PaymentAction extends Action {
                 return "Payment.jsp";
             }
             successMessage.add("Successfully recorded!");
+            r.setPayment_account(form.getAmazonAccount());
             return "Success.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());
