@@ -75,7 +75,7 @@ public class Page09Action extends Action {
             }
 		} catch (RollbackException e) {
 		    System.out.println("in transaction");
-			errors.add(e.getMessage());
+//			errors.add(e.getMessage());
 			return "Page09.jsp";
 		} catch (FormBeanException e) {
 		    System.out.println("in form bean");

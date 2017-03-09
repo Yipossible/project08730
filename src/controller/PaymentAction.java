@@ -76,6 +76,7 @@ public class PaymentAction extends Action {
             }
             successMessage.add("Successfully recorded!");
             r.setPayment_account(form.getAmazonAccount());
+            respondentDAO.update(r);
             return "Success.jsp";
         } catch (RollbackException e) {
             errors.add(e.toString());

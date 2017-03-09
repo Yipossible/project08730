@@ -1,11 +1,11 @@
 <jsp:include page="top7.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+		<h3>Also, please fill out the follow questions Information about yourself and your experiences from outages</h3>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
 			<h3 style="color:red"> ${error} </h3>
 		</c:forEach>
-	<h4>Also, please fill out the follow questions Information about yourself and your experiences from outages.</h4>
 		<form action="page23.do" method="POST">
 			<p>1. How would you categorize yourself in terms of race or ethnicity?</p>
 			<input type="radio" name="race" value="Caucasian" style="margin-right:10px;"> Caucasian
@@ -13,12 +13,14 @@
 			<input type="radio" name="race" value="Black" style="margin-right:10px;">Black
 			<input type="radio" name="race" value="Asian" style="margin-right:10px;">Asian
 			<input type="radio" name="race" value="Other" style="margin-right:10px;">Other
+			<br>
 			<p>2. What was your total household income last year?</p>
 			<input type="radio" name="income" value="Under $10,000" style="margin-right:10px;">Under $10,000
 			<input type="radio" name="income" value="$10,001 to $30,000" style="margin-right:10px;">$10,001 to $30,000
 			<input type="radio" name="income" value="$30,001 to $50,000" style="margin-right:10px;">$30,001 to $50,000
 			<input type="radio" name="income" value="$50,001 to $100,000" style="margin-right:10px;">$50,001 to $100,000
 			<input type="radio" name="income" value="Above $100,000" style="margin-right:10px;"> Above $100,000
+			<br>
 			<p>3. Who pays for your electricity?</p>
 			<input type="radio" name="payer" value="You"  style="margin-right:10px;">You
 			<input type="radio" name="payer" value="Another household member"  style="margin-right:10px;">Another household member

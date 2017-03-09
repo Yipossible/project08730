@@ -60,7 +60,7 @@ public class Page18Action extends Action{
                 return "page20.do";
             }			
 		} catch (RollbackException e) {
-            errors.add(e.getMessage());
+//            errors.add(e.getMessage());
             return "error.jsp";
         } catch (FormBeanException e) {
 			errors.add(e.getMessage());

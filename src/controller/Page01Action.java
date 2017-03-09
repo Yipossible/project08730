@@ -52,7 +52,7 @@ public class Page01Action extends Action {
             session.setAttribute("unique_id", unique_id);
             return "Page01.jsp";
         } catch (RollbackException e) {
-            errors.add(e.toString());
+//            errors.add(e.toString());
             return "error.jsp";
         }
     }

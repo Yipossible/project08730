@@ -91,13 +91,14 @@ public class Page03Action extends Action {
                     return "NotEligible.jsp";
                 }
                 r.setAge(Integer.parseInt(form.getAge()));
+                respondentDAO.update(r);
             }
             else {
                 return "Page03.jsp";
             }
             return "page04.do";
         } catch (RollbackException e) {
-            errors.add(e.toString());
+//            errors.add(e.toString());
             return "error.jsp";
         } catch (FormBeanException e) {
             errors.add(e.toString());

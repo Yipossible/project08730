@@ -70,7 +70,7 @@ public class Page02Action extends Action {
                 t.setRespondent_id(r.getRespondent_id());
                 responseDAO.create(t);
                 r.setEmail(form.getEmail());
-                
+                respondentDAO.update(r);
                 if (form.getOver18().equals("Yes") == false || form.getLivedOver3().equals("Yes") == false || form.getOver2adult().equals("Yes") == false || form.getUnderstand().equals("Yes") == false || form.getParticipate().equals("Yes") == false) {
                     r.setFull_payment(false);
                     return "NotEligible.jsp";
@@ -81,7 +81,7 @@ public class Page02Action extends Action {
             }
             return "page03.do";
         } catch (RollbackException e) {
-            errors.add(e.toString());
+//            errors.add(e.toString());
             return "error.jsp";
         } catch (FormBeanException e) {
             errors.add(e.toString());

@@ -1,6 +1,6 @@
 <jsp:include page="top7.jsp" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-		<h1>6. How inconvenient would it be if an outage lasted …? </h1>
+		<h1>6. How inconvenient would it be if an outage lasted? </h1>
 		</div>
 		<div class="panel-body">
 		<c:forEach var="error" items="${errors}">
@@ -17,11 +17,11 @@
 		</tr>
 		<tr>
 			<td></td>
-			<td><span style="margin-right:10px">Not at all</span></td>
-			<td><span style="margin-right:10px">Slightly</span></td>
-			<td><span style="margin-right:10px">Moderately</span></td>
-			<td><span style="margin-right:10px">Very</span></td>
-			<td><span style="margin-right:10px">Extremely</span></td>
+			<td><span style="margin-right:20px">Not at all</span></td>
+			<td><span style="margin-right:20px">Slightly</span></td>
+			<td><span style="margin-right:20px">Moderately</span></td>
+			<td><span style="margin-right:20px">Very</span></td>
+			<td><span style="margin-right:20px">Extremely</span></td>
 		</tr>
 		
 		<tr>

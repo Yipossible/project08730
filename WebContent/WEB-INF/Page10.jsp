@@ -43,31 +43,31 @@ Anything that runs on a battery, as long as the battery lasts
 (e.g., radios, flashlights, laptop computers, and cell phones).
 		</td>
 		<td>
-•	New style telephones that include a plug to a power outlet.
-•	All electrical appliances that cannot also run on batteries, including air conditioners and blowers that circulate air.
-•	Cable and internet service.
-•	Natural gas and all normal water and sewer services.
+<li> New style telephones that include a plug to a power outlet.</li>
+<li> All electrical appliances that cannot also run on batteries, including air conditioners and blowers that circulate air.
+<li> Cable and internet service.
+<li> Natural gas and all normal water and sewer services.
 
 		</td>
 		<td>
 TV and radio stations.
 		</td>
 		<td>
-•	Traffic signals.
-•	Street lights.
-•	Banks and ATMs.
-•	Most gas stations 
+<li> Traffic signals.
+<li> Street lights.
+<li> Banks and ATMs.
+<li> Most gas stations 
 (pumps need electricity).
-•	Food stores (lights, refrigeration, and cash registers will not work).
-•	Most restaurants (very few have backup generators).
-•	Elevators in buildings without backup.
-•	Ventilator fans and lighting in traffic tunnels.
-•	Electric trolley service.
-•	Airport – major delays.
-•	Natural gas and all normal water and sewer services.
-•	Bus service.
-•	GPS service.
-•	Emergency service including 911 (via cell phone or rotary dial phone).
+<li> Food stores (lights, refrigeration, and cash registers will not work).
+<li> Most restaurants (very few have backup generators).
+<li> Elevators in buildings without backup.
+<li> Ventilator fans and lighting in traffic tunnels.
+<li> Electric trolley service.
+<li> Airport – major delays.
+<li> Natural gas and all normal water and sewer services.
+<li> Bus service.
+<li> GPS service.
+<li> Emergency service including 911 (via cell phone or rotary dial phone).
 Hospitals, police stations, and other government services.
 		</td>
 	

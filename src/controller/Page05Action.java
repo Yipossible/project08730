@@ -49,7 +49,7 @@ public class Page05Action extends Action {
                 session.setAttribute("nextPage", "page08.do");
             }
         } catch (RollbackException e) {
-            errors.add(e.getMessage());
+//            errors.add(e.getMessage());
             System.out.println(errors);
             return "error.jsp";
         } 

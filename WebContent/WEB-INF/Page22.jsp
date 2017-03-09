@@ -25,10 +25,10 @@ if at all. Please rate the exercises in order of importance regarding how much t
 		</tr>
 		<tr>
 			<td></td>
-			<td>Not at all important</td>
-			<td>Slightly important</td>
-			<td>Moderately important</td>
-			<td>Very important</td>
+			<td><span style="margin-right:20px">Not at all important</span></td>
+			<td><span style="margin-right:20px">Slightly important</span></td>
+			<td><span style="margin-right:20px">Moderately important</span></td>
+			<td><span style="margin-right:20px">Very important</span></td>
 		</tr>
 		
 		<tr>
