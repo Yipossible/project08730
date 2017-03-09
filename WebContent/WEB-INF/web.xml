@@ -35,8 +35,12 @@
         <url-pattern>    *.do                     </url-pattern>
     </servlet-mapping>
 	<context-param>
-	  <param-name>LANDING_DEFAULT_URL</param-name>
+	  <param-name>page05_video</param-name>
 	  <param-value>https://www.youtube.com/embed/inxHu5Xlal8</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>page06_slideshow_one</param-name>
+	  <param-value>http://files.photosnack.com/iframejs/embed.html</param-value>
 	</context-param>
     <welcome-file-list>
         <welcome-file>   page01.do                </welcome-file>

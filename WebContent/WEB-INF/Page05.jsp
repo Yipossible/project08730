@@ -10,7 +10,7 @@
 			In this section, I would like you to imagine the following situation: 
 			A large regional blackout occurs in late December at a time when you and all your household members are at home.<br> 
 	
-	<iframe width="560" height="315" src="${initParam.LANDING_DEFAULT_URL}" frameborder="0" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="${initParam.page05_video}" frameborder="0" allowfullscreen></iframe>
 	<br>
 	Before we continue, I would like to ask you a question to make sure you understand the scenario: <br>
 	When will the power come back on?

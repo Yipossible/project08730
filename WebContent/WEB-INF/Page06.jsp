@@ -3,6 +3,7 @@
 		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
+<iframe style="border:none" src="${initParam.page06_slideshow_one}?hash=pdu3gm8i7&t=1489036390" width="600" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" ></iframe>
 <p>
 In addition to paying for the actual electricity you use, your monthly 
 electricity bill includes charges for performing maintenance on the 

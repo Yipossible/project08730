@@ -41,7 +41,6 @@ public class PaymentAction extends Action {
         HttpSession session = request.getSession();
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
-        session.setAttribute("nextPage", "page04.do");
         try {
             PaymentForm form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());

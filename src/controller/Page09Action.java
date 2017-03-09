@@ -60,7 +60,10 @@ public class Page09Action extends Action {
             ResponseBean r = new ResponseBean();
             r.setQuestion_id(9);
             r.setRespondent_id(p.getRespondent_id());
-            r.setResponse(form.getPrice());
+            String[] range = form.getPrice().split(",");
+            double r1 = Integer.parseInt(range[0]) * 10;
+            double r2 = Integer.parseInt(range[1]) * 10;
+            r.setResponse("yes: $0 to $" + (r1 - 0.01) + "; maybe: from $" + r1 + " to $" + (r2 - 0.01) + "; no: from $" + r2 + " to $100");
             responseDAO.create(r);
 
             if (p.getRespondent_id() % 2 == 0) {
