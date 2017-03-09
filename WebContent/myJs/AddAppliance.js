@@ -40,7 +40,47 @@ var lunchList = {};
 var eveningList = {};
 var nightList = {};
 
+var morningClick = [0, 0, 0, 0, 0, 0, 0, 0];
+var lunchClick = [0, 0, 0, 0, 0, 0, 0, 0];
+var eveningClick = [0, 0, 0, 0, 0, 0, 0, 0];
+var nightClick = [0, 0, 0, 0, 0, 0, 0, 0];
 
+
+var clicksnewmorninglargeVacuum = morningClick[0];
+var clicksnewmorninglargeIron = morningClick[1];
+var clicksnewmorninglargeAC = morningClick[2];
+var clicksnewmorninglargeWH = morningClick[3];
+var clicksnewmorningkitchenMV = morningClick[4];
+var clicksnewmorningkitchenStove = morningClick[5];
+var clicksnewmorningsmallTV = morningClick[6];
+var clicksnewmorningsmallSpeaker = morningClick[7];
+
+var clicksnewlunchlargeVacuum = lunchClick[0];
+var clicksnewlunchlargeIron = lunchClick[1];
+var clicksnewlunchlargeAC = lunchClick[2];
+var clicksnewlunchlargeWH = lunchClick[3];
+var clicksnewlunchkitchenMV = lunchClick[4];
+var clicksnewlunchkitchenStove = lunchClick[5];
+var clicksnewlunchsmallTV = lunchClick[6];
+var clicksnewlunchsmallSpeaker = lunchClick[7];
+
+var clicksneweveninglargeVacuum = eveningClick[0];
+var clicksneweveninglargeIron = eveningClick[1];
+var clicksneweveninglargeAC = eveningClick[2];
+var clicksneweveninglargeWH = eveningClick[3];
+var clicksneweveningkitchenMV = eveningClick[4];
+var clicksneweveningkitchenStove = eveningClick[5];
+var clicksneweveningsmallTV = eveningClick[6];
+var clicksneweveningsmallSpeaker = eveningClick[7];
+
+var clicksnewnightlargeVacuum = nightClick[0];
+var clicksnewnightlargeIron = nightClick[1];
+var clicksnewnightlargeAC = nightClick[2];
+var clicksnewnightlargeWH = nightClick[3];
+var clicksnewnightkitchenMV = nightClick[4];
+var clicksnewnightkitchenStove = nightClick[5];
+var clicksnewnightsmallTV = nightClick[6];
+var clicksnewnightsmallSpeaker = nightClick[7];
 
 
 
@@ -117,25 +157,25 @@ function generateArr() {
 	var night = [0, 0, 0, 0, 0, 0, 0, 0];
 	
 	for (i = 0; i < 8; i++) {
-		var tmp = document.getElementById(mid[i]);
+		var tmp = morningClick[i];
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			morning[i] = tmp.value * dict[app[i]];
+			morning[i] = tmp * dict[app[i]];
 		}
-		var tmp = document.getElementById(lid[i]);
+		var tmp = lunchClick[i];
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			lunch[i] = tmp.value * dict[app[i]];
+			lunch[i] = tmp * dict[app[i]];
 		}
-		var tmp = document.getElementById(eid[i]);
+		var tmp = eveningClick[i];
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			evening[i] = tmp.value * dict[app[i]];
+			evening[i] = tmp * dict[app[i]];
 		}
-		var tmp = document.getElementById(nid[i]);
+		var tmp = nightClick[i];
 		if (typeof tmp === 'undefined' || !tmp) {
 		} else {
-			night[i] = tmp.value * dict[app[i]];
+			night[i] = tmp * dict[app[i]];
 		}
 	}
 	var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker'],
@@ -147,41 +187,7 @@ function generateArr() {
 	return arr;
 }
 
-var clicksnewmorninglargeVacuum = 1;
-var clicksnewmorninglargeIron = 1;
-var clicksnewmorninglargeAC = 1;
-var clicksnewmorninglargeWH = 1;
-var clicksnewmorningkitchenMV = 1;
-var clicksnewmorningkitchenStove = 1;
-var clicksnewmorningsmallTV = 1;
-var clicksnewmorningsmallSpeaker = 1;
 
-var clicksnewlunchlargeVacuum = 1;
-var clicksnewlunchlargeIron = 1;
-var clicksnewlunchlargeAC = 1;
-var clicksnewlunchlargeWH = 1;
-var clicksnewlunchkitchenMV = 1;
-var clicksnewlunchkitchenStove = 1;
-var clicksnewlunchsmallTV = 1;
-var clicksnewlunchsmallSpeaker = 1;
-
-var clicksneweveninglargeVacuum = 1;
-var clicksneweveninglargeIron = 1;
-var clicksneweveninglargeAC = 1;
-var clicksneweveninglargeWH = 1;
-var clicksneweveningkitchenMV = 1;
-var clicksneweveningkitchenStove = 1;
-var clicksneweveningsmallTV = 1;
-var clicksneweveningsmallSpeaker = 1;
-
-var clicksnewnightlargeVacuum = 1;
-var clicksnewnightlargeIron = 1;
-var clicksnewnightlargeAC = 1;
-var clicksnewnightlargeWH = 1;
-var clicksnewnightkitchenMV = 1;
-var clicksnewnightkitchenStove = 1;
-var clicksnewnightsmallTV = 1;
-var clicksnewnightsmallSpeaker = 1;
 
 
 
@@ -195,137 +201,40 @@ var clicksnewnightsmallSpeaker = 1;
 function clickplus (e) {    
 	console.log(e);
 
-    
-    if (e == 'newmorninglargeVacuum') {
-    	clicksnewmorninglargeVacuum++;
-    	document.getElementById(e).value =clicksnewmorninglargeVacuum;
-    }
-        if (e == 'newmorninglargeIron') {
-        	clicksnewmorninglargeIron++;
-        	document.getElementById(e).value =clicksnewmorninglargeIron;
-    }
-        if (e == 'newmorninglargeAC') {
-        	clicksnewmorninglargeAC++;
-        	document.getElementById(e).value =clicksnewmorninglargeAC;
-    }
-        if (e == 'newmorninglargeWH') {
-        	clicksnewmorninglargeWH++;
-        	document.getElementById(e).value =clicksnewmorninglargeWH;
-    }
-        if (e == 'newmorningkitchenMV') {
-        	clicksnewmorningkitchenMV++;
-        	document.getElementById(e).value =clicksnewmorningkitchenMV;
-    }
-        if (e == 'newmorningkitchenStove') {
-        	clicksnewmorningkitchenStove++;
-        	document.getElementById(e).value =clicksnewmorningkitchenStove;
-    }
-        if (e == 'newmorningsmallTV') {
-        	clicksnewmorningsmallTV++;
-        	document.getElementById(e).value =clicksnewmorningsmallTV;
-    }
-        if (e == 'newmorningsmallSpeaker') {
-        	clicksnewmorningsmallSpeaker++;
-        	document.getElementById(e).value =clicksnewmorningsmallSpeaker;
-    }
-    
-        if (e == 'newlunchlargeVacuum') {
-        	clicksnewlunchlargeVacuum++;
-        	document.getElementById(e).value =clicksnewlunchlargeVacuum;
-        }
-            if (e == 'newlunchlargeIron') {
-            	clicksnewlunchlargeIron++;
-            	document.getElementById(e).value =clicksnewlunchlargeIron;
-        }
-            if (e == 'newlunchlargeAC') {
-            	clicksnewlunchlargeAC++;
-            	document.getElementById(e).value =clicksnewlunchlargeAC;
-        }
-            if (e == 'newlunchlargeWH') {
-            	clicksneweveninglargeWH++;      
-            	document.getElementById(e).value =clicksneweveninglargeWH;      
-        }
-            if (e == 'newlunchkitchenMV') {
-            	clicksneweveningkitchenMV++;
-            	document.getElementById(e).value =clicksneweveningkitchenMV;
-        }
-            if (e == 'newlunchkitchenStove') {
-            	clicksnewlunchkitchenStove++;
-            	document.getElementById(e).value =clicksnewlunchkitchenStove;
-        }
-            if (e == 'newlunchsmallTV') {
-            	clicksnewlunchsmallTVr++;
-            	document.getElementById(e).value =clicksnewlunchsmallTV;
-        }
-            if (e == 'newlunchsmallSpeaker') {
-            	clicksnewlunchsmallSpeaker++;
-            	document.getElementById(e).value =clicksnewlunchsmallSpeaker;
-        }
-            if (e == 'neweveninglargeVacuum') {
-            	clicksneweveninglargeVacuum++;
-            	document.getElementById(e).value =clicksneweveninglargeVacuum;
-            }
-                if (e == 'neweveninglargeIron') {
-                	clicksneweveninglargeIron++;
-                	document.getElementById(e).value =clicksneweveninglargeIron;
-            }
-                if (e == 'neweveninglargeAC') {
-                	clicksneweveninglargeAC++;
-                	document.getElementById(e).value =clicksneweveninglargeAC;
-            }
-                if (e == 'neweveninglargeWH') {
-                	clicksneweveninglargeWH++;
-                	document.getElementById(e).value =clicksneweveninglargeWH;
-            }
-                if (e == 'neweveningkitchenMV') {
-              clicksneweveningkitchenMV++;
-              document.getElementById(e).value =clicksneweveningkitchenMV;
-            }
-                if (e == 'neweveningkitchenStove') {
-                	clicksneweveningkitchenStove++;
-                	document.getElementById(e).value =clicksneweveningkitchenStove;
-            }
-                if (e == 'neweveningsmallTV') {
-               clicksneweveningsmallTV++;
-               document.getElementById(e).value =clicksneweveningsmallTV;
-            }
-                if (e == 'neweveningsmallSpeaker') {
-               clicksneweveningsmallSpeaker++;
-               document.getElementById(e).value =clicksneweveningsmallSpeaker;
-            }
-                if (e == 'newnightlargeVacuum') {
-                   clicksnewnightlargeVacuum++;
-                   document.getElementById(e).value =clicksnewnightlargeVacuum;
-                }
-                    if (e == 'newnightlargeIron') {
-                 clicksnewnightlargeIron++;
-                 document.getElementById(e).value =clicksnewnightlargeIron;
-                }
-                    if (e == 'newnightlargeAC') {
-                   clicksnewnightlargeAC++;
-                   document.getElementById(e).value =clicksnewnightlargeAC;
-                }
-                    if (e == 'newnightkitchenMV') {
-                   clicksnewnightkitchenMV++;
-                   document.getElementById(e).value =clicksnewnightkitchenMV;
-                }
-                    if (e == 'newnightlargeWH') {
-                    	clicksnewnightlargeWH++;
-                    	document.getElementById(e).value =clicksnewnightlargeWH;
-                }
-                    if (e == 'newnightkitchenStove') {
-                   clicksnewnightkitchenStove++;
-                   document.getElementById(e).value =clicksnewnightkitchenStove;
-                }
-                    if (e == 'newnightsmallTV') {
-                 clicksnewnightsmallTV++;
-                 document.getElementById(e).value =clicksnewnightsmallTV;
-                }
-                    if (e == 'newnightsmallSpeaker') {
-                    	clicksnewnightsmallSpeaker++;
-                    	document.getElementById(e).value =clicksnewnightsmallSpeaker;
-                }
-    
+	
+
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == mid[i]) {
+ 			var temp = morningClick[i];
+ 			temp++;
+ 			morningClick[i] = temp;
+ 			console.log (e + " has " + morningClick[i]+  "clicks");
+ 		}
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == lid[i]) {
+ 			var temp = lunchClick[i];
+ 			temp++;
+ 			lunchClick[i] = temp;
+ 		}
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == eid[i]) {
+ 			var temp = eveningClick[i];
+ 			temp++;
+ 			eveningClick[i] = temp;
+ 		}
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == nid[i]) {
+ 			var temp = nightClick[i];
+ 			temp++;
+ 			nightClick[i] = temp;
+ 		}
+	}
     
     
     arr = generateArr();
@@ -336,142 +245,57 @@ function clickplus (e) {
 function clickminus(e) {
 	console.log(e);
 
-    if (e == 'newmorninglargeVacuum') {
-    	clicksnewmorninglargeVacuum--;
-    	document.getElementById(e).value =clicksnewmorninglargeVacuum;
-    }
-        if (e == 'newmorninglargeIron') {
-        	clicksnewmorninglargeIron--;
-        	document.getElementById(e).value =clicksnewmorninglargeIron;
-    }
-        if (e == 'newmorninglargeAC') {
-        	clicksnewmorninglargeAC--;
-        	document.getElementById(e).value =clicksnewmorninglargeAC;
-    }
-        if (e == 'newmorninglargeWH') {
-        	clicksnewmorninglargeWH--;
-        	document.getElementById(e).value =clicksnewmorninglargeWH;
-    }
-        if (e == 'newmorningkitchenMV') {
-        	clicksnewmorningkitchenMV--;
-        	document.getElementById(e).value =clicksnewmorningkitchenMV;
-    }
-        if (e == 'newmorningkitchenStove') {
-        	clicksnewmorningkitchenStove--;
-        	document.getElementById(e).value =clicksnewmorningkitchenStove;
-    }
-        if (e == 'newmorningsmallTV') {
-        	clicksnewmorningsmallTV--;
-        	document.getElementById(e).value =clicksnewmorningsmallTV;
-    }
-        if (e == 'newmorningsmallSpeaker') {
-        	clicksnewmorningsmallSpeaker--;
-        	document.getElementById(e).value =clicksnewmorningsmallSpeaker;
-    }
-    
-        if (e == 'newlunchlargeVacuum') {
-        	clicksnewlunchlargeVacuum--;
-        	document.getElementById(e).value =clicksnewlunchlargeVacuum;
-        }
-            if (e == 'newlunchlargeIron') {
-            	clicksnewlunchlargeIron--;
-            	document.getElementById(e).value =clicksnewlunchlargeIron;
-        }
-            if (e == 'newlunchlargeAC') {
-            	clicksnewlunchlargeAC--;
-            	document.getElementById(e).value =clicksnewlunchlargeAC;
-        }
-            if (e == 'newlunchlargeWH') {
-            	clicksneweveninglargeWH--;      
-            	document.getElementById(e).value =clicksneweveninglargeWH;      
-        }
-            if (e == 'newlunchkitchenMV') {
-            	clicksneweveningkitchenMV--;
-            	document.getElementById(e).value =clicksneweveningkitchenMV;
-        }
-            if (e == 'newlunchkitchenStove') {
-            	clicksnewlunchkitchenStove--;
-            	document.getElementById(e).value =clicksnewlunchkitchenStove;
-        }
-            if (e == 'newlunchsmallTV') {
-            	clicksnewlunchsmallTVr--;
-            	document.getElementById(e).value =clicksnewlunchsmallTVr;
-        }
-            if (e == 'newlunchsmallSpeaker') {
-            	clicksnewlunchsmallSpeaker--;
-            	document.getElementById(e).value =clicksnewlunchsmallSpeaker;
-        }
-            if (e == 'neweveninglargeVacuum') {
-            	clicksneweveninglargeVacuum--;
-            	document.getElementById(e).value =clicksneweveninglargeVacuum;
-            }
-                if (e == 'neweveninglargeIron') {
-                	clicksneweveninglargeIron--;
-                	document.getElementById(e).value =clicksneweveninglargeIron;
-            }
-                if (e == 'neweveninglargeAC') {
-                	clicksneweveninglargeAC--;
-                	document.getElementById(e).value =clicksneweveninglargeAC;
-            }
-                if (e == 'neweveninglargeWH') {
-                	clicksneweveninglargeWH--;
-                	document.getElementById(e).value =clicksneweveninglargeWH;
-            }
-                if (e == 'neweveningkitchenMV') {
-              clicksneweveningkitchenMV--;
-              document.getElementById(e).value =clicksneweveningkitchenMV;
-            }
-                if (e == 'neweveningkitchenStove') {
-                	clicksneweveningkitchenStove--;
-                	document.getElementById(e).value =clicksneweveningkitchenStove;
-            }
-                if (e == 'neweveningsmallTV') {
-               clicksneweveningsmallTV--;
-               document.getElementById(e).value =clicksneweveningsmallTV;
-            }
-                if (e == 'neweveningsmallSpeaker') {
-               clicksneweveningsmallSpeaker--;
-               document.getElementById(e).value =clicksneweveningsmallSpeaker;
-            }
-                if (e == 'newnightlargeVacuum') {
-                   clicksnewnightlargeVacuum--;
-                   document.getElementById(e).value =clicksnewnightlargeVacuum;
-                }
-                    if (e == 'newnightlargeIron') {
-                 clicksnewnightlargeIron--;
-                 document.getElementById(e).value =clicksnewnightlargeIron;
-                }
-                    if (e == 'newnightlargeAC') {
-                   clicksnewnightlargeAC--;
-                   document.getElementById(e).value =clicksnewnightlargeAC;
-                }
-                    if (e == 'newnightkitchenMV') {
-                   clicksnewnightkitchenMV--;
-                   document.getElementById(e).value =clicksnewnightkitchenMV;
-                }
-                    if (e == 'newnightlargeWH') {
-                    	clicksnewnightlargeWH--;
-                    	document.getElementById(e).value =clicksnewnightlargeWH;
-                }
-                    if (e == 'newnightkitchenStove') {
-                   clicksnewnightkitchenStove--;
-                   document.getElementById(e).value =clicksnewnightkitchenStove;
-                }
-                    if (e == 'newnightsmallTV') {
-                 clicksnewnightsmallTV--;
-                 document.getElementById(e).value =clicksnewnightsmallTV;
-                }
-                    if (e == 'newnightsmallSpeaker') {
-                    	clicksnewnightsmallSpeaker--;
-                    	document.getElementById(e).value =clicksnewnightsmallSpeaker;
-                }
-   
-                    
-    if (document.getElementById(e).value < 0 || document.getElementById(e).value == 0) {
-    	document.getElementById(e).value = 0;
-    	remove(e);
-        console.log("item removed");
-     }
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == mid[i]) {
+ 			var temp = morningClick[i];
+ 			temp--;
+ 			morningClick[i] = temp;
+ 			if (morningClick[i] < 0 || morningClick[i] == 0) {
+ 	 	    	morningClick[i] = 0;
+ 	 	    	remove(e);
+ 	 	        console.log("morning item removed");
+ 	 	     } 
+ 		}    
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == lid[i]) {
+ 			var temp = lunchClick[i];
+ 			temp--;
+ 			lunchClick[i] = temp;
+ 			 if (lunchClick[i] < 0 || lunchClick[i] == 0) {
+ 	 		   	lunchClick[i] = 0;
+ 	 	    	remove(e);
+ 	 	        console.log("lunch item removed");
+ 	 	     }
+ 		}     
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == eid[i]) {
+ 			var temp = eveningClick[i];
+ 			temp--;
+ 			eveningClick[i] = temp;
+ 			if (eveningClick[i] < 0 || eveningClick[i] == 0) {
+ 		 		  eveningClick[i] = 0;
+ 		 	    	remove(e);
+ 		 	        console.log("evening item removed");
+ 		 	     }
+ 		}     
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == nid[i]) {
+ 			var temp = nightClick[i];
+ 			temp--;
+ 			nightClick[i] = temp;
+ 			if (nightClick[i] < 0 || nightClick[i] == 0) {
+ 		 		  nightClick[i] = 0;
+ 		 	    	remove(e);
+ 		 	        console.log("night item removed");
+ 		 	     }
+ 		}      
+	}
                     
      arr = generateArr();
     google.charts.setOnLoadCallback(drawChart(arr));

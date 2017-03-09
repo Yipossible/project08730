@@ -139,7 +139,7 @@
     <div class="level1" id = 'board' style="width:900px;">
             <!--This is for the scenario description-->
         <div class="level2">
-            <img src="images/Normal-morning-thumb.png" id = "banner" width="800" height="120">
+            <img src="images/Limited-morning-thumb.png" id = "banner" width="800" height="120">
         </div>
     
             <!--This is for the visualized graph-->

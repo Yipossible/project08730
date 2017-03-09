@@ -213,6 +213,7 @@ function generateArr() {
 //	console.log ("night" + nightSum);
 //	
 	
+	//update morning section graph;
 	for (var i = 0; i < 8; i++){
 		var tmp = morningClick[i];
 		if (typeof tmp === 'undefined' || !tmp) {
@@ -236,32 +237,77 @@ function generateArr() {
 	}
 	 morningSum = 0;
 	
-	
-	
-	
-	/*for (i = 0; i < 8; i++) {
-		var tmp = morningClick[i];
-		if (typeof tmp === 'undefined' || !tmp) {
-		} else {
-			
-			if ((morningSum + dict[app[i]]) < 151) {
-				console.log ("morning" + morningSum);
-				gate = true;
-				console.log (gate);
-				morningScore[i] = tmp * dict[app[i]];
-				morningSum = morningSum + dict[app[i]];
-			
+	//update lunch section graph;
+		for (var i = 0; i < 8; i++){
+			var tmp = lunchClick[i];
+			if (typeof tmp === 'undefined' || !tmp) {
 			} else {
-				gate = false;
-				console.log (gate);
-				tmp--;
-				morningClick[i] = tmp;
-				//morning[i] = tmp * dict[app[i]];
-				alert("You have reached consumption threshold, cannot add more!");
+				lunchSum = lunchSum + tmp * dict[app[i]];
+				if (lunchSum > 150) {
+					gate = false;
+					console.log (gate);
+					alert("You have reached consumption threshold, cannot add more!");
+					tmp--;
+					lunchClick[i] = tmp;
+				} else {
+					lunchScore[i] = tmp * dict[app[i]];
+					gate = true;
+					console.log (gate);
+				}
+
 			}
-		}*/
-		
-		
+			
+			
+		}
+		lunchSum = 0;
+		 
+		//update evening section graph;
+		for (var i = 0; i < 8; i++){
+				var tmp = eveningClick[i];
+				if (typeof tmp === 'undefined' || !tmp) {
+				} else {
+					eveningSum = eveningSum + tmp * dict[app[i]];
+					if (eveningSum > 150) {
+						gate = false;
+						console.log (gate);
+						alert("You have reached consumption threshold, cannot add more!");
+						tmp--;
+						eveningClick[i] = tmp;
+					} else {
+						eveningScore[i] = tmp * dict[app[i]];
+						gate = true;
+						console.log (gate);
+					}
+
+				}
+				
+				
+			}
+		eveningSum = 0;
+	
+			//update night section graph;
+				for (var i = 0; i < 8; i++){
+					var tmp = nightClick[i];
+					if (typeof tmp === 'undefined' || !tmp) {
+					} else {
+						nightSum = nightSum + tmp * dict[app[i]];
+						if (nightSum > 150) {
+							gate = false;
+							console.log (gate);
+							alert("You have reached consumption threshold, cannot add more!");
+							tmp--;
+							nightClick[i] = tmp;
+						} else {
+							nightScore[i] = tmp * dict[app[i]];
+							gate = true;
+							console.log (gate);
+						}
+
+					}
+					
+					
+				}
+				nightSum = 0;
 		
 		
 //		var tmp = document.getElementById(lid[i]);
@@ -283,12 +329,12 @@ function generateArr() {
 	
       var arr =	[['a', 'Vacuum', 'Iron', 'AC', 'Water Healer', 'Microwave', 'Stove', 'TV', 'Speaker', 'Threshold'],
     	 ['Morning'].concat(morningScore),
-         //['Lunch'].concat(lunchScore),
-         //['Evening'].concat(eveningScore),
-         //['Night'].concat(nightScore)
+         ['Lunch'].concat(lunchScore),
+         ['Evening'].concat(eveningScore),
+         ['Night'].concat(nightScore)
       ];
 	return arr;
-	console.log ("morningSum in js:" + morningSum);
+	
     console.log(arr);
 }
 
@@ -312,10 +358,80 @@ function clickplus (e) {
  			morningClick[i] = temp;
  		}
 	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == lid[i]) {
+ 			var temp = lunchClick[i];
+ 			temp++;
+ 			lunchClick[i] = temp;
+ 		}
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == eid[i]) {
+ 			var temp = eveningClick[i];
+ 			temp++;
+ 			eveningClick[i] = temp;
+ 		}
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == nid[i]) {
+ 			var temp = nightClick[i];
+ 			temp++;
+ 			nightClick[i] = temp;
+ 		}
+	}
+	
+	
+	
+	
     
   
     arr = generateArr();
     google.charts.setOnLoadCallback(drawChart(arr)); 
+    
+    for (var i=0; i < morningClick.length; i++) {
+		var table = mid[i].substring(3) + "table";
+		console.log ("remove?: "+ table);
+		var tmpObj =document.getElementById(table);
+		if ((morningClick[i] == 0) && ( tmpObj != null) ){
+			document.getElementById('morningConsumption').removeChild(document.getElementById(table));
+		    delete morningList[e];
+		}
+	}
+    
+    for (var i=0; i < lunchClick.length; i++) {
+		var table = lid[i].substring(3) + "table";
+		console.log ("remove lunch: "+ table);
+		var tmpObj =document.getElementById(table);
+		if ((lunchClick[i] == 0) && ( tmpObj != null) ){
+			document.getElementById('lunchConsumption').removeChild(document.getElementById(table));
+		    delete lunchList[e];
+		}
+	}
+    
+    for (var i=0; i < eveningClick.length; i++) {
+		var table = eid[i].substring(3) + "table";
+		console.log ("remove evening: "+ table);
+		var tmpObj =document.getElementById(table);
+		if ((eveningClick[i] == 0) && ( tmpObj != null) ){
+			document.getElementById('eveningConsumption').removeChild(document.getElementById(table));
+		    delete eveningList[e];
+		}
+	}
+    
+    for (var i=0; i < nightClick.length; i++) {
+		var table = nid[i].substring(3) + "table";
+		console.log ("remove?: "+ table);
+		var tmpObj =document.getElementById(table);
+		if ((nightClick[i] == 0) && ( tmpObj != null) ){
+			document.getElementById('nightConsumption').removeChild(document.getElementById(table));
+		    delete nightList[e];
+		}
+	}
+    
+    
 }
 
 function clickminus(e) {
@@ -327,13 +443,51 @@ function clickminus(e) {
  			var temp = morningClick[i];
  			temp--;
  			morningClick[i] = temp;
- 		}
- 	   if (morningClick[i] < 0 || morningClick[i] == 0) {
- 	    	morningClick[i] = 0;
- 	    	remove(e);
- 	        console.log("item removed");
- 	     }
- 	       
+ 			if (morningClick[i] < 0 || morningClick[i] == 0) {
+ 	 	    	morningClick[i] = 0;
+ 	 	    	remove(e);
+ 	 	        console.log("morning item removed");
+ 	 	     } 
+ 		}    
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == lid[i]) {
+ 			var temp = lunchClick[i];
+ 			temp--;
+ 			lunchClick[i] = temp;
+ 			 if (lunchClick[i] < 0 || lunchClick[i] == 0) {
+ 	 		   	lunchClick[i] = 0;
+ 	 	    	remove(e);
+ 	 	        console.log("lunch item removed");
+ 	 	     }
+ 		}     
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == eid[i]) {
+ 			var temp = eveningClick[i];
+ 			temp--;
+ 			eveningClick[i] = temp;
+ 			if (eveningClick[i] < 0 || eveningClick[i] == 0) {
+ 		 		  eveningClick[i] = 0;
+ 		 	    	remove(e);
+ 		 	        console.log("evening item removed");
+ 		 	     }
+ 		}     
+	}
+	
+	for (var i = 0 ; i < 8; i++) {
+ 		if (e == nid[i]) {
+ 			var temp = nightClick[i];
+ 			temp--;
+ 			nightClick[i] = temp;
+ 			if (nightClick[i] < 0 || nightClick[i] == 0) {
+ 		 		  nightClick[i] = 0;
+ 		 	    	remove(e);
+ 		 	        console.log("night item removed");
+ 		 	     }
+ 		}      
 	}
    
                     
@@ -524,7 +678,6 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
-        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -538,9 +691,7 @@ function addtoPanel(e) {
         	container.appendChild(button2);
         	container.appendChild(input);
         morningList[inputid] = 1;
-        morningClick[appMap[mapid]] = 1;
-        console.log("new item key" + appMap[mapid]);
-;        }
+        }
     }
     
         if (reference == "LunchTime") {
@@ -553,7 +704,6 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
-        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -582,7 +732,6 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
-        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -610,7 +759,6 @@ function addtoPanel(e) {
         newImage.setAttribute("id", imageid);
         newImage.removeAttribute('onclick');
         input.setAttribute('id', inputid);
-        //input.setAttribute('value', 1);
         button1.setAttribute('onclick','clickplus("' + inputid + '")');
         button1.setAttribute('id',button1id);
         button2.setAttribute('id',button2id);
@@ -629,6 +777,3 @@ function addtoPanel(e) {
     }
 
 }
-
-
-
