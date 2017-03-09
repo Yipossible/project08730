@@ -1,6 +1,8 @@
 package controller;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -58,10 +60,16 @@ public class PaymentAction extends Action {
             System.out.println(r);
             if (r != null) {
                 ResponseBean t = new ResponseBean(); 
-            	t.setQuestion_id(1);
+            	t.setQuestion_id(30);
             	t.setResponse(form.getAmazonAccount());
             	t.setRespondent_id(r.getRespondent_id());
             	responseDAO.create(t);
+            	
+            	ResponseBean t2 = new ResponseBean(); 
+                t2.setQuestion_id(31);
+                t2.setResponse("Submitted at:" + LocalDateTime.now().toString());
+                t2.setRespondent_id(r.getRespondent_id());
+                responseDAO.create(t2);
             }
             else {
                 return "Payment.jsp";
