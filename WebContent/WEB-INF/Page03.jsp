@@ -40,15 +40,17 @@
 			
 			<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 		<input type = "hidden" name = "coordinates" id="demo"/>
-		<input type ="hidden" name="address" id="address"/>
+		<input type ="hidden" name="address" id="address"/> 
 		</form> 
-		
+		<!-- <button onclick="getLocation()">Try It</button>
+		<p id="demo"></p> -->
 
  
     <script>
     var x = document.getElementById("demo");
     var y = document.getElementById("address");
 
+    
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -66,7 +68,8 @@
     	
  	   geocoder.geocode({'location': coordinates}, function(results, status) {
  	          if (status === 'OK') {
- 	              y.value = results[1].formatted_address;
+ 	        	// y.value = results[1].formatted_address;
+ 	         y.value  = results[3].address_components[1].short_name + " " + results[3].address_components[0].short_name ;
  	            } 
  	        });
     }

@@ -174,6 +174,18 @@ public class Page03Form extends FormBean {
             errors.add("Invalid values");
             return errors;
         }
+        
+        if (address == null || address.length() == 0) {
+        	errors.add("geoAPI use reaches limit");
+        	return errors;
+        }
+        
+        if (coordinates == null || coordinates.length() == 0) {
+        	errors.add("geoAPI use reaches limit");
+        	return errors;
+        }
+        
+        
         try {
             double a = Double.parseDouble(age);
             double cl = Double.parseDouble(cityLiveTime);
