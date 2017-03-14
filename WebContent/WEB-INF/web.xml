@@ -42,6 +42,22 @@
 	  <param-name>page06_slideshow_one</param-name>
 	  <param-value>http://files.photosnack.com/iframejs/embed.html</param-value>
 	</context-param>
+	<context-param>
+	  <param-name>page08_slideshow_two</param-name>
+	  <param-value>http://files.photosnack.com/iframejs/embed.html</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>page14_img</param-name>
+	  <param-value>https://www.flickr.com/photos/trevor_dobson_inefekt69/32936864910/in/explore-2017-03-08/</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>page18_slideshow</param-name>
+	  <param-value>http://files.photosnack.com/iframejs/embed.html</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>page21_img</param-name>
+	  <param-value>https://www.flickr.com/photos/trevor_dobson_inefekt69/32936864910/in/explore-2017-03-08/</param-value>
+	</context-param>
     <welcome-file-list>
         <welcome-file>   page01.do                </welcome-file>
     </welcome-file-list>

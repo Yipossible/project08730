@@ -3,6 +3,7 @@
 		    <h1>Main Survey: Blackout in late December</h1>
 		</div>
 		<div class="panel-body">
+		${initParam.page08_slideshow_two}
 <p>
 <p>
 In addition to paying for the actual electricity you use, your monthly 

@@ -14,14 +14,14 @@
 </p>
 
 <p>
-Next, let’s focus on one specific inconvenience: spoiled food. Below we have 
+Next, let's focus on one specific inconvenience: spoiled food. Below we have 
 provided you a picture of the contents of a typical refrigerator/freezer to help 
 you think about the food you have:
 </p>
 
 <p>
 <strong>
-	THERE IS A PICTURE!
+	<img src="${initParam.page14_img}">
 </strong>
 </p>
 

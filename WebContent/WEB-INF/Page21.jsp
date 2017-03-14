@@ -20,7 +20,7 @@ to help the entire community during the outage?
 
 
 <p>
-<b>INSERT A PICTURE HERE</b>
+${initParam.page21_image}
 </p>
 
 <form method ="post" action="page21.do">

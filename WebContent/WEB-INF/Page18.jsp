@@ -19,7 +19,7 @@ the household level, sometimes an outage do pose a serious risk of death or
 major property losses. For example, outages in extreme winter can cause deaths
  and major property damages (e.g., frozen water pipes). 
 
-<b>NEED TO BE AN INTERACTIVE SLIDES HERE</b>
+${initParam.page18_slideshow}
 </p>
 
 <form>
