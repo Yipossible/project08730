@@ -58,11 +58,11 @@ public class Page22Form extends FormBean{
 			errors.add("Please fill row 3.");
 		}
 		
-		if(page_22_3 == null || page_22_4.length() == 0) {
+		if(page_22_4 == null || page_22_4.length() == 0) {
 			errors.add("Please fill row 4.");
 		}
 		
-		if(page_22_4 == null || page_22_5.length() == 0) {
+		if(page_22_5 == null || page_22_5.length() == 0) {
 			errors.add("Please fill row 5.");
 		}
 		

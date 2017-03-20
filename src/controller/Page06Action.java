@@ -39,7 +39,19 @@ public class Page06Action extends Action {
         session.setAttribute("successMessage", successMessage);
         session.setAttribute("errors", errors);
         session.setAttribute("nextPage", "page07.do");
-        
+        String unique_id = (String) session.getAttribute("unique_id"); // store in session
+        RespondentBean p;
+        try {
+            p = respondentDAO.read(unique_id);
+            if (!p.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
+        } catch (RollbackException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return "error.jsp";
+        }
+       
         return "Page06.jsp";
     }
 }

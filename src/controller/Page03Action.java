@@ -42,6 +42,13 @@ public class Page03Action extends Action {
         session.setAttribute("errors", errors);
         session.setAttribute("nextPage", "page04.do");
         try {
+            String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean r = respondentDAO.read(unique_id);
+            System.out.println("eligible?" + r.isFull_payment());
+            if (!r.isFull_payment()) {
+                
+                return "NotEligible.jsp";
+            }
             Page03Form form = formBeanFactory.create(request);
             System.out.println(!form.isPresent());
             if (!form.isPresent()) {
@@ -53,11 +60,8 @@ public class Page03Action extends Action {
                 System.out.println("errors" + errors);
                 return "Page03.jsp";
             }
-            String unique_id = (String) session.getAttribute("unique_id"); // store in session
-            RespondentBean r = respondentDAO.read(unique_id);
-            if (!r.isFull_payment()) {
-                return "NotEligible.jsp";
-            }
+            
+            
             System.out.println("full" + r.isFull_payment());
             if (r != null) {
                 // store question 1~3 to the response table

@@ -189,12 +189,17 @@ public class Page03Form extends FormBean {
         try {
             double a = Double.parseDouble(age);
             double cl = Double.parseDouble(cityLiveTime);
+            double o = Double.parseDouble(over65);
+            double p = Double.parseDouble(preschool);
+            double f = Double.parseDouble(from30to65);
+            double u = Double.parseDouble(under30);
+            double k = Double.parseDouble(k12);
             int z = Integer.parseInt(zipcode);
             if (a < 0 || cl < 0 || z < 9999) {
                 errors.add("Invalid value");
             }
         } catch (NumberFormatException e) {
-            errors.add("Invalid format for amount");
+            errors.add("Please input all numbers!");
         }
         return errors;
     }

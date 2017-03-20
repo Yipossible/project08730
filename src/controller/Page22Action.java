@@ -36,6 +36,7 @@ public class Page22Action extends Action {
 	public String perform(HttpServletRequest request) {
 		List<String> errors = new ArrayList<String>();
 		HttpSession session = request.getSession();
+		session.setAttribute("errors", errors);
 		session.setAttribute("nextPage", "page23.do");
 		try {
 			Page22Form form = formBeanFactory.create(request);
@@ -43,14 +44,14 @@ public class Page22Action extends Action {
 			if (!form.isPresent()) {
 				return "Page22.jsp";
 			}
-			
 
 			errors.addAll(form.getValidationErrors());
-			System.out.println(errors);
-			session.setAttribute("errors", errors);
+			System.out.println("error" + errors);
 			if (errors.size() > 0) {
-				return "Page22.jsp";
+			    System.out.println("errors" + errors);
+			    return "Page22.jsp";
 			}
+
 			String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean p = respondentDAO.read(unique_id);
             if (!p.isFull_payment()) {

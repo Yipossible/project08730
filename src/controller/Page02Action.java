@@ -73,8 +73,10 @@ public class Page02Action extends Action {
                 respondentDAO.update(r);
                 if (form.getOver18().equals("Yes") == false || form.getLivedOver3().equals("Yes") == false || form.getOver2adult().equals("Yes") == false || form.getUnderstand().equals("Yes") == false || form.getParticipate().equals("Yes") == false) {
                     r.setFull_payment(false);
+                    respondentDAO.update(r);
                     return "NotEligible.jsp";
                 }
+                
             }
             else {
                 return "Page02.jsp";

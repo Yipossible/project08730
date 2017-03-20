@@ -6,10 +6,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
+import org.genericdao.RollbackException;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
+import databeans.RespondentBean;
 import formbean.Page10Form;
 import model.Model;
 import model.RespondentDAO;
@@ -36,6 +37,11 @@ public class Page10Action extends Action{
 		HttpSession session = request.getSession();
 		session.setAttribute("nextPage", "page11.do");
 		try {
+		    String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            if (!p.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
 			Page10Form form = formBeanFactory.create(request);
 			
 			if (!form.isPresent()) {
@@ -50,10 +56,15 @@ public class Page10Action extends Action{
 			
 			return "page11.do";
 			
+		} catch (RollbackException e) {
+            System.out.println("in transaction");
+//          errors.add(e.getMessage());
+            return "Page10.jsp";
 		} catch (FormBeanException e) {
 			errors.add(e.getMessage());
 			return "Page10.jsp";
 		}
+		
 			
 		}
 }

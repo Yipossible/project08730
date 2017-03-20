@@ -131,15 +131,22 @@ public class Page04Form extends FormBean {
 
     public List<String> getValidationErrors() {
         List<String> errors = new ArrayList<String>();
-       
+        if (workFromHome == null || workFromHome.length() == 0) {
+            errors.add("Quesion 4 is not answered");
+        }
+        
+        if (device == null || device.length() == 0) {
+            errors.add("Quesion 5 is not answered");
+        }
+        
         if (houseType == null || houseType.length() == 0) {
-            errors.add("houseType is required");
+            errors.add("House type is required");
         } else if (houseType.length() > 15 || houseType.length() >15) {
             errors.add("Invalid values");
             return errors;
         }
         if (houseLiveTime == null || houseLiveTime.length() == 0) {
-            errors.add("houseLiveTime is required");
+            errors.add("How many years have you lived in your current house or apartment is required");
         } else if (houseLiveTime.length() > 15 || houseLiveTime.length() >15) {
             errors.add("Invalid values");
             return errors;

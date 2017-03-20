@@ -49,10 +49,10 @@ public class Page23Action extends Action {
                 return "Page23.jsp";
             }
 
-//            errors.addAll(form.getValidationErrors());
-//            if (errors.size() != 0) {
-//                return "Page23.jsp";
-//            }
+            errors.addAll(form.getValidationErrors());
+            if (errors.size() != 0) {
+                return "Page23.jsp";
+            }
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
             if (!r.isFull_payment()) {

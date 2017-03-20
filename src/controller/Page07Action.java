@@ -38,6 +38,11 @@ public class Page07Action extends Action {
 		HttpSession session = request.getSession();
 		
 		try {
+		    String unique_id = (String) session.getAttribute("unique_id"); // store in session
+            RespondentBean p = respondentDAO.read(unique_id);
+            if (!p.isFull_payment()) {
+                return "NotEligible.jsp";
+            }
 		    Page07Form form = formBeanFactory.create(request);
 			
 			if (!form.isPresent()) {
@@ -52,8 +57,6 @@ public class Page07Action extends Action {
 				return "Page07.jsp";
 			}
 			
-            String unique_id = (String) session.getAttribute("unique_id"); // store in session
-            RespondentBean p = respondentDAO.read(unique_id);
             if (!p.isFull_payment()) {
                 return "NotEligible.jsp";
             }

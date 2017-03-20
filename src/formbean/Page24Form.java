@@ -208,39 +208,8 @@ public class Page24Form extends FormBean {
     public List<String> getValidationErrors() {
         List<String> errors = new ArrayList<String>();
         if (experience == null || experience.length() == 0) {
-            errors.add("zipcode is required");
-        } else if (experience.length() > 5 || experience.length() > 5) {
-            errors.add("Invalid values");
-            return errors;
-        }
-        
-        if (available_1 == null || available_1.length() == 0) {
-            errors.add("age is required");
-        } else if (available_1.length() > 3 || available_1.length() > 3) {
-            errors.add("Invalid values");
-            return errors;
-        }
-//        if (estimate_kWh == null || estimate_kWh.length() == 0) {
-//            errors.add("age is required");
-//        } else if (estimate_kWh.length() > 3 || estimate_kWh.length() > 3) {
-//            errors.add("Invalid values");
-//            return errors;
-//        }
-//        if (estimate_amps == null || estimate_amps.length() == 0) {
-//            errors.add("age is required");
-//        } else if (estimate_amps.length() > 3 || estimate_amps.length() > 3) {
-//            errors.add("Invalid values");
-//            return errors;
-//        }
-//        try {
-//            double k = Double.parseDouble(estimate_kWh);
-//            double a = Double.parseDouble(estimate_amps);
-//            if (a < 0 || k < 0 ) {
-//                errors.add("Invalid value");
-//            }
-//        } catch (NumberFormatException e) {
-//            errors.add("Invalid format for amount");
-//        }
+            errors.add("quesion 4 is required");
+        } 
         return errors;
     }
 
