@@ -116,42 +116,18 @@ public class Page23Form extends FormBean {
             errors.add("zipcode is required");
         } else if (race.length() > 5 || race.length() > 5) {
             errors.add("Invalid values");
-            return errors;
         }
         if (income == null || income.length() == 0) {
             errors.add("cityLiveTime is required");
         } else if (income.length() > 15 || income.length() >15) {
             errors.add("Invalid values");
-            return errors;
         }
         
         if (payer == null || payer.length() == 0) {
             errors.add("age is required");
         } else if (payer.length() > 3 || payer.length() > 3) {
             errors.add("Invalid values");
-            return errors;
         }
-//        if (estimate_kWh == null || estimate_kWh.length() == 0) {
-//            errors.add("age is required");
-//        } else if (estimate_kWh.length() > 3 || estimate_kWh.length() > 3) {
-//            errors.add("Invalid values");
-//            return errors;
-//        }
-//        if (estimate_amps == null || estimate_amps.length() == 0) {
-//            errors.add("age is required");
-//        } else if (estimate_amps.length() > 3 || estimate_amps.length() > 3) {
-//            errors.add("Invalid values");
-//            return errors;
-//        }
-//        try {
-//            double k = Double.parseDouble(estimate_kWh);
-//            double a = Double.parseDouble(estimate_amps);
-//            if (a < 0 || k < 0 ) {
-//                errors.add("Invalid value");
-//            }
-//        } catch (NumberFormatException e) {
-//            errors.add("Invalid format for amount");
-//        }
         return errors;
     }
 

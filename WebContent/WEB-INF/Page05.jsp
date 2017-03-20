@@ -19,7 +19,7 @@
 	<input type="radio" name="ans" value="7 days">7 days
 	<input type="radio" name="ans" value="2 weeks">2 weeks
 	<input type="radio" name="ans" value="1 month">1 month
-	<form method="get" action="page06.do">
+	<form method="get" action="page05.do">
 		<input type="submit" class="btn btn-info" name="submit" value="Next" style="float: right;"/>
 	</form>
 	
