@@ -210,6 +210,19 @@ public class Page24Form extends FormBean {
         if (experience == null || experience.length() == 0) {
             errors.add("quesion 4 is required");
         } 
+        
+        if ((available_1 ==  null || available_1.length() == 0) &&
+        		(available_2 ==  null || available_2.length() == 0) &&
+        		(available_3 ==  null || available_3.length() == 0) &&
+        		(available_4 ==  null || available_4.length() == 0) &&
+        		(available_5 ==  null || available_5.length() == 0) &&
+        		(available_6 ==  null || available_6.length() == 0) &&
+        		(available_7 ==  null || available_7.length() == 0) &&
+        		(available_8 ==  null || available_8.length() == 0) &&
+        		(available_9 ==  null || available_9.length() == 0)) {
+        	errors.add("Need to make at least one choice at checkbox.");
+        }
+        
         return errors;
     }
 

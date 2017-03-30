@@ -132,33 +132,33 @@ public class Page04Form extends FormBean {
     public List<String> getValidationErrors() {
         List<String> errors = new ArrayList<String>();
         if (workFromHome == null || workFromHome.length() == 0) {
-            errors.add("Quesion 4 is not answered");
+            errors.add("Please choose your answer for question 4");
         }
         
         if (device == null || device.length() == 0) {
-            errors.add("Quesion 5 is not answered");
+            errors.add("Please choose your answer for question 5");
         }
         
         if (houseType == null || houseType.length() == 0) {
-            errors.add("House type is required");
+            errors.add("Please choose your answer for house type");
         } else if (houseType.length() > 15 || houseType.length() >15) {
-            errors.add("Invalid values");
+            errors.add("This is an non-applicable house type.");
             return errors;
         }
         if (houseLiveTime == null || houseLiveTime.length() == 0) {
-            errors.add("How many years have you lived in your current house or apartment is required");
+            errors.add("Please answer how many years have you lived in your current house or apartment, as a required question.");
         } else if (houseLiveTime.length() > 15 || houseLiveTime.length() >15) {
-            errors.add("Invalid values");
+            errors.add("Please enter a reason number for the years you lived in your current house");
             return errors;
         }
 
         try {
             double hl = Double.parseDouble(houseLiveTime);
             if (hl < 0) {
-                errors.add("Invalid value");
+                errors.add("Please enter a reason number for the years you lived in your current house");
             }
         } catch (NumberFormatException e) {
-            errors.add("Invalid format for amount");
+            errors.add("Please enter the years you lived in your current house in a valid format");
         }
         return errors;
     }

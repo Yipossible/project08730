@@ -48,11 +48,13 @@ public class Page24Action extends Action {
                 System.out.println(form);
                 return "Page24.jsp";
             }
+            
 
-//            errors.addAll(form.getValidationErrors());
-//            if (errors.size() != 0) {
-//                return "Page24.jsp";
-//            }
+            errors.addAll(form.getValidationErrors());
+            if (errors.size() != 0) {
+                return "Page24.jsp";
+            }
+            
             String unique_id = (String) session.getAttribute("unique_id"); // store in session
             RespondentBean r = respondentDAO.read(unique_id);
             if (!r.isFull_payment()) {

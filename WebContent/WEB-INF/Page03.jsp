@@ -13,10 +13,11 @@
 			<input type="text" name="cityLiveTime" placeholder="Please input number" class="form-control" style="width:200px;display:inline-block; margin-right:10px">years
 			<p>2. What is your age?</p>
 			<input type="text" name="age" placeholder="Please input number" class="form-control" style="width:200px; display:inline-block; margin-right:10px">years old	 
-			<p>3. How many people are there in your household in each of the following age groups:</p>
+			<p>3. How many people are there in your household in each of the following age groups:</p> <br>
+			<p>(If not applicable, please enter 0; otherwise you cannot move forward.)</p>
 			<table>
 				<tr> 
-					<td>Preschool children:</td>
+					<td>Preschool children: </td>
 					<td> <input type="text" placeholder="Please input number" name="preschool" class="form-control" ></td>
 				</tr>
 					<td>K-12 children:</td>

@@ -175,15 +175,15 @@ public class Page03Form extends FormBean {
             return errors;
         }
         
-        if (address == null || address.length() == 0) {
-        	errors.add("geoAPI use reaches limit");
-        	return errors;
-        }
-        
-        if (coordinates == null || coordinates.length() == 0) {
-        	errors.add("geoAPI use reaches limit");
-        	return errors;
-        }
+//        if (address == null || address.length() == 0) {
+//        	errors.add("geoAPI use reaches limit");
+//        	return errors;
+//        }
+//        
+//        if (coordinates == null || coordinates.length() == 0) {
+//        	errors.add("geoAPI use reaches limit");
+//        	return errors;
+//        }
         
         
         try {
