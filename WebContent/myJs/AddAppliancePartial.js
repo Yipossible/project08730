@@ -229,6 +229,7 @@ function generateArr() {
 				morningScore[i] = tmp * dict[app[i]];
 				gate = true;
 				console.log (gate);
+				console.log("morningScore:" + morningSore[i]);
 			}
 
 		}
